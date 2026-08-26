@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dqig67wjgi55k"]
 
-[ext_resource type="PackedScene" uid="uid://bohvpwyu00svn" path="res://Levels/room.tscn" id="1_t21ke"]
+[ext_resource type="PackedScene" uid="uid://bohvpwyu00svn" path="res://Layout/room.tscn" id="1_t21ke"]
 
 [node name="Level1" type="Node2D" unique_id=1989014117]
 
