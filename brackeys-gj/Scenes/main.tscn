@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c05ymu5ep5tuf"]
 
 [ext_resource type="PackedScene" uid="uid://dwefd1o4kvbii" path="res://Scenes/mainui.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://dqig67wjgi55k" path="res://Layout/level1.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://dqig67wjgi55k" path="res://Layout/layout1.tscn" id="2_bo1nx"]
 
 [node name="Main" type="Control" unique_id=1025555931]
 layout_mode = 3
@@ -13,4 +13,4 @@ grow_vertical = 2
 
 [node name="MainUI" parent="." unique_id=2093234743 instance=ExtResource("1_jjgbg")]
 
-[node name="Level1" parent="." unique_id=1989014117 instance=ExtResource("2_bo1nx")]
+[node name="Layout1" parent="." unique_id=1989014117 instance=ExtResource("2_bo1nx")]
