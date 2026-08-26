@@ -1,3 +1,22 @@
 [gd_scene format=3 uid="uid://dwefd1o4kvbii"]
 
 [node name="MainUI" type="Node2D" unique_id=2093234743]
+
+[node name="Suspects" type="Control" parent="." unique_id=946064484]
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 670.0
+offset_top = 10.0
+offset_right = 1270.0
+offset_bottom = 310.0
+
+[node name="TextEdit" type="TextEdit" parent="Suspects" unique_id=302238619]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 0
+offset_left = 245.0
+offset_right = 345.0
+offset_bottom = 40.0
+text = "Suspects"
+editable = false
+selecting_enabled = false
