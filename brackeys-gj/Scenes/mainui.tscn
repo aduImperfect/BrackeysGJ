@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bn3mhbdo20de2" path="res://Textures/Suspects_2.png" id="2_hmkf7"]
 [ext_resource type="Texture2D" uid="uid://dkb3b4y1kedq8" path="res://Textures/Suspects_3.png" id="3_4vhit"]
 [ext_resource type="Script" uid="uid://mg242xff10ut" path="res://Scripts/suspect_button.gd" id="5_4vhit"]
+[ext_resource type="Script" uid="uid://cug4o61k3blg6" path="res://Scripts/suspect_name_under.gd" id="6_01wry"]
 [ext_resource type="Script" uid="uid://tmvam1swun57" path="res://Scripts/suspect_information.gd" id="6_6c4uu"]
 [ext_resource type="Script" uid="uid://xvyyvay02k1o" path="res://Scripts/suspect_title.gd" id="7_hpdrm"]
 [ext_resource type="Script" uid="uid://cfrw6uoohei75" path="res://Scripts/suspect_name.gd" id="8_c18ef"]
@@ -50,6 +51,18 @@ suspectShortDesc = "\"I hadn't spoken to her in weeks. Ask the accountant.\""
 suspectInfo = "Voss co-owned the design firm with the victim and stood to lose everything if the buyout went through without her signature. He claims he was at a client dinner across town, but the reservation was made under a different name. Financial records show three missed loan payments in the last month."
 suspectVal = 70
 
+[node name="SuspectName1" type="TextEdit" parent="Suspects" unique_id=2119083057]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 0
+offset_left = 163.0
+offset_top = 91.0
+offset_right = 243.0
+offset_bottom = 121.0
+editable = false
+selecting_enabled = false
+script = ExtResource("6_01wry")
+suspectNameUnderText = "Marcus"
+
 [node name="SuspectButton_2" type="TextureButton" parent="Suspects" unique_id=538804975]
 layout_mode = 0
 offset_left = 274.0
@@ -67,6 +80,18 @@ suspectShortDesc = "\"We were finally on good terms. Why would I ruin that?\""
 suspectInfo = "Kade's divorce from the victim finalized eight months ago, but the custody arrangement remained bitter. She says she was home with her sister the night of the murder. Neighbors recall raised voices from her flat around 9pm, though the timing is disputed."
 suspectVal = 50
 
+[node name="SuspectName2" type="TextEdit" parent="Suspects" unique_id=1605724236]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 0
+offset_left = 254.0
+offset_top = 91.0
+offset_right = 334.0
+offset_bottom = 121.0
+editable = false
+selecting_enabled = false
+script = ExtResource("6_01wry")
+suspectNameUnderText = "Elena"
+
 [node name="SuspectButton_3" type="TextureButton" parent="Suspects" unique_id=297813803]
 layout_mode = 0
 offset_left = 362.0
@@ -83,6 +108,18 @@ suspectName = "Danny Reyes"
 suspectShortDesc = "\"I heard something, sure. Didn't think much of it.\""
 suspectInfo = "Reyes lives directly across the hall and admits to hearing a crash around 10:40pm but says he assumed it was furniture being moved. He has a prior trespassing complaint against the victim over a shared parking spot. His story about his own whereabouts that night has shifted twice."
 suspectVal = 30
+
+[node name="SuspectName3" type="TextEdit" parent="Suspects" unique_id=1158992875]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 0
+offset_left = 343.0
+offset_top = 91.0
+offset_right = 423.0
+offset_bottom = 121.0
+editable = false
+selecting_enabled = false
+script = ExtResource("6_01wry")
+suspectNameUnderText = "Danny"
 
 [node name="SuspectInformation" type="TextEdit" parent="Suspects" unique_id=132669764]
 z_index = -100
