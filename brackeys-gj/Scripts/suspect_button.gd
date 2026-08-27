@@ -1,22 +1,21 @@
-extends Control
+extends TextureButton
 
-class_name FollowMouse
+@export var suspectText : String
 
-var is_dragging: bool = false
-var drag_offset: Vector2 = Vector2.ZERO
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
 
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if is_dragging:
-		global_position = get_global_mouse_position() - drag_offset
+	pass
 
-# godot callback
-func _gui_input(_event: InputEvent) -> void:
+func _on_gui_input(_event: InputEvent) -> void:
 	if _event is InputEventMouseButton:
 		if _event.button_index == MOUSE_BUTTON_LEFT and _event.pressed:
-			is_dragging = true
-			drag_offset = get_global_mouse_position() - global_position
-		elif _event.button_index == MOUSE_BUTTON_LEFT and not _event.pressed:
-			is_dragging = false
+			SuspectInfo._update_text(suspectText)
+			pass # Replace with function body.
 
 func _input(event: InputEvent):
 	# Check if a mouse button is clicked while the node has focus

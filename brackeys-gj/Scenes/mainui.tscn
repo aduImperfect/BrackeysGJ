@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://d3643rc2jitha" path="res://Textures/Suspects_1.png" id="1_nia38"]
 [ext_resource type="Texture2D" uid="uid://bn3mhbdo20de2" path="res://Textures/Suspects_2.png" id="2_hmkf7"]
 [ext_resource type="Texture2D" uid="uid://dkb3b4y1kedq8" path="res://Textures/Suspects_3.png" id="3_4vhit"]
+[ext_resource type="Script" uid="uid://mg242xff10ut" path="res://Scripts/suspect_button.gd" id="5_4vhit"]
+[ext_resource type="Script" uid="uid://tmvam1swun57" path="res://Scenes/suspect_information.gd" id="6_6c4uu"]
 
 [node name="MainUI" type="Node2D" unique_id=2093234743]
 
@@ -37,6 +39,8 @@ scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("1_nia38")
 texture_pressed = ExtResource("2_hmkf7")
 texture_hover = ExtResource("3_4vhit")
+script = ExtResource("5_4vhit")
+suspectText = "Suspect 1: has a lot of things in mind and is hiding it well. He does not know himself."
 
 [node name="SuspectButton_2" type="TextureButton" parent="Suspects" unique_id=538804975]
 layout_mode = 0
@@ -48,6 +52,8 @@ scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("1_nia38")
 texture_pressed = ExtResource("2_hmkf7")
 texture_hover = ExtResource("3_4vhit")
+script = ExtResource("5_4vhit")
+suspectText = "Suspect 2: She has a knife with her. She is the killer. We have found her."
 
 [node name="SuspectButton_3" type="TextureButton" parent="Suspects" unique_id=297813803]
 layout_mode = 0
@@ -59,3 +65,21 @@ scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("1_nia38")
 texture_pressed = ExtResource("2_hmkf7")
 texture_hover = ExtResource("3_4vhit")
+script = ExtResource("5_4vhit")
+suspectText = "Suspect 3: A harmless kitten. It really is a kitten and not a dog. But what if its a werewolf. ..."
+
+[node name="SuspectInformation" type="TextEdit" parent="Suspects" unique_id=132669764]
+custom_minimum_size = Vector2(580, 160)
+layout_mode = 0
+offset_left = 9.0
+offset_top = 125.0
+offset_right = 589.0
+offset_bottom = 285.0
+editable = false
+selecting_enabled = false
+wrap_mode = 1
+script = ExtResource("6_6c4uu")
+
+[connection signal="gui_input" from="Suspects/SuspectButton_1" to="Suspects/SuspectButton_1" method="_on_gui_input"]
+[connection signal="gui_input" from="Suspects/SuspectButton_2" to="Suspects/SuspectButton_2" method="_on_gui_input"]
+[connection signal="gui_input" from="Suspects/SuspectButton_3" to="Suspects/SuspectButton_3" method="_on_gui_input"]
