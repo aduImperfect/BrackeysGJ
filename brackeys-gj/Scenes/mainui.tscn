@@ -1,16 +1,20 @@
 [gd_scene format=3 uid="uid://dwefd1o4kvbii"]
 
-[ext_resource type="Script" uid="uid://bsy7muk02wp7q" path="res://Scripts/suspects_title.gd" id="1_hmkf7"]
+[ext_resource type="Script" uid="uid://bsy7muk02wp7q" path="res://Scripts/suspects_header.gd" id="1_hmkf7"]
 [ext_resource type="Texture2D" uid="uid://d3643rc2jitha" path="res://Textures/Suspects_1.png" id="1_nia38"]
 [ext_resource type="Texture2D" uid="uid://bn3mhbdo20de2" path="res://Textures/Suspects_2.png" id="2_hmkf7"]
 [ext_resource type="Texture2D" uid="uid://dkb3b4y1kedq8" path="res://Textures/Suspects_3.png" id="3_4vhit"]
 [ext_resource type="Script" uid="uid://mg242xff10ut" path="res://Scripts/suspect_button.gd" id="5_4vhit"]
-[ext_resource type="Script" uid="uid://tmvam1swun57" path="res://Scenes/suspect_information.gd" id="6_6c4uu"]
+[ext_resource type="Script" uid="uid://tmvam1swun57" path="res://Scripts/suspect_information.gd" id="6_6c4uu"]
+[ext_resource type="Script" uid="uid://xvyyvay02k1o" path="res://Scripts/suspect_title.gd" id="7_hpdrm"]
+[ext_resource type="Script" uid="uid://cfrw6uoohei75" path="res://Scripts/suspect_name.gd" id="8_c18ef"]
+[ext_resource type="Script" uid="uid://17mewq7g522f" path="res://Scripts/suspect_short_desc.gd" id="9_w0ycj"]
+[ext_resource type="Script" uid="uid://depqr05jciyar" path="res://Scripts/suspicion_slider.gd" id="10_crvle"]
 
 [node name="MainUI" type="Node2D" unique_id=2093234743]
 
 [node name="Suspects" type="Control" parent="." unique_id=946064484]
-custom_minimum_size = Vector2(600, 300)
+custom_minimum_size = Vector2(600, 400)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 670.0
@@ -18,7 +22,7 @@ offset_top = 10.0
 offset_right = 1270.0
 offset_bottom = 310.0
 
-[node name="SuspectsTitle" type="TextEdit" parent="Suspects" unique_id=302238619]
+[node name="SuspectsHeader" type="TextEdit" parent="Suspects" unique_id=302238619]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 0
 offset_left = 245.0
@@ -40,7 +44,11 @@ texture_normal = ExtResource("1_nia38")
 texture_pressed = ExtResource("2_hmkf7")
 texture_hover = ExtResource("3_4vhit")
 script = ExtResource("5_4vhit")
-suspectText = "Suspect 1: has a lot of things in mind and is hiding it well. He does not know himself."
+suspectTitle = "Business Partner"
+suspectName = "Marcus Voss"
+suspectShortDesc = "\"I hadn't spoken to her in weeks. Ask the accountant.\""
+suspectInfo = "Voss co-owned the design firm with the victim and stood to lose everything if the buyout went through without her signature. He claims he was at a client dinner across town, but the reservation was made under a different name. Financial records show three missed loan payments in the last month."
+suspectVal = 70
 
 [node name="SuspectButton_2" type="TextureButton" parent="Suspects" unique_id=538804975]
 layout_mode = 0
@@ -53,7 +61,11 @@ texture_normal = ExtResource("1_nia38")
 texture_pressed = ExtResource("2_hmkf7")
 texture_hover = ExtResource("3_4vhit")
 script = ExtResource("5_4vhit")
-suspectText = "Suspect 2: She has a knife with her. She is the killer. We have found her."
+suspectTitle = "Ex-Wife"
+suspectName = "Elena Kade"
+suspectShortDesc = "\"We were finally on good terms. Why would I ruin that?\""
+suspectInfo = "Kade's divorce from the victim finalized eight months ago, but the custody arrangement remained bitter. She says she was home with her sister the night of the murder. Neighbors recall raised voices from her flat around 9pm, though the timing is disputed."
+suspectVal = 50
 
 [node name="SuspectButton_3" type="TextureButton" parent="Suspects" unique_id=297813803]
 layout_mode = 0
@@ -66,19 +78,82 @@ texture_normal = ExtResource("1_nia38")
 texture_pressed = ExtResource("2_hmkf7")
 texture_hover = ExtResource("3_4vhit")
 script = ExtResource("5_4vhit")
-suspectText = "Suspect 3: A harmless kitten. It really is a kitten and not a dog. But what if its a werewolf. ..."
+suspectTitle = "Neighbor, Unit 3"
+suspectName = "Danny Reyes"
+suspectShortDesc = "\"I heard something, sure. Didn't think much of it.\""
+suspectInfo = "Reyes lives directly across the hall and admits to hearing a crash around 10:40pm but says he assumed it was furniture being moved. He has a prior trespassing complaint against the victim over a shared parking spot. His story about his own whereabouts that night has shifted twice."
+suspectVal = 30
 
 [node name="SuspectInformation" type="TextEdit" parent="Suspects" unique_id=132669764]
-custom_minimum_size = Vector2(580, 160)
+z_index = -100
+custom_minimum_size = Vector2(580, 140)
 layout_mode = 0
 offset_left = 9.0
-offset_top = 125.0
+offset_top = 201.0
 offset_right = 589.0
-offset_bottom = 285.0
+offset_bottom = 301.0
 editable = false
 selecting_enabled = false
 wrap_mode = 1
 script = ExtResource("6_6c4uu")
+
+[node name="SuspectTitle" type="TextEdit" parent="Suspects" unique_id=1747301334]
+z_index = -20
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 130.0
+offset_right = 116.0
+offset_bottom = 160.0
+editable = false
+selecting_enabled = false
+script = ExtResource("7_hpdrm")
+
+[node name="SuspectName" type="TextEdit" parent="Suspects" unique_id=1433924696]
+z_index = -20
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 0
+offset_left = 181.0
+offset_top = 130.0
+offset_right = 281.0
+offset_bottom = 160.0
+editable = false
+selecting_enabled = false
+script = ExtResource("8_c18ef")
+
+[node name="SuspectShortDesc" type="TextEdit" parent="Suspects" unique_id=1751043253]
+z_index = -20
+custom_minimum_size = Vector2(560, 30)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 166.0
+offset_right = 116.0
+offset_bottom = 196.0
+editable = false
+selecting_enabled = false
+wrap_mode = 1
+script = ExtResource("9_w0ycj")
+
+[node name="SuspicionSliderHeader" type="TextEdit" parent="Suspects" unique_id=59401149]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 0
+offset_left = 9.0
+offset_top = 346.0
+offset_right = 109.0
+offset_bottom = 376.0
+text = "Suscpicion"
+editable = false
+selecting_enabled = false
+
+[node name="SuspicionSlider" type="HSlider" parent="Suspects" unique_id=1909244185]
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 0
+offset_left = 130.0
+offset_top = 350.0
+offset_right = 580.0
+offset_bottom = 366.0
+editable = false
+script = ExtResource("10_crvle")
 
 [connection signal="gui_input" from="Suspects/SuspectButton_1" to="Suspects/SuspectButton_1" method="_on_gui_input"]
 [connection signal="gui_input" from="Suspects/SuspectButton_2" to="Suspects/SuspectButton_2" method="_on_gui_input"]

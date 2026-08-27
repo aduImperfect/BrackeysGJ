@@ -1,6 +1,10 @@
 extends TextureButton
 
-@export var suspectText : String
+@export var suspectTitle : String
+@export var suspectName : String
+@export var suspectShortDesc : String
+@export var suspectInfo : String
+@export var suspectVal : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,8 +18,11 @@ func _process(_delta: float) -> void:
 func _on_gui_input(_event: InputEvent) -> void:
 	if _event is InputEventMouseButton:
 		if _event.button_index == MOUSE_BUTTON_LEFT and _event.pressed:
-			SuspectInfo._update_text(suspectText)
-			pass # Replace with function body.
+			SuspectTitle._update_text(suspectTitle)
+			SuspectName._update_text(suspectName)
+			SuspectShortDesc._update_text(suspectShortDesc)
+			SuspectInfo._update_text(suspectInfo)
+			SuspicionSliderVal._update_value(suspectVal)
 
 func _input(event: InputEvent):
 	# Check if a mouse button is clicked while the node has focus
