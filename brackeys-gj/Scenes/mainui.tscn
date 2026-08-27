@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://dwefd1o4kvbii"]
 
+[ext_resource type="Script" uid="uid://bsy7muk02wp7q" path="res://Scripts/suspects_title.gd" id="1_hmkf7"]
+[ext_resource type="Texture2D" uid="uid://d3643rc2jitha" path="res://Textures/Suspects_1.png" id="1_nia38"]
+[ext_resource type="Texture2D" uid="uid://bn3mhbdo20de2" path="res://Textures/Suspects_2.png" id="2_hmkf7"]
+[ext_resource type="Texture2D" uid="uid://dkb3b4y1kedq8" path="res://Textures/Suspects_3.png" id="3_4vhit"]
+
 [node name="MainUI" type="Node2D" unique_id=2093234743]
 
 [node name="Suspects" type="Control" parent="." unique_id=946064484]
@@ -11,7 +16,7 @@ offset_top = 10.0
 offset_right = 1270.0
 offset_bottom = 310.0
 
-[node name="TextEdit" type="TextEdit" parent="Suspects" unique_id=302238619]
+[node name="SuspectsTitle" type="TextEdit" parent="Suspects" unique_id=302238619]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 0
 offset_left = 245.0
@@ -20,3 +25,37 @@ offset_bottom = 40.0
 text = "Suspects"
 editable = false
 selecting_enabled = false
+script = ExtResource("1_hmkf7")
+
+[node name="SuspectButton_1" type="TextureButton" parent="Suspects" unique_id=1721453105]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 48.0
+offset_right = 223.0
+offset_bottom = 88.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("1_nia38")
+texture_pressed = ExtResource("2_hmkf7")
+texture_hover = ExtResource("3_4vhit")
+
+[node name="SuspectButton_2" type="TextureButton" parent="Suspects" unique_id=538804975]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 46.0
+offset_right = 674.0
+offset_bottom = 446.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("1_nia38")
+texture_pressed = ExtResource("2_hmkf7")
+texture_hover = ExtResource("3_4vhit")
+
+[node name="SuspectButton_3" type="TextureButton" parent="Suspects" unique_id=297813803]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 46.0
+offset_right = 762.0
+offset_bottom = 446.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("1_nia38")
+texture_pressed = ExtResource("2_hmkf7")
+texture_hover = ExtResource("3_4vhit")
