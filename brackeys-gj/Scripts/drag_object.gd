@@ -1,6 +1,6 @@
 extends Control
 
-class_name FollowMouse
+class_name DragObject
 
 var is_dragging: bool = false
 var drag_offset: Vector2 = Vector2.ZERO

@@ -11,6 +11,13 @@
 [ext_resource type="Script" uid="uid://cfrw6uoohei75" path="res://Scripts/suspect_name.gd" id="8_c18ef"]
 [ext_resource type="Script" uid="uid://17mewq7g522f" path="res://Scripts/suspect_short_desc.gd" id="9_w0ycj"]
 [ext_resource type="Script" uid="uid://depqr05jciyar" path="res://Scripts/suspicion_slider.gd" id="10_crvle"]
+[ext_resource type="Script" uid="uid://bgsn6j5avr18d" path="res://Scripts/suspicion_slider_header.gd" id="11_gim0o"]
+[ext_resource type="Script" uid="uid://cw0ew6ybihtv1" path="res://Scripts/evidence_header.gd" id="13_gfj6t"]
+[ext_resource type="Script" uid="uid://c1qxvn6bqrdpp" path="res://Scripts/evidence_data.gd" id="14_ouli6"]
+[ext_resource type="Script" uid="uid://b388r3lr4lqkg" path="res://Scripts/drag_object.gd" id="14_tlp82"]
+[ext_resource type="Script" uid="uid://pqnsk0ndnf5p" path="res://Scripts/object_img.gd" id="16_147pp"]
+[ext_resource type="Script" uid="uid://dw8dus84lolg5" path="res://Scripts/object_name.gd" id="17_enppw"]
+[ext_resource type="Script" uid="uid://b1bvv3kwbggln" path="res://Scripts/object_desc.gd" id="18_kx34a"]
 
 [node name="MainUI" type="Node2D" unique_id=2093234743]
 
@@ -181,6 +188,7 @@ offset_bottom = 376.0
 text = "Suscpicion"
 editable = false
 selecting_enabled = false
+script = ExtResource("11_gim0o")
 
 [node name="SuspicionSlider" type="HSlider" parent="Suspects" unique_id=1909244185]
 custom_minimum_size = Vector2(450, 0)
@@ -191,6 +199,72 @@ offset_right = 580.0
 offset_bottom = 366.0
 editable = false
 script = ExtResource("10_crvle")
+
+[node name="EvidenceLocker" type="Control" parent="." unique_id=1616462786]
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 670.0
+offset_top = 410.0
+offset_right = 1270.0
+offset_bottom = 710.0
+
+[node name="EvidenceHeader" type="TextEdit" parent="EvidenceLocker" unique_id=2136378570]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 0
+offset_left = 180.0
+offset_right = 380.0
+offset_bottom = 40.0
+text = "Evidence Locker"
+editable = false
+selecting_enabled = false
+script = ExtResource("13_gfj6t")
+
+[node name="Evidence1" type="Control" parent="EvidenceLocker" unique_id=1585660916]
+custom_minimum_size = Vector2(280, 60)
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 52.0
+offset_right = 50.0
+offset_bottom = 92.0
+script = ExtResource("14_ouli6")
+evidenceTex = ExtResource("2_hmkf7")
+evidenceName = "Kitchen Knife"
+evidenceDesc = "Missing from the block, later found wiped clean."
+
+[node name="DraggablePart" type="Control" parent="EvidenceLocker/Evidence1" unique_id=667986574]
+custom_minimum_size = Vector2(280, 60)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_tlp82")
+
+[node name="ObjectImg" type="Sprite2D" parent="EvidenceLocker/Evidence1/DraggablePart" unique_id=442237160]
+position = Vector2(116, 12)
+scale = Vector2(0.05, 0.05)
+script = ExtResource("16_147pp")
+
+[node name="ObjectName" type="TextEdit" parent="EvidenceLocker/Evidence1/DraggablePart" unique_id=1661583599]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 0
+offset_top = 3.0
+offset_right = 100.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 10
+editable = false
+selecting_enabled = false
+script = ExtResource("17_enppw")
+
+[node name="ObjectDesc" type="TextEdit" parent="EvidenceLocker/Evidence1/DraggablePart" unique_id=278989604]
+custom_minimum_size = Vector2(280, 30)
+layout_mode = 0
+offset_top = 26.0
+offset_right = 280.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 10
+editable = false
+selecting_enabled = false
+script = ExtResource("18_kx34a")
 
 [connection signal="gui_input" from="Suspects/SuspectButton_1" to="Suspects/SuspectButton_1" method="_on_gui_input"]
 [connection signal="gui_input" from="Suspects/SuspectButton_2" to="Suspects/SuspectButton_2" method="_on_gui_input"]
