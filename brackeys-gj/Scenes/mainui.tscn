@@ -20,10 +20,14 @@
 [ext_resource type="Script" uid="uid://pqnsk0ndnf5p" path="res://Scripts/object_img.gd" id="16_147pp"]
 [ext_resource type="Script" uid="uid://dw8dus84lolg5" path="res://Scripts/object_name.gd" id="17_enppw"]
 [ext_resource type="Texture2D" uid="uid://ctsopdttq1fy7" path="res://Textures/EvidenceValBG.png" id="17_i3k6o"]
+[ext_resource type="Texture2D" uid="uid://3twv5i3x1tlf" path="res://Textures/EvidenceObject1.png" id="17_ueqbn"]
 [ext_resource type="Script" uid="uid://b1bvv3kwbggln" path="res://Scripts/object_desc.gd" id="18_kx34a"]
 [ext_resource type="Texture2D" uid="uid://6e8cvm6n7kw3" path="res://Textures/TimelineBG.png" id="21_qoud8"]
 [ext_resource type="Script" uid="uid://b1os4n24dbsxq" path="res://Scripts/timeline_header.gd" id="22_yj67u"]
 [ext_resource type="Texture2D" uid="uid://cgavbkuohbpd1" path="res://Textures/HouseBG.png" id="23_ih6jt"]
+[ext_resource type="Script" uid="uid://bv7tmmmreufbs" path="res://Scripts/drag_obj_img.gd" id="23_l0p4r"]
+[ext_resource type="Script" uid="uid://ceelgtarpqwuh" path="res://Scripts/house_header.gd" id="27_kcbrv"]
+[ext_resource type="Script" uid="uid://bha7jyl3oexy7" path="res://Scripts/house_case_no.gd" id="28_e4h4u"]
 
 [node name="MainUI" type="Node2D" unique_id=2093234743]
 
@@ -258,7 +262,7 @@ offset_top = 52.0
 offset_right = 50.0
 offset_bottom = 92.0
 script = ExtResource("14_ouli6")
-evidenceTex = ExtResource("2_hmkf7")
+evidenceTex = ExtResource("17_ueqbn")
 evidenceName = "Kitchen Knife"
 evidenceDesc = "Missing from the block, later found wiped clean."
 
@@ -268,19 +272,12 @@ position = Vector2(140, 30)
 scale = Vector2(280, 60)
 texture = ExtResource("17_i3k6o")
 
-[node name="DraggablePart" type="Control" parent="EvidenceLocker/Evidence1" unique_id=667986574]
-custom_minimum_size = Vector2(280, 60)
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("14_tlp82")
-
-[node name="ObjectImg" type="Sprite2D" parent="EvidenceLocker/Evidence1/DraggablePart" unique_id=442237160]
+[node name="ObjectImg" type="Sprite2D" parent="EvidenceLocker/Evidence1" unique_id=442237160]
 position = Vector2(129, 12)
 scale = Vector2(0.05, 0.05)
 script = ExtResource("16_147pp")
 
-[node name="ObjectName" type="TextEdit" parent="EvidenceLocker/Evidence1/DraggablePart" unique_id=1661583599]
+[node name="ObjectName" type="TextEdit" parent="EvidenceLocker/Evidence1" unique_id=1661583599]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 0
 offset_left = 5.0
@@ -292,7 +289,7 @@ editable = false
 selecting_enabled = false
 script = ExtResource("17_enppw")
 
-[node name="ObjectDesc" type="TextEdit" parent="EvidenceLocker/Evidence1/DraggablePart" unique_id=278989604]
+[node name="ObjectDesc" type="TextEdit" parent="EvidenceLocker/Evidence1" unique_id=278989604]
 custom_minimum_size = Vector2(270, 30)
 layout_mode = 0
 offset_left = 5.0
@@ -303,6 +300,24 @@ theme_override_font_sizes/font_size = 10
 editable = false
 selecting_enabled = false
 script = ExtResource("18_kx34a")
+
+[node name="DraggablePart" type="Control" parent="EvidenceLocker/Evidence1" unique_id=667986574]
+custom_minimum_size = Vector2(280, 60)
+anchors_preset = 0
+offset_right = 280.0
+offset_bottom = 60.0
+script = ExtResource("14_tlp82")
+is_dragging = null
+drag_offset = null
+startPos = null
+dragSuccess = null
+
+[node name="DragObjImg" type="Sprite2D" parent="EvidenceLocker/Evidence1/DraggablePart" unique_id=1239164942]
+visible = false
+z_index = -500
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("17_ueqbn")
+script = ExtResource("23_l0p4r")
 
 [node name="Timeline" type="Control" parent="." unique_id=379029211]
 custom_minimum_size = Vector2(660, 100)
@@ -346,6 +361,32 @@ z_index = -1200
 position = Vector2(330, 300)
 scale = Vector2(660, 600)
 texture = ExtResource("23_ih6jt")
+
+[node name="HouseHeader" type="TextEdit" parent="House" unique_id=585503340]
+z_index = -300
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 308.0
+offset_bottom = 46.0
+text = "The Scene — Ashcombe Flat, Unit 4"
+editable = false
+selecting_enabled = false
+script = ExtResource("27_kcbrv")
+
+[node name="HouseCaseNo" type="TextEdit" parent="House" unique_id=1458317151]
+z_index = -300
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 0
+offset_left = 552.0
+offset_top = 6.0
+offset_right = 652.0
+offset_bottom = 46.0
+text = "CASE #4471"
+editable = false
+selecting_enabled = false
+script = ExtResource("28_e4h4u")
 
 [connection signal="gui_input" from="Suspects/SuspectButton_1" to="Suspects/SuspectButton_1" method="_on_gui_input"]
 [connection signal="gui_input" from="Suspects/SuspectButton_2" to="Suspects/SuspectButton_2" method="_on_gui_input"]
