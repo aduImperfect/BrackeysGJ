@@ -12,5 +12,5 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-static func _checkEvidence() -> void:
+static func _checkEvidence(_playerEvidenceRes : Resource) -> void:
 	pass
