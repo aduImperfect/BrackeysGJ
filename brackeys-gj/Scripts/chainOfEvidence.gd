@@ -1,5 +1,7 @@
 extends Node
 
+class_name ChainOfEvidence
+
 @export var itemsHolder : Control
 @export var itemInfo : PackedScene
 
@@ -12,12 +14,18 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if(Input.is_action_just_pressed("ui_up")):
+	if spawnedEvidences.size() == 8:
+		EvidenceCheck.enableButton = true
+	else:
+		EvidenceCheck.enableButton = false
+
+	if TimelineReset.resetTimeline:
 		_clearEvidences()
+		TimelineReset.resetTimeline = false
+
 	if(Input.is_action_just_pressed("ui_accept")):
 		var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
 		_spawnEvidence(entry)
-	pass
 
 func _spawnEvidence(entry: EvidenceEntry) -> void:
 	var newEvidence := itemInfo.instantiate() as Node2D
@@ -40,8 +48,7 @@ func _checkAndPopulateEvidences(_playerEvidences : AllEvidences) -> void:
 	_clearEvidences()
 	for evidence in _playerEvidences.entries:
 		_spawnEvidence(evidence)
-	pass
-	
+
 func _clearEvidences() -> void:
 	for evidence in spawnedEvidences:
 		evidence.queue_free()

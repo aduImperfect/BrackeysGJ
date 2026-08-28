@@ -16,7 +16,7 @@ func _process(_delta: float) -> void:
 		is_dragging = false
 		if draggingImg != null:
 			draggingImg.visible = false
-		TimelineReset.resetTimeline = false
+		#TimelineReset.resetTimeline = false
 
 	if is_dragging:
 		if draggingImg != null:

@@ -31,6 +31,7 @@
 [ext_resource type="Script" uid="uid://ceelgtarpqwuh" path="res://Scripts/house_header.gd" id="27_kcbrv"]
 [ext_resource type="Script" uid="uid://bha7jyl3oexy7" path="res://Scripts/house_case_no.gd" id="28_e4h4u"]
 [ext_resource type="Script" uid="uid://d08q23tpdrbwo" path="res://Scripts/timeline_reset_button.gd" id="28_ry14t"]
+[ext_resource type="Script" uid="uid://c1wt3lalv7ik3" path="res://Scripts/evidence_check_button.gd" id="29_d2nfp"]
 
 [node name="MainUI" type="Node2D" unique_id=2093234743]
 
@@ -365,6 +366,16 @@ offset_right = 652.0
 offset_bottom = 37.0
 text = "Reset"
 script = ExtResource("28_ry14t")
+
+[node name="EvidenceCheckButton" type="Button" parent="Timeline" unique_id=384517381]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 6.0
+offset_right = 593.0
+offset_bottom = 37.0
+disabled = true
+text = "Evidence Check"
+script = ExtResource("29_d2nfp")
 
 [node name="House" type="Control" parent="." unique_id=1658027778]
 custom_minimum_size = Vector2(660, 600)
