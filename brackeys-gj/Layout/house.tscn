@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dbc0uwvp6ibfs" path="res://Textures/House_Alt.png" id="1_2y6vw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2add"]
-size = Vector2(250, 310)
+size = Vector2(1, 1)
 
 [node name="House" type="Node2D" unique_id=1444724472]
 
@@ -12,8 +12,44 @@ z_index = -1000
 position = Vector2(336, 324)
 texture = ExtResource("1_2y6vw")
 
-[node name="Bedroom1MasterArea2D" type="Area2D" parent="House" unique_id=635434835]
+[node name="Bedroom1MasterA2D" type="Area2D" parent="House" unique_id=635434835]
+position = Vector2(-168, -104)
+scale = Vector2(250, 305)
 
-[node name="Bedroom1MasterCS2D" type="CollisionShape2D" parent="House/Bedroom1MasterArea2D" unique_id=1703102311]
-position = Vector2(-168, -105)
+[node name="Bedroom1MasterCS2D" type="CollisionShape2D" parent="House/Bedroom1MasterA2D" unique_id=1703102311]
+shape = SubResource("RectangleShape2D_d2add")
+
+[node name="BathA2D" type="Area2D" parent="House" unique_id=195507470]
+position = Vector2(34, -160)
+scale = Vector2(125, 190)
+
+[node name="BathCS2D" type="CollisionShape2D" parent="House/BathA2D" unique_id=1464889007]
+shape = SubResource("RectangleShape2D_d2add")
+
+[node name="Bedroom2A2D" type="Area2D" parent="House" unique_id=1471322380]
+position = Vector2(201, -104)
+scale = Vector2(180, 305)
+
+[node name="Bedroom2CS2D" type="CollisionShape2D" parent="House/Bedroom2A2D" unique_id=439339487]
+shape = SubResource("RectangleShape2D_d2add")
+
+[node name="HallA2D" type="Area2D" parent="House" unique_id=1997284324]
+position = Vector2(34, 0)
+scale = Vector2(125, 100)
+
+[node name="HallCS2D" type="CollisionShape2D" parent="House/HallA2D" unique_id=1442945241]
+shape = SubResource("RectangleShape2D_d2add")
+
+[node name="LivingRoomA2D" type="Area2D" parent="House" unique_id=895034656]
+position = Vector2(-98, 160)
+scale = Vector2(385, 190)
+
+[node name="LivingRoomCS2D" type="CollisionShape2D" parent="House/LivingRoomA2D" unique_id=1644785690]
+shape = SubResource("RectangleShape2D_d2add")
+
+[node name="Bedroom3A2D" type="Area2D" parent="House" unique_id=927452884]
+position = Vector2(200, 160)
+scale = Vector2(180, 190)
+
+[node name="Bedroom3CS2D" type="CollisionShape2D" parent="House/Bedroom3A2D" unique_id=493254019]
 shape = SubResource("RectangleShape2D_d2add")
