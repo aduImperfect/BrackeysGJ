@@ -2,8 +2,8 @@ extends TextureButton
 
 @export var suspectTitle : String
 @export var suspectName : String
-@export var suspectShortDesc : String
-@export var suspectInfo : String
+@export_multiline var suspectShortDesc : String
+@export_multiline var suspectInfo : String
 @export var suspectVal : int
 
 # Called when the node enters the scene tree for the first time.

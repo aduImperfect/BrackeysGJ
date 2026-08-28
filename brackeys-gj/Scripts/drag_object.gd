@@ -4,6 +4,7 @@ class_name DragObject
 
 var is_dragging: bool = false
 var drag_offset: Vector2 = Vector2.ZERO
+var startPos: Vector2 = Vector2.ZERO
 
 func _process(_delta: float) -> void:
 	if is_dragging:
@@ -14,6 +15,7 @@ func _gui_input(_event: InputEvent) -> void:
 	if _event is InputEventMouseButton:
 		if _event.button_index == MOUSE_BUTTON_LEFT and _event.pressed:
 			is_dragging = true
+			startPos = global_position
 			drag_offset = get_global_mouse_position() - global_position
 		elif _event.button_index == MOUSE_BUTTON_LEFT and not _event.pressed:
 			is_dragging = false
