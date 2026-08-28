@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bsy7muk02wp7q" path="res://Scripts/suspects_header.gd" id="1_hmkf7"]
 [ext_resource type="Texture2D" uid="uid://d3643rc2jitha" path="res://Textures/Suspects_1.png" id="1_nia38"]
+[ext_resource type="Texture2D" uid="uid://f78var123yw5" path="res://Textures/SuspectsBG.png" id="1_wc7ih"]
 [ext_resource type="Texture2D" uid="uid://bn3mhbdo20de2" path="res://Textures/Suspects_2.png" id="2_hmkf7"]
 [ext_resource type="Texture2D" uid="uid://dkb3b4y1kedq8" path="res://Textures/Suspects_3.png" id="3_4vhit"]
 [ext_resource type="Script" uid="uid://mg242xff10ut" path="res://Scripts/suspect_button.gd" id="5_4vhit"]
@@ -13,11 +14,15 @@
 [ext_resource type="Script" uid="uid://depqr05jciyar" path="res://Scripts/suspicion_slider.gd" id="10_crvle"]
 [ext_resource type="Script" uid="uid://bgsn6j5avr18d" path="res://Scripts/suspicion_slider_header.gd" id="11_gim0o"]
 [ext_resource type="Script" uid="uid://cw0ew6ybihtv1" path="res://Scripts/evidence_header.gd" id="13_gfj6t"]
+[ext_resource type="Texture2D" uid="uid://dqbuoqlbnwb6r" path="res://Textures/EvidencesBG.png" id="14_3q4g7"]
 [ext_resource type="Script" uid="uid://c1qxvn6bqrdpp" path="res://Scripts/evidence_data.gd" id="14_ouli6"]
 [ext_resource type="Script" uid="uid://b388r3lr4lqkg" path="res://Scripts/drag_object.gd" id="14_tlp82"]
 [ext_resource type="Script" uid="uid://pqnsk0ndnf5p" path="res://Scripts/object_img.gd" id="16_147pp"]
 [ext_resource type="Script" uid="uid://dw8dus84lolg5" path="res://Scripts/object_name.gd" id="17_enppw"]
 [ext_resource type="Script" uid="uid://b1bvv3kwbggln" path="res://Scripts/object_desc.gd" id="18_kx34a"]
+[ext_resource type="Texture2D" uid="uid://6e8cvm6n7kw3" path="res://Textures/TimelineBG.png" id="21_qoud8"]
+[ext_resource type="Script" uid="uid://b1os4n24dbsxq" path="res://Scripts/timeline_header.gd" id="22_yj67u"]
+[ext_resource type="Texture2D" uid="uid://cgavbkuohbpd1" path="res://Textures/HouseBG.png" id="23_ih6jt"]
 
 [node name="MainUI" type="Node2D" unique_id=2093234743]
 
@@ -30,18 +35,27 @@ offset_top = 10.0
 offset_right = 1270.0
 offset_bottom = 310.0
 
+[node name="SuspectsBGSprite2D" type="Sprite2D" parent="Suspects" unique_id=1455602008]
+z_index = -600
+position = Vector2(300, 200)
+scale = Vector2(600, 400)
+texture = ExtResource("1_wc7ih")
+
 [node name="SuspectsHeader" type="TextEdit" parent="Suspects" unique_id=302238619]
+z_index = -300
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 0
 offset_left = 245.0
+offset_top = 3.0
 offset_right = 345.0
-offset_bottom = 40.0
+offset_bottom = 43.0
 text = "Suspects"
 editable = false
 selecting_enabled = false
 script = ExtResource("1_hmkf7")
 
 [node name="SuspectButton_1" type="TextureButton" parent="Suspects" unique_id=1721453105]
+z_index = -300
 layout_mode = 0
 offset_left = 183.0
 offset_top = 48.0
@@ -59,6 +73,7 @@ suspectInfo = "Voss co-owned the design firm with the victim and stood to lose e
 suspectVal = 70
 
 [node name="SuspectName1" type="TextEdit" parent="Suspects" unique_id=2119083057]
+z_index = -300
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 0
 offset_left = 163.0
@@ -71,6 +86,7 @@ script = ExtResource("6_01wry")
 suspectNameUnderText = "Marcus"
 
 [node name="SuspectButton_2" type="TextureButton" parent="Suspects" unique_id=538804975]
+z_index = -300
 layout_mode = 0
 offset_left = 274.0
 offset_top = 46.0
@@ -88,6 +104,7 @@ suspectInfo = "Kade's divorce from the victim finalized eight months ago, but th
 suspectVal = 50
 
 [node name="SuspectName2" type="TextEdit" parent="Suspects" unique_id=1605724236]
+z_index = -300
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 0
 offset_left = 254.0
@@ -100,6 +117,7 @@ script = ExtResource("6_01wry")
 suspectNameUnderText = "Elena"
 
 [node name="SuspectButton_3" type="TextureButton" parent="Suspects" unique_id=297813803]
+z_index = -300
 layout_mode = 0
 offset_left = 362.0
 offset_top = 46.0
@@ -117,6 +135,7 @@ suspectInfo = "Reyes lives directly across the hall and admits to hearing a cras
 suspectVal = 30
 
 [node name="SuspectName3" type="TextEdit" parent="Suspects" unique_id=1158992875]
+z_index = -300
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 0
 offset_left = 343.0
@@ -129,7 +148,7 @@ script = ExtResource("6_01wry")
 suspectNameUnderText = "Danny"
 
 [node name="SuspectInformation" type="TextEdit" parent="Suspects" unique_id=132669764]
-z_index = -100
+z_index = -300
 custom_minimum_size = Vector2(580, 140)
 layout_mode = 0
 offset_left = 9.0
@@ -142,7 +161,7 @@ wrap_mode = 1
 script = ExtResource("6_6c4uu")
 
 [node name="SuspectTitle" type="TextEdit" parent="Suspects" unique_id=1747301334]
-z_index = -20
+z_index = -300
 custom_minimum_size = Vector2(150, 30)
 layout_mode = 0
 offset_left = 16.0
@@ -154,7 +173,7 @@ selecting_enabled = false
 script = ExtResource("7_hpdrm")
 
 [node name="SuspectName" type="TextEdit" parent="Suspects" unique_id=1433924696]
-z_index = -20
+z_index = -300
 custom_minimum_size = Vector2(150, 30)
 layout_mode = 0
 offset_left = 181.0
@@ -166,7 +185,7 @@ selecting_enabled = false
 script = ExtResource("8_c18ef")
 
 [node name="SuspectShortDesc" type="TextEdit" parent="Suspects" unique_id=1751043253]
-z_index = -20
+z_index = -300
 custom_minimum_size = Vector2(560, 30)
 layout_mode = 0
 offset_left = 16.0
@@ -179,6 +198,7 @@ wrap_mode = 1
 script = ExtResource("9_w0ycj")
 
 [node name="SuspicionSliderHeader" type="TextEdit" parent="Suspects" unique_id=59401149]
+z_index = -300
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 0
 offset_left = 9.0
@@ -191,6 +211,7 @@ selecting_enabled = false
 script = ExtResource("11_gim0o")
 
 [node name="SuspicionSlider" type="HSlider" parent="Suspects" unique_id=1909244185]
+z_index = -300
 custom_minimum_size = Vector2(450, 0)
 layout_mode = 0
 offset_left = 130.0
@@ -209,12 +230,20 @@ offset_top = 410.0
 offset_right = 1270.0
 offset_bottom = 710.0
 
+[node name="EvidenceBGSprite2D" type="Sprite2D" parent="EvidenceLocker" unique_id=1973965966]
+z_index = -600
+position = Vector2(300, 150)
+scale = Vector2(600, 300)
+texture = ExtResource("14_3q4g7")
+
 [node name="EvidenceHeader" type="TextEdit" parent="EvidenceLocker" unique_id=2136378570]
+z_index = -300
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 0
 offset_left = 180.0
+offset_top = 4.0
 offset_right = 380.0
-offset_bottom = 40.0
+offset_bottom = 44.0
 text = "Evidence Locker"
 editable = false
 selecting_enabled = false
@@ -265,6 +294,49 @@ theme_override_font_sizes/font_size = 10
 editable = false
 selecting_enabled = false
 script = ExtResource("18_kx34a")
+
+[node name="Timeline" type="Control" parent="." unique_id=379029211]
+custom_minimum_size = Vector2(660, 100)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 610.0
+offset_right = 670.0
+offset_bottom = 710.0
+
+[node name="TimelineBGSprite2D" type="Sprite2D" parent="Timeline" unique_id=1067560464]
+z_index = -600
+position = Vector2(330, 50)
+scale = Vector2(660, 100)
+texture = ExtResource("21_qoud8")
+
+[node name="TimelineHeader" type="TextEdit" parent="Timeline" unique_id=1865272060]
+z_index = -600
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 0
+offset_left = 180.0
+offset_top = 4.0
+offset_right = 380.0
+offset_bottom = 44.0
+text = "Chain Of Evidence"
+editable = false
+selecting_enabled = false
+script = ExtResource("22_yj67u")
+
+[node name="House" type="Control" parent="." unique_id=1658027778]
+custom_minimum_size = Vector2(660, 600)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 670.0
+offset_bottom = 610.0
+
+[node name="HouseBGSprite2D" type="Sprite2D" parent="House" unique_id=1759952695]
+z_index = -1200
+position = Vector2(330, 300)
+scale = Vector2(660, 600)
+texture = ExtResource("23_ih6jt")
 
 [connection signal="gui_input" from="Suspects/SuspectButton_1" to="Suspects/SuspectButton_1" method="_on_gui_input"]
 [connection signal="gui_input" from="Suspects/SuspectButton_2" to="Suspects/SuspectButton_2" method="_on_gui_input"]
