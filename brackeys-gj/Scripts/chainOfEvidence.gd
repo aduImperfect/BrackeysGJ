@@ -4,7 +4,7 @@ extends Node
 @export var itemInfo : PackedScene
 
 static var spawnedEvidences : Array[Node]
-var offset : float = 100
+@export var offset : float = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
