@@ -14,40 +14,10 @@
 [ext_resource type="Script" uid="uid://bgsn6j5avr18d" path="res://Scripts/suspicion_slider_header.gd" id="11_gim0o"]
 [ext_resource type="Script" uid="uid://cw0ew6ybihtv1" path="res://Scripts/evidence_header.gd" id="13_gfj6t"]
 [ext_resource type="Script" uid="uid://c1qxvn6bqrdpp" path="res://Scripts/evidence_data.gd" id="14_ouli6"]
+[ext_resource type="Script" uid="uid://b388r3lr4lqkg" path="res://Scripts/drag_object.gd" id="14_tlp82"]
 [ext_resource type="Script" uid="uid://pqnsk0ndnf5p" path="res://Scripts/object_img.gd" id="16_147pp"]
 [ext_resource type="Script" uid="uid://dw8dus84lolg5" path="res://Scripts/object_name.gd" id="17_enppw"]
 [ext_resource type="Script" uid="uid://b1bvv3kwbggln" path="res://Scripts/object_desc.gd" id="18_kx34a"]
-
-[sub_resource type="GDScript" id="GDScript_enppw"]
-script/source = "extends Control
-
-class_name DragObject
-
-var is_dragging: bool = false
-var drag_offset: Vector2 = Vector2.ZERO
-var startPos: Vector2 = Vector2.ZERO
-
-func _process(_delta: float) -> void:
-	if is_dragging:
-		global_position = get_global_mouse_position() - drag_offset
-
-# godot callback
-func _gui_input(_event: InputEvent) -> void:
-	if _event is InputEventMouseButton:
-		if _event.button_index == MOUSE_BUTTON_LEFT and _event.pressed:
-			is_dragging = true
-			startPos = global_position
-			drag_offset = get_global_mouse_position() - global_position
-		elif _event.button_index == MOUSE_BUTTON_LEFT and not _event.pressed:
-			is_dragging = false
-
-func _input(event: InputEvent):
-	# Check if a mouse button is clicked while the node has focus
-	if has_focus() and event is InputEventMouseButton and event.pressed:
-		# If the click position is outside the node's rectangle
-		if not get_global_rect().has_point(event.position):
-			release_focus()
-"
 
 [node name="MainUI" type="Node2D" unique_id=2093234743]
 
@@ -267,7 +237,7 @@ custom_minimum_size = Vector2(280, 60)
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = SubResource("GDScript_enppw")
+script = ExtResource("14_tlp82")
 
 [node name="ObjectImg" type="Sprite2D" parent="EvidenceLocker/Evidence1/DraggablePart" unique_id=442237160]
 position = Vector2(116, 12)
