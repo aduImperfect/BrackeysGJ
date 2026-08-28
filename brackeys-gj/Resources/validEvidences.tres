@@ -1,7 +1,7 @@
 [gd_resource type="Resource" format=3 uid="uid://bv3qtssqwxc8b"]
 
 [ext_resource type="Script" uid="uid://dm33po16rd0xa" path="res://Scripts/evidenceEntry.gd" id="1_6dgqs"]
-[ext_resource type="Script" uid="uid://booobqof8lbga" path="res://Scripts/allEvidences.gd" id="2_37f1u"]
+[ext_resource type="Script" uid="uid://booobqof8lbga" path="res://Scripts/validEvidences.gd" id="2_37f1u"]
 
 [resource]
 script = ExtResource("2_37f1u")

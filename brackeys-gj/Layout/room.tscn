@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://bohvpwyu00svn"]
-
-[ext_resource type="Texture2D" uid="uid://dboe6g4amogcj" path="res://Textures/Room.png" id="1_cqbng"]
-
-[node name="Room" type="Node2D" unique_id=1444724472]
-
-[node name="Room" type="Sprite2D" parent="." unique_id=986285732]
-position = Vector2(336, 324)
-texture = ExtResource("1_cqbng")
