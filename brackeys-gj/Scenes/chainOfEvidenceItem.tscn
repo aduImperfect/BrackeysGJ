@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bhxhv8gghrin5"]
+
+[node name="ChainOfEvidenceItem" type="Node2D" unique_id=1953792481]
+
+[node name="Control" type="Control" parent="." unique_id=709400923]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 142.0
+offset_bottom = 92.0
+
+[node name="EvidenceOrder" type="Label" parent="Control" unique_id=1969023825]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "1"
+
+[node name="EvidenceName" type="Label" parent="Control" unique_id=291498499]
+layout_mode = 0
+offset_left = 18.0
+offset_right = 58.0
+offset_bottom = 23.0
+text = "dasd"

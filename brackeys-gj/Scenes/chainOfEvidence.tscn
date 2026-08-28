@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bmco8vn6cs30p"]
+
+[ext_resource type="Texture2D" uid="uid://6e8cvm6n7kw3" path="res://Textures/TimelineBG.png" id="1_loqa0"]
+[ext_resource type="Script" uid="uid://bguuvv3vkhxah" path="res://Scripts/chainOfEvidence.gd" id="1_po718"]
+[ext_resource type="PackedScene" uid="uid://bhxhv8gghrin5" path="res://Scenes/chainOfEvidenceItem.tscn" id="2_domh4"]
+
+[node name="ChainOfEvidence" type="Node2D" unique_id=26661854]
+
+[node name="Timeline" type="Control" parent="." unique_id=1529680059 node_paths=PackedStringArray("itemsHolder")]
+custom_minimum_size = Vector2(660, 100)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 610.0
+offset_right = 670.0
+offset_bottom = 710.0
+script = ExtResource("1_po718")
+itemsHolder = NodePath("Holder")
+itemInfo = ExtResource("2_domh4")
+
+[node name="TimelineBGSprite2D" type="Sprite2D" parent="Timeline" unique_id=1886818930]
+z_index = -800
+position = Vector2(330, 50)
+scale = Vector2(660, 100)
+texture = ExtResource("1_loqa0")
+
+[node name="TimelineHeader" type="TextEdit" parent="Timeline" unique_id=777370010]
+z_index = -600
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 0
+offset_left = 180.0
+offset_top = 4.0
+offset_right = 380.0
+offset_bottom = 44.0
+text = "Chain Of Evidence"
+editable = false
+selecting_enabled = false
+
+[node name="Holder" type="Control" parent="Timeline" unique_id=1538626613]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
