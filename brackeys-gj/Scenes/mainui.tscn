@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://b388r3lr4lqkg" path="res://Scripts/drag_object.gd" id="14_tlp82"]
 [ext_resource type="Script" uid="uid://pqnsk0ndnf5p" path="res://Scripts/object_img.gd" id="16_147pp"]
 [ext_resource type="Script" uid="uid://dw8dus84lolg5" path="res://Scripts/object_name.gd" id="17_enppw"]
+[ext_resource type="Texture2D" uid="uid://ctsopdttq1fy7" path="res://Textures/EvidenceValBG.png" id="17_i3k6o"]
 [ext_resource type="Script" uid="uid://b1bvv3kwbggln" path="res://Scripts/object_desc.gd" id="18_kx34a"]
 [ext_resource type="Texture2D" uid="uid://6e8cvm6n7kw3" path="res://Textures/TimelineBG.png" id="21_qoud8"]
 [ext_resource type="Script" uid="uid://b1os4n24dbsxq" path="res://Scripts/timeline_header.gd" id="22_yj67u"]
@@ -36,7 +37,7 @@ offset_right = 1270.0
 offset_bottom = 310.0
 
 [node name="SuspectsBGSprite2D" type="Sprite2D" parent="Suspects" unique_id=1455602008]
-z_index = -600
+z_index = -800
 position = Vector2(300, 200)
 scale = Vector2(600, 400)
 texture = ExtResource("1_wc7ih")
@@ -231,7 +232,7 @@ offset_right = 1270.0
 offset_bottom = 710.0
 
 [node name="EvidenceBGSprite2D" type="Sprite2D" parent="EvidenceLocker" unique_id=1973965966]
-z_index = -600
+z_index = -800
 position = Vector2(300, 150)
 scale = Vector2(600, 300)
 texture = ExtResource("14_3q4g7")
@@ -261,6 +262,12 @@ evidenceTex = ExtResource("2_hmkf7")
 evidenceName = "Kitchen Knife"
 evidenceDesc = "Missing from the block, later found wiped clean."
 
+[node name="Evidence1BG" type="Sprite2D" parent="EvidenceLocker/Evidence1" unique_id=1793554176]
+z_index = -700
+position = Vector2(140, 30)
+scale = Vector2(280, 60)
+texture = ExtResource("17_i3k6o")
+
 [node name="DraggablePart" type="Control" parent="EvidenceLocker/Evidence1" unique_id=667986574]
 custom_minimum_size = Vector2(280, 60)
 anchors_preset = 0
@@ -269,26 +276,28 @@ offset_bottom = 40.0
 script = ExtResource("14_tlp82")
 
 [node name="ObjectImg" type="Sprite2D" parent="EvidenceLocker/Evidence1/DraggablePart" unique_id=442237160]
-position = Vector2(116, 12)
+position = Vector2(129, 12)
 scale = Vector2(0.05, 0.05)
 script = ExtResource("16_147pp")
 
 [node name="ObjectName" type="TextEdit" parent="EvidenceLocker/Evidence1/DraggablePart" unique_id=1661583599]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 0
-offset_top = 3.0
-offset_right = 100.0
-offset_bottom = 23.0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 105.0
+offset_bottom = 24.0
 theme_override_font_sizes/font_size = 10
 editable = false
 selecting_enabled = false
 script = ExtResource("17_enppw")
 
 [node name="ObjectDesc" type="TextEdit" parent="EvidenceLocker/Evidence1/DraggablePart" unique_id=278989604]
-custom_minimum_size = Vector2(280, 30)
+custom_minimum_size = Vector2(270, 30)
 layout_mode = 0
+offset_left = 5.0
 offset_top = 26.0
-offset_right = 280.0
+offset_right = 275.0
 offset_bottom = 56.0
 theme_override_font_sizes/font_size = 10
 editable = false
@@ -305,7 +314,7 @@ offset_right = 670.0
 offset_bottom = 710.0
 
 [node name="TimelineBGSprite2D" type="Sprite2D" parent="Timeline" unique_id=1067560464]
-z_index = -600
+z_index = -800
 position = Vector2(330, 50)
 scale = Vector2(660, 100)
 texture = ExtResource("21_qoud8")
