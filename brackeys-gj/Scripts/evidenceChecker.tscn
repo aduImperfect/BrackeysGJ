@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://chah0ehtchopy"]
+
+[ext_resource type="Script" uid="uid://dahxhu2m0362c" path="res://Scripts/evidence_checker.gd" id="1_hc0ks"]
+[ext_resource type="Resource" uid="uid://bv3qtssqwxc8b" path="res://Scenes/validEvidences.tres" id="2_o1nsl"]
+
+[node name="EvidenceChecker" type="Node2D" unique_id=1609072874]
+script = ExtResource("1_hc0ks")
+validEvidencesRes = ExtResource("2_o1nsl")
