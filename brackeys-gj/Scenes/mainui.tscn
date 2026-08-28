@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://bhxhv8gghrin5" path="res://Scenes/chainOfEvidenceItem.tscn" id="25_c1erm"]
 [ext_resource type="Script" uid="uid://ceelgtarpqwuh" path="res://Scripts/house_header.gd" id="27_kcbrv"]
 [ext_resource type="Script" uid="uid://bha7jyl3oexy7" path="res://Scripts/house_case_no.gd" id="28_e4h4u"]
+[ext_resource type="Script" uid="uid://d08q23tpdrbwo" path="res://Scripts/timeline_reset_button.gd" id="28_ry14t"]
 
 [node name="MainUI" type="Node2D" unique_id=2093234743]
 
@@ -339,9 +340,9 @@ texture = ExtResource("21_qoud8")
 z_index = -600
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 0
-offset_left = 180.0
+offset_left = 8.0
 offset_top = 4.0
-offset_right = 380.0
+offset_right = 208.0
 offset_bottom = 44.0
 text = "Chain Of Evidence"
 editable = false
@@ -354,6 +355,16 @@ offset_left = 11.0
 offset_top = 50.0
 offset_right = 51.0
 offset_bottom = 90.0
+
+[node name="TimelineResetButton" type="Button" parent="Timeline" unique_id=467882638]
+z_index = -100
+layout_mode = 0
+offset_left = 601.0
+offset_top = 6.0
+offset_right = 652.0
+offset_bottom = 37.0
+text = "Reset"
+script = ExtResource("28_ry14t")
 
 [node name="House" type="Control" parent="." unique_id=1658027778]
 custom_minimum_size = Vector2(660, 600)
@@ -399,3 +410,4 @@ script = ExtResource("28_e4h4u")
 [connection signal="gui_input" from="Suspects/SuspectButton_1" to="Suspects/SuspectButton_1" method="_on_gui_input"]
 [connection signal="gui_input" from="Suspects/SuspectButton_2" to="Suspects/SuspectButton_2" method="_on_gui_input"]
 [connection signal="gui_input" from="Suspects/SuspectButton_3" to="Suspects/SuspectButton_3" method="_on_gui_input"]
+[connection signal="pressed" from="Timeline/TimelineResetButton" to="Timeline/TimelineResetButton" method="_on_pressed"]

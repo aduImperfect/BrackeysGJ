@@ -9,6 +9,15 @@ class_name DragObject
 @export var dragComplete : bool = false
 
 func _process(_delta: float) -> void:
+	if TimelineReset.resetTimeline == true:
+		dragComplete = false
+		drag_offset = Vector2.ZERO
+		global_position = startPos
+		is_dragging = false
+		if draggingImg != null:
+			draggingImg.visible = false
+		TimelineReset.resetTimeline = false
+
 	if is_dragging:
 		if draggingImg != null:
 			draggingImg.visible = true
@@ -58,6 +67,9 @@ func _process(_delta: float) -> void:
 
 # godot callback
 func _gui_input(_event: InputEvent) -> void:
+	if dragComplete == true:
+		return
+
 	if _event is InputEventMouseButton:
 		if _event.button_index == MOUSE_BUTTON_LEFT and _event.pressed:
 			is_dragging = true
