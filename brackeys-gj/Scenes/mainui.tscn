@@ -307,9 +307,16 @@ anchors_preset = 0
 offset_right = 280.0
 offset_bottom = 60.0
 script = ExtResource("14_tlp82")
+is_dragging = null
+drag_offset = null
+startPos = null
+dragSuccess = null
 
 [node name="DragObjImg" type="Sprite2D" parent="EvidenceLocker/Evidence1/DraggablePart" unique_id=1239164942]
+visible = false
 z_index = -500
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("17_ueqbn")
 script = ExtResource("23_l0p4r")
 
 [node name="Timeline" type="Control" parent="." unique_id=379029211]
