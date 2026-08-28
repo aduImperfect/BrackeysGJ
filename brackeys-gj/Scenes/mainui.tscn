@@ -26,6 +26,8 @@
 [ext_resource type="Script" uid="uid://b1os4n24dbsxq" path="res://Scripts/timeline_header.gd" id="22_yj67u"]
 [ext_resource type="Texture2D" uid="uid://cgavbkuohbpd1" path="res://Textures/HouseBG.png" id="23_ih6jt"]
 [ext_resource type="Script" uid="uid://bv7tmmmreufbs" path="res://Scripts/drag_obj_img.gd" id="23_l0p4r"]
+[ext_resource type="Script" uid="uid://bguuvv3vkhxah" path="res://Scripts/chainOfEvidence.gd" id="24_8i0sk"]
+[ext_resource type="PackedScene" uid="uid://bhxhv8gghrin5" path="res://Scenes/chainOfEvidenceItem.tscn" id="25_c1erm"]
 [ext_resource type="Script" uid="uid://ceelgtarpqwuh" path="res://Scripts/house_header.gd" id="27_kcbrv"]
 [ext_resource type="Script" uid="uid://bha7jyl3oexy7" path="res://Scripts/house_case_no.gd" id="28_e4h4u"]
 
@@ -307,19 +309,15 @@ anchors_preset = 0
 offset_right = 280.0
 offset_bottom = 60.0
 script = ExtResource("14_tlp82")
-is_dragging = null
-drag_offset = null
-startPos = null
-dragSuccess = null
 
 [node name="DragObjImg" type="Sprite2D" parent="EvidenceLocker/Evidence1/DraggablePart" unique_id=1239164942]
 visible = false
-z_index = -500
+z_index = -200
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("17_ueqbn")
 script = ExtResource("23_l0p4r")
 
-[node name="Timeline" type="Control" parent="." unique_id=379029211]
+[node name="Timeline" type="Control" parent="." unique_id=379029211 node_paths=PackedStringArray("itemsHolder")]
 custom_minimum_size = Vector2(660, 100)
 layout_mode = 3
 anchors_preset = 0
@@ -327,6 +325,9 @@ offset_left = 10.0
 offset_top = 610.0
 offset_right = 670.0
 offset_bottom = 710.0
+script = ExtResource("24_8i0sk")
+itemsHolder = NodePath("Holder")
+itemInfo = ExtResource("25_c1erm")
 
 [node name="TimelineBGSprite2D" type="Sprite2D" parent="Timeline" unique_id=1067560464]
 z_index = -800
@@ -346,6 +347,13 @@ text = "Chain Of Evidence"
 editable = false
 selecting_enabled = false
 script = ExtResource("22_yj67u")
+
+[node name="Holder" type="Control" parent="Timeline" unique_id=33465211]
+anchors_preset = 0
+offset_left = 11.0
+offset_top = 50.0
+offset_right = 51.0
+offset_bottom = 90.0
 
 [node name="House" type="Control" parent="." unique_id=1658027778]
 custom_minimum_size = Vector2(660, 600)

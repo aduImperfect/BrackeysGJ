@@ -21,6 +21,7 @@ texture = ExtResource("1_2y6vw")
 [node name="Bedroom1MasterA2D" type="Area2D" parent="House" unique_id=635434835]
 position = Vector2(-168, -104)
 scale = Vector2(250, 305)
+disable_mode = 1
 script = ExtResource("2_tls7l")
 
 [node name="Bedroom1MasterCS2D" type="CollisionShape2D" parent="House/Bedroom1MasterA2D" unique_id=1703102311]
@@ -29,6 +30,7 @@ shape = SubResource("RectangleShape2D_d2add")
 [node name="BathA2D" type="Area2D" parent="House" unique_id=195507470]
 position = Vector2(34, -160)
 scale = Vector2(125, 190)
+disable_mode = 1
 script = ExtResource("3_0lj70")
 
 [node name="BathCS2D" type="CollisionShape2D" parent="House/BathA2D" unique_id=1464889007]
@@ -37,6 +39,7 @@ shape = SubResource("RectangleShape2D_d2add")
 [node name="Bedroom2A2D" type="Area2D" parent="House" unique_id=1471322380]
 position = Vector2(201, -104)
 scale = Vector2(180, 305)
+disable_mode = 1
 script = ExtResource("4_ru08u")
 
 [node name="Bedroom2CS2D" type="CollisionShape2D" parent="House/Bedroom2A2D" unique_id=439339487]
@@ -45,6 +48,7 @@ shape = SubResource("RectangleShape2D_d2add")
 [node name="HallA2D" type="Area2D" parent="House" unique_id=1997284324]
 position = Vector2(34, 0)
 scale = Vector2(125, 100)
+disable_mode = 1
 script = ExtResource("5_0mgoe")
 
 [node name="HallCS2D" type="CollisionShape2D" parent="House/HallA2D" unique_id=1442945241]
@@ -53,6 +57,7 @@ shape = SubResource("RectangleShape2D_d2add")
 [node name="LivingRoomA2D" type="Area2D" parent="House" unique_id=895034656]
 position = Vector2(-98, 160)
 scale = Vector2(385, 190)
+disable_mode = 1
 script = ExtResource("6_baosa")
 
 [node name="LivingRoomCS2D" type="CollisionShape2D" parent="House/LivingRoomA2D" unique_id=1644785690]
@@ -61,7 +66,11 @@ shape = SubResource("RectangleShape2D_d2add")
 [node name="Bedroom3A2D" type="Area2D" parent="House" unique_id=927452884]
 position = Vector2(200, 160)
 scale = Vector2(180, 190)
+disable_mode = 1
 script = ExtResource("7_t7ivt")
 
 [node name="Bedroom3CS2D" type="CollisionShape2D" parent="House/Bedroom3A2D" unique_id=493254019]
 shape = SubResource("RectangleShape2D_d2add")
+
+[connection signal="mouse_entered" from="House/Bedroom1MasterA2D" to="House/Bedroom1MasterA2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="House/Bedroom1MasterA2D" to="House/Bedroom1MasterA2D" method="_on_mouse_exited"]
