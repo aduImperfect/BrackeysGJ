@@ -1,15 +1,12 @@
 [gd_scene format=3 uid="uid://bohvpwyu00svn"]
 
 [ext_resource type="Texture2D" uid="uid://dbc0uwvp6ibfs" path="res://Textures/House_Alt.png" id="1_2y6vw"]
-[ext_resource type="Script" uid="uid://c8v7ovv62fjei" path="res://Scripts/bedroom_1_master_a_2d.gd" id="2_tls7l"]
-[ext_resource type="Script" uid="uid://b7h2x3wqh1y6n" path="res://Scripts/bath_a_2d.gd" id="3_0lj70"]
-[ext_resource type="Script" uid="uid://c23xgsbh061fk" path="res://Scripts/bedroom_2a_2d.gd" id="4_ru08u"]
-[ext_resource type="Script" uid="uid://dilw5vq6t2yr1" path="res://Scripts/hall_a_2d.gd" id="5_0mgoe"]
-[ext_resource type="Script" uid="uid://dm8klpovm16xk" path="res://Scripts/living_room_a_2d.gd" id="6_baosa"]
-[ext_resource type="Script" uid="uid://c8kccm6meyiuc" path="res://Scripts/bedroom_3a_2d.gd" id="7_t7ivt"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2add"]
-size = Vector2(1, 1)
+[ext_resource type="Script" uid="uid://clkmhkiddkyr7" path="res://Scripts/bedroom_1_master_control.gd" id="2_jwp7f"]
+[ext_resource type="Script" uid="uid://bfsbi3idaulqg" path="res://Scripts/bath_control.gd" id="3_t7ivt"]
+[ext_resource type="Script" uid="uid://bjgkt6ny416hh" path="res://Scripts/bedroom_2_control.gd" id="4_t7ivt"]
+[ext_resource type="Script" uid="uid://bgq74ln5uc1ce" path="res://Scripts/hall_control.gd" id="5_t7ivt"]
+[ext_resource type="Script" uid="uid://w2ned7y8yrrp" path="res://Scripts/living_room_control.gd" id="6_t7ivt"]
+[ext_resource type="Script" uid="uid://dhshhxwqvfss" path="res://Scripts/bedroom_3_control.gd" id="7_t7ivt"]
 
 [node name="House" type="Node2D" unique_id=1444724472]
 
@@ -18,59 +15,75 @@ z_index = -1000
 position = Vector2(336, 324)
 texture = ExtResource("1_2y6vw")
 
-[node name="Bedroom1MasterA2D" type="Area2D" parent="House" unique_id=635434835]
-position = Vector2(-168, -104)
-scale = Vector2(250, 305)
-disable_mode = 1
-script = ExtResource("2_tls7l")
+[node name="Bedroom1MasterControl" type="Control" parent="House" unique_id=1238069711]
+custom_minimum_size = Vector2(250, 305)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -290.0
+offset_top = -255.0
+offset_right = -40.0
+offset_bottom = 50.0
+script = ExtResource("2_jwp7f")
 
-[node name="Bedroom1MasterCS2D" type="CollisionShape2D" parent="House/Bedroom1MasterA2D" unique_id=1703102311]
-shape = SubResource("RectangleShape2D_d2add")
+[node name="BathControl" type="Control" parent="House" unique_id=1407984099]
+custom_minimum_size = Vector2(125, 190)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -28.0
+offset_top = -255.0
+offset_right = 97.0
+offset_bottom = -65.0
+script = ExtResource("3_t7ivt")
 
-[node name="BathA2D" type="Area2D" parent="House" unique_id=195507470]
-position = Vector2(34, -160)
-scale = Vector2(125, 190)
-disable_mode = 1
-script = ExtResource("3_0lj70")
+[node name="Bedroom2Control" type="Control" parent="House" unique_id=5452219]
+custom_minimum_size = Vector2(180, 305)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 111.0
+offset_top = -255.0
+offset_right = 291.0
+offset_bottom = 50.0
+script = ExtResource("4_t7ivt")
 
-[node name="BathCS2D" type="CollisionShape2D" parent="House/BathA2D" unique_id=1464889007]
-shape = SubResource("RectangleShape2D_d2add")
+[node name="HallControl" type="Control" parent="House" unique_id=359983201]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -28.0
+offset_top = -50.0
+offset_right = 97.0
+offset_bottom = 50.0
+script = ExtResource("5_t7ivt")
 
-[node name="Bedroom2A2D" type="Area2D" parent="House" unique_id=1471322380]
-position = Vector2(201, -104)
-scale = Vector2(180, 305)
-disable_mode = 1
-script = ExtResource("4_ru08u")
+[node name="LivingRoomControl" type="Control" parent="House" unique_id=1847031114]
+custom_minimum_size = Vector2(385, 190)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -290.0
+offset_top = 65.0
+offset_right = 95.0
+offset_bottom = 255.0
+script = ExtResource("6_t7ivt")
 
-[node name="Bedroom2CS2D" type="CollisionShape2D" parent="House/Bedroom2A2D" unique_id=439339487]
-shape = SubResource("RectangleShape2D_d2add")
-
-[node name="HallA2D" type="Area2D" parent="House" unique_id=1997284324]
-position = Vector2(34, 0)
-scale = Vector2(125, 100)
-disable_mode = 1
-script = ExtResource("5_0mgoe")
-
-[node name="HallCS2D" type="CollisionShape2D" parent="House/HallA2D" unique_id=1442945241]
-shape = SubResource("RectangleShape2D_d2add")
-
-[node name="LivingRoomA2D" type="Area2D" parent="House" unique_id=895034656]
-position = Vector2(-98, 160)
-scale = Vector2(385, 190)
-disable_mode = 1
-script = ExtResource("6_baosa")
-
-[node name="LivingRoomCS2D" type="CollisionShape2D" parent="House/LivingRoomA2D" unique_id=1644785690]
-shape = SubResource("RectangleShape2D_d2add")
-
-[node name="Bedroom3A2D" type="Area2D" parent="House" unique_id=927452884]
-position = Vector2(200, 160)
-scale = Vector2(180, 190)
-disable_mode = 1
+[node name="Bedroom3Control" type="Control" parent="House" unique_id=1020189106]
+custom_minimum_size = Vector2(180, 190)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 111.0
+offset_top = 65.0
+offset_right = 291.0
+offset_bottom = 255.0
 script = ExtResource("7_t7ivt")
 
-[node name="Bedroom3CS2D" type="CollisionShape2D" parent="House/Bedroom3A2D" unique_id=493254019]
-shape = SubResource("RectangleShape2D_d2add")
-
-[connection signal="mouse_entered" from="House/Bedroom1MasterA2D" to="House/Bedroom1MasterA2D" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="House/Bedroom1MasterA2D" to="House/Bedroom1MasterA2D" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="House/Bedroom1MasterControl" to="House/Bedroom1MasterControl" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="House/Bedroom1MasterControl" to="House/Bedroom1MasterControl" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="House/BathControl" to="House/BathControl" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="House/BathControl" to="House/BathControl" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="House/Bedroom2Control" to="House/Bedroom2Control" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="House/Bedroom2Control" to="House/Bedroom2Control" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="House/HallControl" to="House/HallControl" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="House/HallControl" to="House/HallControl" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="House/LivingRoomControl" to="House/LivingRoomControl" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="House/LivingRoomControl" to="House/LivingRoomControl" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="House/Bedroom3Control" to="House/Bedroom3Control" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="House/Bedroom3Control" to="House/Bedroom3Control" method="_on_mouse_exited"]
