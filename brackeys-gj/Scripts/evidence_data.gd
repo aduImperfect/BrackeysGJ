@@ -4,7 +4,7 @@ class_name EvidenceData
 
 @export var evidenceTex : Texture2D
 @export var evidenceName : String
-@export var evidenceDesc : String
+@export_multiline var evidenceDesc : String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
