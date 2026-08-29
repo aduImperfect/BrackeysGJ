@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://3ypqav3g5loh"]
+
+[ext_resource type="Script" uid="uid://c1qxvn6bqrdpp" path="res://Scripts/evidence_data.gd" id="1_6g3e4"]
+[ext_resource type="Texture2D" uid="uid://ctsopdttq1fy7" path="res://Textures/EvidenceValBG.png" id="2_e8oyb"]
+[ext_resource type="Script" uid="uid://pqnsk0ndnf5p" path="res://Scripts/object_img.gd" id="3_pvq4j"]
+[ext_resource type="Script" uid="uid://dw8dus84lolg5" path="res://Scripts/object_name.gd" id="4_548gt"]
+[ext_resource type="Script" uid="uid://b1bvv3kwbggln" path="res://Scripts/object_desc.gd" id="5_2keyk"]
+
+[node name="Evidence1" type="Control" unique_id=1643630644]
+custom_minimum_size = Vector2(280, 120)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 55.0
+offset_right = 290.0
+offset_bottom = 155.0
+script = ExtResource("1_6g3e4")
+
+[node name="Evidence1BG" type="Sprite2D" parent="." unique_id=1608268065]
+z_index = -700
+position = Vector2(140, 60.00003)
+scale = Vector2(280, 120)
+texture = ExtResource("2_e8oyb")
+
+[node name="Object1Img" type="Sprite2D" parent="." unique_id=1280895337]
+position = Vector2(182, 12)
+scale = Vector2(0.05, 0.05)
+script = ExtResource("3_pvq4j")
+
+[node name="Object1Name" type="TextEdit" parent="." unique_id=591396268]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 105.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 16
+editable = false
+selecting_enabled = false
+script = ExtResource("4_548gt")
+
+[node name="Object1Desc" type="TextEdit" parent="." unique_id=565804962]
+custom_minimum_size = Vector2(270, 80)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 35.0
+offset_right = 275.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 16
+editable = false
+selecting_enabled = false
+wrap_mode = 1
+script = ExtResource("5_2keyk")

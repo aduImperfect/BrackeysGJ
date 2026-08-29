@@ -12,7 +12,7 @@ func _ready() -> void:
 		evidenceCounter += 1
 	_updateInfo(myIndex)
 
-func  _updateInfo(index : int) -> void:
+func _updateInfo(index : int) -> void:
 	var entry = evidenceData.entries[index]
 	ObjectTex._update_texture(entry.evidence_tex)
 	ObjectName._update_text(entry.evidence_name)
