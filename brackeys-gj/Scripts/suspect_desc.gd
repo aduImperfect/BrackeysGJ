@@ -3,17 +3,19 @@ extends TextEdit
 class_name SuspectDesc
 
 static var newText : String
+static var selfInstance : SuspectDesc
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	text = newText
+	selfInstance = self
+	if !(newText.is_empty()):
+		text = newText
+		newText = ""
 
 static func _update_text(_textVal : String) -> void:
 	newText = _textVal
+	if(is_instance_valid(selfInstance)):
+		selfInstance.text = newText
 
 func _input(event: InputEvent):
 	# Check if a mouse button is clicked while the node has focus

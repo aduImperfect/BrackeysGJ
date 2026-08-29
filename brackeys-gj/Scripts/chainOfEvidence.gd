@@ -46,7 +46,6 @@ func _draw() -> void:
 	var from := xform * itemsHolderInternal.global_position + startOffset
 	var to := xform * itemsHolderInternal.global_position + endOffset
 	draw_line(from, to, lineColor, lineWidth)
-	print("test")
 
 static func _spawnEvidence(entry: EvidenceEntry) -> void:
 	var newEvidence := itemInfoInternal.instantiate() as Node2D
