@@ -8,6 +8,8 @@ class_name DragObject
 @export var draggingImg : Sprite2D
 @export var dragComplete : bool = false
 @export var evidenceBGImage : Sprite2D
+@export var evidenceName : TextEdit
+@export var evidenceDesc : TextEdit
 @export var evidenceModVal : Color
 @export var newEvidenceModVal : Color
 
@@ -38,7 +40,7 @@ func _process(_delta: float) -> void:
 			if draggingImg != null:
 				global_position = get_global_mouse_position()
 				draggingImg.position = Vector2.ZERO
-				var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
+				var entry = EvidenceEntry.makeEntry(evidenceName.text,["tesssttttt"], "Bedroom1MasterControl", "10", evidenceDesc.text)
 				ChainOfEvidence._spawnEvidence(entry)
 				evidenceBGImage.modulate = newEvidenceModVal
 		elif BathControl.mouseEntered == true:
@@ -47,7 +49,7 @@ func _process(_delta: float) -> void:
 			if draggingImg != null:
 				global_position = get_global_mouse_position()
 				draggingImg.position = Vector2.ZERO
-				var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
+				var entry = EvidenceEntry.makeEntry(evidenceName.text,["tesssttttt"], "BathControl", "10", evidenceDesc.text)
 				ChainOfEvidence._spawnEvidence(entry)
 				evidenceBGImage.modulate = newEvidenceModVal
 		elif Bedroom2Control.mouseEntered == true:
@@ -56,7 +58,7 @@ func _process(_delta: float) -> void:
 			if draggingImg != null:
 				global_position = get_global_mouse_position()
 				draggingImg.position = Vector2.ZERO
-				var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
+				var entry = EvidenceEntry.makeEntry(evidenceName.text,["tesssttttt"], "Bedroom2Control", "10", evidenceDesc.text)
 				ChainOfEvidence._spawnEvidence(entry)
 				evidenceBGImage.modulate = newEvidenceModVal
 		elif HallControl.mouseEntered == true:
@@ -65,7 +67,7 @@ func _process(_delta: float) -> void:
 			if draggingImg != null:
 				global_position = get_global_mouse_position()
 				draggingImg.position = Vector2.ZERO
-				var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
+				var entry = EvidenceEntry.makeEntry(evidenceName.text,["tesssttttt"], "HallControl", "10", evidenceDesc.text)
 				ChainOfEvidence._spawnEvidence(entry)
 				evidenceBGImage.modulate = newEvidenceModVal
 		elif LivingRoomControl.mouseEntered == true:
@@ -74,7 +76,7 @@ func _process(_delta: float) -> void:
 			if draggingImg != null:
 				global_position = get_global_mouse_position()
 				draggingImg.position = Vector2.ZERO
-				var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
+				var entry = EvidenceEntry.makeEntry(evidenceName.text,["tesssttttt"], "LivingRoomControl", "10", evidenceDesc.text)
 				ChainOfEvidence._spawnEvidence(entry)
 				evidenceBGImage.modulate = newEvidenceModVal
 		elif Bedroom3Control.mouseEntered == true:
@@ -83,7 +85,7 @@ func _process(_delta: float) -> void:
 			if draggingImg != null:
 				global_position = get_global_mouse_position()
 				draggingImg.position = Vector2.ZERO
-				var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
+				var entry = EvidenceEntry.makeEntry(evidenceName.text,["tesssttttt"], "Bedroom3Control", "10", evidenceDesc.text)
 				ChainOfEvidence._spawnEvidence(entry)
 				evidenceBGImage.modulate = newEvidenceModVal
 		else:
