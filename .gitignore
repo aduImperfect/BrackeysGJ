@@ -18,3 +18,4 @@ mono_crash.*.json
 
 # Ignore References folder
 References/
+Builds/

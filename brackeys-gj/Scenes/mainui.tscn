@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://cgavbkuohbpd1" path="res://Textures/HouseBG.png" id="23_ih6jt"]
 [ext_resource type="Script" uid="uid://bguuvv3vkhxah" path="res://Scripts/chainOfEvidence.gd" id="24_8i0sk"]
 [ext_resource type="PackedScene" uid="uid://bhxhv8gghrin5" path="res://Scenes/chainOfEvidenceItem.tscn" id="25_c1erm"]
-[ext_resource type="Script" uid="uid://pqdxpcn65nr7" path="res://Scenes/house_manager.gd" id="26_d2nfp"]
+[ext_resource type="Script" uid="uid://pqdxpcn65nr7" path="res://Scripts/house_manager.gd" id="26_d2nfp"]
 [ext_resource type="Script" uid="uid://cq60s8c7qv8ls" path="res://Scripts/win_screen.gd" id="26_kcbrv"]
 [ext_resource type="Script" uid="uid://cbd0ucont2l6a" path="res://Scripts/lost_screen.gd" id="27_e4h4u"]
 [ext_resource type="Script" uid="uid://ceelgtarpqwuh" path="res://Scripts/house_header.gd" id="27_kcbrv"]
