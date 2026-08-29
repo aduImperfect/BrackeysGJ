@@ -152,6 +152,8 @@ offset_bottom = 301.0
 editable = false
 selecting_enabled = false
 wrap_mode = 1
+scroll_smooth = true
+scroll_v_scroll_speed = 40.0
 script = ExtResource("8_q41a2")
 
 [node name="SuspectTitle" type="TextEdit" parent="Suspects" unique_id=1747301334]
