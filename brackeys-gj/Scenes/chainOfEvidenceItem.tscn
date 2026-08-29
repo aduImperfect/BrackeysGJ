@@ -11,18 +11,21 @@ offset_right = 142.0
 offset_bottom = 92.0
 
 [node name="EvidenceName" type="Label" parent="Control" unique_id=291498499]
+z_index = -1250
 layout_mode = 0
+offset_left = 47.0
 offset_top = 18.0
-offset_right = 40.0
+offset_right = 87.0
 offset_bottom = 41.0
 text = "dasd"
 horizontal_alignment = 1
 
 [node name="EvidenceTex" type="TextureRect" parent="Control" unique_id=779025471]
+z_index = -1250
 layout_mode = 0
-offset_top = -38.0
+offset_top = 5.0
 offset_right = 40.0
-offset_bottom = 2.0
+offset_bottom = 45.0
 texture = ExtResource("1_dgy51")
 expand_mode = 5
 stretch_mode = 4

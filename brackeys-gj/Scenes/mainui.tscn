@@ -258,7 +258,7 @@ script = ExtResource("13_gfj6t")
 
 [node name="TimelineScrollContainer" type="ScrollContainer" parent="." unique_id=2098150592 node_paths=PackedStringArray("evidenceTimeline")]
 z_index = -1200
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(669.86, 100)
 clip_contents = false
 offset_top = 610.0
 offset_bottom = 718.0
@@ -276,7 +276,7 @@ itemsHolder = NodePath("Holder")
 itemInfo = ExtResource("25_c1erm")
 
 [node name="TimelineBGSprite2D" type="Sprite2D" parent="TimelineScrollContainer/Timeline" unique_id=1067560464]
-z_index = -800
+z_index = -1300
 position = Vector2(1000, 50)
 scale = Vector2(2000, 100)
 texture = ExtResource("21_qoud8")

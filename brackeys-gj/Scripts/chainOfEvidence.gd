@@ -4,7 +4,7 @@ class_name ChainOfEvidence
 
 @export var itemsHolder : Control
 @export var itemInfo : PackedScene
-static var offset : float = 100
+static var offset : float = 300
 
 var validEvidences : ValidEvidences = preload("res://Resources/evidencesRes.tres")
 static var itemsHolderInternal : Control
