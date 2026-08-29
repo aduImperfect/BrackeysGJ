@@ -19,7 +19,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if spawnedEvidences.size() == 1:
+	if spawnedEvidences.size() == validEvidences.entries.size():
 		EvidenceCheck.enableButton = true
 	else:
 		EvidenceCheck.enableButton = false
