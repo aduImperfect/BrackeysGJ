@@ -2,7 +2,7 @@ extends Sprite2D
 
 class_name ObjectTex
 
-static var newTex : Texture2D
+var newTex : Texture2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,5 +12,5 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	texture = newTex
 
-static func _update_texture(_texVal : Texture2D) -> void:
+func _update_texture(_texVal : Texture2D) -> void:
 	newTex = _texVal

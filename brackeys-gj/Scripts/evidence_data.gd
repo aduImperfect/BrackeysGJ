@@ -3,20 +3,20 @@ extends Control
 class_name EvidenceData
 
 var evidenceData : ValidEvidences = preload("res://Resources/evidencesRes.tres")
-static var evidenceCounter : int
+static var evidenceCounter : int = 0
 var myIndex
 
 func _ready() -> void:
 	myIndex =  evidenceCounter
-	if evidenceCounter + 1 < evidenceData.entries.size():
+	if (evidenceCounter + 1) < evidenceData.entries.size():
 		evidenceCounter += 1
 	_updateInfo(myIndex)
 
 func _updateInfo(index : int) -> void:
 	var entry = evidenceData.entries[index]
-	ObjectTex._update_texture(entry.evidence_tex)
-	ObjectName._update_text(entry.evidence_name)
-	ObjectDesc._update_text(entry.desc)
+	get_child(1)._update_texture(entry.evidence_tex)
+	get_child(2)._update_text(entry.evidence_name)
+	get_child(3)._update_text(entry.desc)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

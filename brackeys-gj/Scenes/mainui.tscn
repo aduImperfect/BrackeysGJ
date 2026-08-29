@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dkb3b4y1kedq8" path="res://Textures/Suspects_3.png" id="3_4vhit"]
 [ext_resource type="Script" uid="uid://mg242xff10ut" path="res://Scripts/suspect_button.gd" id="5_4vhit"]
 [ext_resource type="Script" uid="uid://cug4o61k3blg6" path="res://Scripts/suspect_name_under.gd" id="6_01wry"]
-[ext_resource type="Script" path="res://Scripts/suspect_information.gd" id="6_6c4uu"]
 [ext_resource type="Script" uid="uid://xvyyvay02k1o" path="res://Scripts/suspect_title.gd" id="7_hpdrm"]
 [ext_resource type="Script" uid="uid://cfrw6uoohei75" path="res://Scripts/suspect_name.gd" id="8_c18ef"]
+[ext_resource type="Script" uid="uid://tmvam1swun57" path="res://Scripts/suspect_desc.gd" id="8_q41a2"]
 [ext_resource type="Script" uid="uid://17mewq7g522f" path="res://Scripts/suspect_short_desc.gd" id="9_w0ycj"]
 [ext_resource type="Script" uid="uid://depqr05jciyar" path="res://Scripts/suspicion_slider.gd" id="10_crvle"]
 [ext_resource type="Script" uid="uid://bgsn6j5avr18d" path="res://Scripts/suspicion_slider_header.gd" id="11_gim0o"]
@@ -149,7 +149,7 @@ selecting_enabled = false
 script = ExtResource("6_01wry")
 suspectNameUnderText = "Danny"
 
-[node name="SuspectInformation" type="TextEdit" parent="Suspects" unique_id=132669764]
+[node name="SuspectDesc" type="TextEdit" parent="Suspects" unique_id=132669764]
 z_index = -300
 custom_minimum_size = Vector2(580, 140)
 layout_mode = 0
@@ -160,7 +160,7 @@ offset_bottom = 301.0
 editable = false
 selecting_enabled = false
 wrap_mode = 1
-script = ExtResource("6_6c4uu")
+script = ExtResource("8_q41a2")
 
 [node name="SuspectTitle" type="TextEdit" parent="Suspects" unique_id=1747301334]
 z_index = -300
