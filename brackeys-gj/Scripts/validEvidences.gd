@@ -1,5 +1,7 @@
 extends Resource
 
+class_name ValidEvidences
+
 @export var entries: Array[EvidenceEntry] = []
 
 # Called when the node enters the scene tree for the first time.
