@@ -12,10 +12,13 @@ static var itemInfoInternal : PackedScene
 static var spawnedEvidences : Array[Node]
 static var spawnedEvidencesEntries : Array[EvidenceEntry]
 
+#static var clearEvidencesExternal : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	itemsHolderInternal = itemsHolder
 	itemInfoInternal = itemInfo
+	#clearEvidencesExternal = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -27,6 +30,10 @@ func _process(_delta: float) -> void:
 	if TimelineReset.resetTimeline:
 		_clearEvidences()
 		TimelineReset.resetTimeline = false
+
+	#if clearEvidencesExternal:
+		#_clearEvidences()
+		#clearEvidencesExternal = false
 
 static func _spawnEvidence(entry: EvidenceEntry) -> void:
 	var newEvidence := itemInfoInternal.instantiate() as Node2D
@@ -56,3 +63,6 @@ func _clearEvidences() -> void:
 		evidence.queue_free()
 	spawnedEvidences.clear()
 	spawnedEvidencesEntries.clear()
+
+#static func _clearEvidencesExt() -> void:
+	#clearEvidencesExternal = true
