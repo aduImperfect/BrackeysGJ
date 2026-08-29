@@ -2,6 +2,9 @@ extends Button
 
 class_name EvidenceCheck
 
+@export var winScreen : Control
+@export var lostScreen : Control
+
 static var enableButton : bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -16,5 +19,7 @@ func _process(_delta: float) -> void:
 		disabled = true
 
 func _on_pressed() -> void:
-	#EvidenceChecker._checkEvidence(ChainOfEvidence.spawnedEvidences)
-	pass
+	if (EvidenceChecker._checkEvidence(ChainOfEvidence.spawnedEvidencesEntries)) :
+		winScreen.visible = true
+	else :
+		lostScreen.visible = true

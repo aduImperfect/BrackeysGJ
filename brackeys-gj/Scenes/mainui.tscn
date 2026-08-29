@@ -16,11 +16,14 @@
 [ext_resource type="Script" uid="uid://cw0ew6ybihtv1" path="res://Scripts/evidence_header.gd" id="13_gfj6t"]
 [ext_resource type="Texture2D" uid="uid://dqbuoqlbnwb6r" path="res://Textures/EvidencesBG.png" id="14_3q4g7"]
 [ext_resource type="Script" uid="uid://b2rnnxgr5lnor" path="res://Scripts/evidencesSpawner.gd" id="14_5fuw8"]
+[ext_resource type="Texture2D" uid="uid://ctsopdttq1fy7" path="res://Textures/EvidenceValBG.png" id="17_i3k6o"]
 [ext_resource type="Texture2D" uid="uid://6e8cvm6n7kw3" path="res://Textures/TimelineBG.png" id="21_qoud8"]
 [ext_resource type="Script" uid="uid://b1os4n24dbsxq" path="res://Scripts/timeline_header.gd" id="22_yj67u"]
 [ext_resource type="Texture2D" uid="uid://cgavbkuohbpd1" path="res://Textures/HouseBG.png" id="23_ih6jt"]
 [ext_resource type="Script" uid="uid://bguuvv3vkhxah" path="res://Scripts/chainOfEvidence.gd" id="24_8i0sk"]
 [ext_resource type="PackedScene" uid="uid://bhxhv8gghrin5" path="res://Scenes/chainOfEvidenceItem.tscn" id="25_c1erm"]
+[ext_resource type="Script" uid="uid://cq60s8c7qv8ls" path="res://Scripts/win_screen.gd" id="26_kcbrv"]
+[ext_resource type="Script" uid="uid://cbd0ucont2l6a" path="res://Scripts/lost_screen.gd" id="27_e4h4u"]
 [ext_resource type="Script" uid="uid://ceelgtarpqwuh" path="res://Scripts/house_header.gd" id="27_kcbrv"]
 [ext_resource type="Script" uid="uid://bha7jyl3oexy7" path="res://Scripts/house_case_no.gd" id="28_e4h4u"]
 [ext_resource type="Script" uid="uid://d08q23tpdrbwo" path="res://Scripts/timeline_reset_button.gd" id="28_ry14t"]
@@ -298,7 +301,7 @@ offset_bottom = 37.0
 text = "Reset"
 script = ExtResource("28_ry14t")
 
-[node name="EvidenceCheckButton" type="Button" parent="Timeline" unique_id=384517381]
+[node name="EvidenceCheckButton" type="Button" parent="Timeline" unique_id=384517381 node_paths=PackedStringArray("winScreen", "lostScreen")]
 layout_mode = 0
 offset_left = 465.0
 offset_top = 6.0
@@ -307,6 +310,8 @@ offset_bottom = 37.0
 disabled = true
 text = "Evidence Check"
 script = ExtResource("29_d2nfp")
+winScreen = NodePath("../../WinScreen")
+lostScreen = NodePath("../../LostScreen")
 
 [node name="House" type="Control" parent="." unique_id=1658027778]
 custom_minimum_size = Vector2(660, 600)
@@ -349,7 +354,134 @@ editable = false
 selecting_enabled = false
 script = ExtResource("28_e4h4u")
 
+[node name="WinScreen" type="Control" parent="." unique_id=475643136]
+visible = false
+custom_minimum_size = Vector2(400, 30.285)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1304.7521
+offset_bottom = 750.0
+script = ExtResource("26_kcbrv")
+
+[node name="TextureRect" type="TextureRect" parent="WinScreen" unique_id=286529489]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_i3k6o")
+
+[node name="Label" type="Label" parent="WinScreen" unique_id=2115780755]
+z_index = 100
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.376038
+offset_top = -65.0
+offset_right = 64.62396
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Won"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="WinScreen" unique_id=113830602]
+z_index = 100
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.376038
+offset_top = 35.0
+offset_right = 64.62396
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PARTYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="WinScreen" unique_id=725066515]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.5
+offset_top = -15.5
+offset_right = 52.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Reset Game!"
+
+[node name="LostScreen" type="Control" parent="." unique_id=1226184002]
+visible = false
+custom_minimum_size = Vector2(400, 30.285)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1304.7521
+offset_bottom = 750.0
+script = ExtResource("27_e4h4u")
+
+[node name="TextureRect" type="TextureRect" parent="LostScreen" unique_id=1515901980]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_3q4g7")
+
+[node name="Label" type="Label" parent="LostScreen" unique_id=1131728053]
+z_index = 100
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.376038
+offset_top = -71.0
+offset_right = 35.623962
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Lost :("
+
+[node name="Button" type="Button" parent="LostScreen" unique_id=1627694127]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.5
+offset_top = -15.5
+offset_right = 52.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Reset Game!"
+
 [connection signal="gui_input" from="Suspects/SuspectButton_1" to="Suspects/SuspectButton_1" method="_on_gui_input"]
 [connection signal="gui_input" from="Suspects/SuspectButton_2" to="Suspects/SuspectButton_2" method="_on_gui_input"]
 [connection signal="gui_input" from="Suspects/SuspectButton_3" to="Suspects/SuspectButton_3" method="_on_gui_input"]
 [connection signal="pressed" from="Timeline/TimelineResetButton" to="Timeline/TimelineResetButton" method="_on_pressed"]
+[connection signal="pressed" from="Timeline/EvidenceCheckButton" to="Timeline/EvidenceCheckButton" method="_on_pressed"]
+[connection signal="pressed" from="WinScreen/Button" to="WinScreen" method="_on_button_pressed"]
+[connection signal="pressed" from="LostScreen/Button" to="LostScreen" method="_on_button_pressed"]

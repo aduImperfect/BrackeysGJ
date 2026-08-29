@@ -33,7 +33,6 @@ func spawnEvidences() -> void:
 		spawnedEvidence.name = "Evidence" +  str(spawnedEvidences.size() + 1)
 		spawnedEvidence.global_position = spawnPos
 		spawnedEvidences.append(spawnedEvidence)
-		print(str(evidenceIndex))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

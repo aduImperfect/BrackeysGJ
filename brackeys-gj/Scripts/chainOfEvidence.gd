@@ -6,9 +6,11 @@ class_name ChainOfEvidence
 @export var itemInfo : PackedScene
 static var offset : float = 100
 
+var validEvidences : ValidEvidences = preload("res://Resources/evidencesRes.tres")
 static var itemsHolderInternal : Control
 static var itemInfoInternal : PackedScene
 static var spawnedEvidences : Array[Node]
+static var spawnedEvidencesEntries : Array[EvidenceEntry]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,7 +19,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if spawnedEvidences.size() == 8:
+	if spawnedEvidences.size() == 1:
 		EvidenceCheck.enableButton = true
 	else:
 		EvidenceCheck.enableButton = false
@@ -41,6 +43,7 @@ static func _spawnEvidence(entry: EvidenceEntry) -> void:
 	var orderLab := newEvidence.find_child("EvidenceOrder") as Label
 	orderLab.text = str(spawnedEvidences.size() + 1)
 
+	spawnedEvidencesEntries.append(entry)
 	spawnedEvidences.append(newEvidence)
 
 func _checkAndPopulateEvidences(_playerEvidences : AllEvidences) -> void:
@@ -52,3 +55,4 @@ func _clearEvidences() -> void:
 	for evidence in spawnedEvidences:
 		evidence.queue_free()
 	spawnedEvidences.clear()
+	spawnedEvidencesEntries.clear()
