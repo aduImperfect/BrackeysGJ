@@ -9,8 +9,9 @@ extends Resource
 #@export var time: String = ""
 @export_multiline var desc: String = ""
 
-static func makeEntry(p_name: String, p_characters: Array[String], p_location: String, p_desc : String) -> EvidenceEntry:
+static func makeEntry(p_tex: Texture2D, p_name: String, p_characters: Array[String], p_location: String, p_desc : String) -> EvidenceEntry:
 	var e := EvidenceEntry.new()
+	e.evidence_tex = p_tex
 	e.evidence_name = p_name
 	e.characters = p_characters
 	e.location = p_location

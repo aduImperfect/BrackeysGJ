@@ -4,7 +4,7 @@ class_name ChainOfEvidence
 
 @export var itemsHolder : Control
 @export var itemInfo : PackedScene
-static var offset : float = 100
+static var offset : float = 300
 
 var validEvidences : ValidEvidences = preload("res://Resources/evidencesRes.tres")
 static var itemsHolderInternal : Control
@@ -39,9 +39,9 @@ static func _spawnEvidence(entry: EvidenceEntry) -> void:
 
 	var nameLab := newEvidence.find_child("EvidenceName") as Label
 	nameLab.text = entry.evidence_name
-
-	var orderLab := newEvidence.find_child("EvidenceOrder") as Label
-	orderLab.text = str(spawnedEvidences.size() + 1)
+	
+	var evidenceTex := newEvidence.find_child("EvidenceTex") as TextureRect
+	evidenceTex.texture = entry.evidence_tex
 
 	spawnedEvidencesEntries.append(entry)
 	spawnedEvidences.append(newEvidence)

@@ -32,6 +32,8 @@ func _process(_delta: float) -> void:
 	startPos = followEvidenceControl.global_position
 
 	if DraggableObject.forcedUpdateStatic == true:
+		HouseManager.dragList.clear()
+		HouseManager.forceDrawCall = true
 		setPos = Vector2.ZERO
 		dragComplete = false
 		drag_offset = Vector2.ZERO
@@ -86,9 +88,11 @@ func _set_values(_locationName : String) -> void:
 		global_position = get_global_mouse_position()
 		setPos = global_position
 		draggingImg.position = Vector2.ZERO
-		var entry = EvidenceEntry.makeEntry(evidenceName.text, evidenceChars, _locationName, evidenceDesc.text)
+		var entry = EvidenceEntry.makeEntry(draggingImg.texture, evidenceName.text, evidenceChars, _locationName, evidenceDesc.text)
 		ChainOfEvidence._spawnEvidence(entry)
 		evidenceBGImage.modulate = newEvidenceModVal
+		HouseManager.dragList.append(self)
+		HouseManager.forceDrawCall = true
 
 # godot callback
 func _gui_input(_event: InputEvent) -> void:

@@ -1,15 +1,17 @@
 [gd_scene format=3 uid="uid://dwefd1o4kvbii"]
 
 [ext_resource type="Script" uid="uid://bsy7muk02wp7q" path="res://Scripts/suspects_header.gd" id="1_hmkf7"]
-[ext_resource type="Texture2D" uid="uid://d3643rc2jitha" path="res://Textures/Suspects_1.png" id="1_nia38"]
 [ext_resource type="Texture2D" uid="uid://f78var123yw5" path="res://Textures/SuspectsBG.png" id="1_wc7ih"]
-[ext_resource type="Texture2D" uid="uid://bn3mhbdo20de2" path="res://Textures/Suspects_2.png" id="2_hmkf7"]
-[ext_resource type="Texture2D" uid="uid://dkb3b4y1kedq8" path="res://Textures/Suspects_3.png" id="3_4vhit"]
+[ext_resource type="Texture2D" uid="uid://bn3mhbdo20de2" path="res://Textures/Suspect_Pressed.png" id="2_hmkf7"]
+[ext_resource type="Texture2D" uid="uid://dkb3b4y1kedq8" path="res://Textures/Suspect_Highlighted.png" id="3_4vhit"]
+[ext_resource type="Texture2D" uid="uid://3twv5i3x1tlf" path="res://Textures/EvidenceObject1.png" id="3_c1erm"]
 [ext_resource type="Script" uid="uid://mg242xff10ut" path="res://Scripts/suspect_button.gd" id="5_4vhit"]
 [ext_resource type="Script" uid="uid://cug4o61k3blg6" path="res://Scripts/suspect_name_under.gd" id="6_01wry"]
 [ext_resource type="Script" uid="uid://xvyyvay02k1o" path="res://Scripts/suspect_title.gd" id="7_hpdrm"]
 [ext_resource type="Script" uid="uid://cfrw6uoohei75" path="res://Scripts/suspect_name.gd" id="8_c18ef"]
 [ext_resource type="Script" uid="uid://tmvam1swun57" path="res://Scripts/suspect_desc.gd" id="8_q41a2"]
+[ext_resource type="Texture2D" uid="uid://c188e70j1tmv" path="res://Textures/EvidenceObject2.png" id="8_ry14t"]
+[ext_resource type="Texture2D" uid="uid://jjv35jax4r5i" path="res://Textures/EvidenceObject3.png" id="9_ry14t"]
 [ext_resource type="Script" uid="uid://17mewq7g522f" path="res://Scripts/suspect_short_desc.gd" id="9_w0ycj"]
 [ext_resource type="Script" uid="uid://depqr05jciyar" path="res://Scripts/suspicion_slider.gd" id="10_crvle"]
 [ext_resource type="Script" uid="uid://bgsn6j5avr18d" path="res://Scripts/suspicion_slider_header.gd" id="11_gim0o"]
@@ -23,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://cgavbkuohbpd1" path="res://Textures/HouseBG.png" id="23_ih6jt"]
 [ext_resource type="Script" uid="uid://bguuvv3vkhxah" path="res://Scripts/chainOfEvidence.gd" id="24_8i0sk"]
 [ext_resource type="PackedScene" uid="uid://bhxhv8gghrin5" path="res://Scenes/chainOfEvidenceItem.tscn" id="25_c1erm"]
+[ext_resource type="Script" uid="uid://pqdxpcn65nr7" path="res://Scenes/house_manager.gd" id="26_d2nfp"]
 [ext_resource type="Script" uid="uid://cq60s8c7qv8ls" path="res://Scripts/win_screen.gd" id="26_kcbrv"]
 [ext_resource type="Script" uid="uid://cbd0ucont2l6a" path="res://Scripts/lost_screen.gd" id="27_e4h4u"]
 [ext_resource type="Script" uid="uid://ceelgtarpqwuh" path="res://Scripts/house_header.gd" id="27_kcbrv"]
@@ -68,7 +71,7 @@ offset_top = 48.0
 offset_right = 223.0
 offset_bottom = 88.0
 scale = Vector2(0.1, 0.1)
-texture_normal = ExtResource("1_nia38")
+texture_normal = ExtResource("3_c1erm")
 texture_pressed = ExtResource("2_hmkf7")
 texture_hover = ExtResource("3_4vhit")
 script = ExtResource("5_4vhit")
@@ -84,7 +87,7 @@ offset_bottom = 121.0
 editable = false
 selecting_enabled = false
 script = ExtResource("6_01wry")
-suspectNameUnderText = "Marcus"
+suspectNameUnderText = "Nikhil"
 
 [node name="SuspectButton_2" type="TextureButton" parent="Suspects" unique_id=538804975]
 z_index = -300
@@ -94,7 +97,7 @@ offset_top = 46.0
 offset_right = 674.0
 offset_bottom = 446.0
 scale = Vector2(0.1, 0.1)
-texture_normal = ExtResource("1_nia38")
+texture_normal = ExtResource("8_ry14t")
 texture_pressed = ExtResource("2_hmkf7")
 texture_hover = ExtResource("3_4vhit")
 script = ExtResource("5_4vhit")
@@ -110,7 +113,7 @@ offset_bottom = 121.0
 editable = false
 selecting_enabled = false
 script = ExtResource("6_01wry")
-suspectNameUnderText = "Elena"
+suspectNameUnderText = "Maya"
 
 [node name="SuspectButton_3" type="TextureButton" parent="Suspects" unique_id=297813803]
 z_index = -300
@@ -120,7 +123,7 @@ offset_top = 46.0
 offset_right = 762.0
 offset_bottom = 446.0
 scale = Vector2(0.1, 0.1)
-texture_normal = ExtResource("1_nia38")
+texture_normal = ExtResource("9_ry14t")
 texture_pressed = ExtResource("2_hmkf7")
 texture_hover = ExtResource("3_4vhit")
 script = ExtResource("5_4vhit")
@@ -136,7 +139,7 @@ offset_bottom = 121.0
 editable = false
 selecting_enabled = false
 script = ExtResource("6_01wry")
-suspectNameUnderText = "Danny"
+suspectNameUnderText = "Rohan"
 
 [node name="SuspectDesc" type="TextEdit" parent="Suspects" unique_id=132669764]
 z_index = -300
@@ -258,25 +261,26 @@ script = ExtResource("13_gfj6t")
 
 [node name="TimelineScrollContainer" type="ScrollContainer" parent="." unique_id=2098150592 node_paths=PackedStringArray("evidenceTimeline")]
 z_index = -1200
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(670, 100)
 clip_contents = false
 offset_top = 610.0
 offset_bottom = 718.0
 horizontal_scroll_mode = 2
 vertical_scroll_mode = 0
+scroll_horizontal_by_default = true
 script = ExtResource("17_8i0sk")
-scrollMultiplier = 100
+scrollMultiplier = 300
 evidenceTimeline = NodePath("Timeline")
 
 [node name="Timeline" type="Control" parent="TimelineScrollContainer" unique_id=379029211 node_paths=PackedStringArray("itemsHolder")]
-custom_minimum_size = Vector2(2000, 100)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 script = ExtResource("24_8i0sk")
 itemsHolder = NodePath("Holder")
 itemInfo = ExtResource("25_c1erm")
 
 [node name="TimelineBGSprite2D" type="Sprite2D" parent="TimelineScrollContainer/Timeline" unique_id=1067560464]
-z_index = -800
+z_index = -1300
 position = Vector2(1000, 50)
 scale = Vector2(2000, 100)
 texture = ExtResource("21_qoud8")
@@ -331,6 +335,7 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 670.0
 offset_bottom = 610.0
+script = ExtResource("26_d2nfp")
 
 [node name="HouseBGSprite2D" type="Sprite2D" parent="House" unique_id=1759952695]
 z_index = -1200
