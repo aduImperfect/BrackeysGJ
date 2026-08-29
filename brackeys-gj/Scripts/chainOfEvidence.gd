@@ -26,13 +26,6 @@ func _process(_delta: float) -> void:
 		_clearEvidences()
 		TimelineReset.resetTimeline = false
 
-	#if(Input.is_action_just_pressed("ui_accept")):
-		#var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
-		#_spawnEvidence(entry)
-
-#static func _spawnEvidenceStatic(entry: EvidenceEntry) -> void:
-	#_spawnEvidence(entry)
-
 static func _spawnEvidence(entry: EvidenceEntry) -> void:
 	var newEvidence := itemInfoInternal.instantiate() as Node2D
 

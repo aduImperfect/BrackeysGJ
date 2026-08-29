@@ -7,6 +7,13 @@ class_name DragObject
 @export var startPos: Vector2 = Vector2.ZERO
 @export var draggingImg : Sprite2D
 @export var dragComplete : bool = false
+@export var evidenceBGImage : Sprite2D
+@export var evidenceModVal : Color
+@export var newEvidenceModVal : Color
+
+func _ready() -> void:
+	#evidenceBGImage = owner.get_child(0) as Sprite2D
+	evidenceModVal = evidenceBGImage.modulate
 
 func _process(_delta: float) -> void:
 	if TimelineReset.resetTimeline == true:
@@ -16,6 +23,7 @@ func _process(_delta: float) -> void:
 		is_dragging = false
 		if draggingImg != null:
 			draggingImg.visible = false
+		evidenceBGImage.modulate = evidenceModVal
 		#TimelineReset.resetTimeline = false
 
 	if is_dragging:
@@ -32,6 +40,7 @@ func _process(_delta: float) -> void:
 				draggingImg.position = Vector2.ZERO
 				var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
 				ChainOfEvidence._spawnEvidence(entry)
+				evidenceBGImage.modulate = newEvidenceModVal
 		elif BathControl.mouseEntered == true:
 			BathControl.arrControls.append(self)
 			dragComplete = true
@@ -40,6 +49,7 @@ func _process(_delta: float) -> void:
 				draggingImg.position = Vector2.ZERO
 				var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
 				ChainOfEvidence._spawnEvidence(entry)
+				evidenceBGImage.modulate = newEvidenceModVal
 		elif Bedroom2Control.mouseEntered == true:
 			Bedroom2Control.arrControls.append(self)
 			dragComplete = true
@@ -48,6 +58,7 @@ func _process(_delta: float) -> void:
 				draggingImg.position = Vector2.ZERO
 				var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
 				ChainOfEvidence._spawnEvidence(entry)
+				evidenceBGImage.modulate = newEvidenceModVal
 		elif HallControl.mouseEntered == true:
 			HallControl.arrControls.append(self)
 			dragComplete = true
@@ -56,6 +67,7 @@ func _process(_delta: float) -> void:
 				draggingImg.position = Vector2.ZERO
 				var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
 				ChainOfEvidence._spawnEvidence(entry)
+				evidenceBGImage.modulate = newEvidenceModVal
 		elif LivingRoomControl.mouseEntered == true:
 			LivingRoomControl.arrControls.append(self)
 			dragComplete = true
@@ -64,6 +76,7 @@ func _process(_delta: float) -> void:
 				draggingImg.position = Vector2.ZERO
 				var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
 				ChainOfEvidence._spawnEvidence(entry)
+				evidenceBGImage.modulate = newEvidenceModVal
 		elif Bedroom3Control.mouseEntered == true:
 			Bedroom3Control.arrControls.append(self)
 			dragComplete = true
@@ -72,6 +85,7 @@ func _process(_delta: float) -> void:
 				draggingImg.position = Vector2.ZERO
 				var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
 				ChainOfEvidence._spawnEvidence(entry)
+				evidenceBGImage.modulate = newEvidenceModVal
 		else:
 			if draggingImg != null:
 				draggingImg.visible = false

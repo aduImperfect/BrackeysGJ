@@ -305,12 +305,14 @@ editable = false
 selecting_enabled = false
 script = ExtResource("18_kx34a")
 
-[node name="DraggablePart" type="Control" parent="EvidenceLocker/Evidence1" unique_id=667986574]
+[node name="DraggablePart" type="Control" parent="EvidenceLocker/Evidence1" unique_id=667986574 node_paths=PackedStringArray("evidenceBGImage")]
 custom_minimum_size = Vector2(280, 60)
 anchors_preset = 0
 offset_right = 280.0
 offset_bottom = 60.0
 script = ExtResource("14_tlp82")
+evidenceBGImage = NodePath("../Evidence1BG")
+newEvidenceModVal = Color(0, 0, 0, 0.40784314)
 
 [node name="DragObjImg" type="Sprite2D" parent="EvidenceLocker/Evidence1/DraggablePart" unique_id=1239164942]
 visible = false
