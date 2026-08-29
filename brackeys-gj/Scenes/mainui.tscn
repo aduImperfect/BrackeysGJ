@@ -356,6 +356,7 @@ script = ExtResource("28_e4h4u")
 
 [node name="WinScreen" type="Control" parent="." unique_id=475643136]
 visible = false
+z_index = 2000
 custom_minimum_size = Vector2(400, 30.285)
 layout_mode = 3
 anchors_preset = 0
@@ -427,6 +428,7 @@ text = "Reset Game!"
 
 [node name="LostScreen" type="Control" parent="." unique_id=1226184002]
 visible = false
+z_index = 2000
 custom_minimum_size = Vector2(400, 30.285)
 layout_mode = 3
 anchors_preset = 0
