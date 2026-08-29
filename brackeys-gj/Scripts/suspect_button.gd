@@ -8,6 +8,12 @@ extends TextureButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if name == "SuspectButton_1":
+		SuspectTitle._update_text(suspectTitle)
+		SuspectName._update_text(suspectName)
+		SuspectShortDesc._update_text(suspectShortDesc)
+		SuspectInfo._update_text(suspectInfo)
+		SuspicionSliderVal._update_value(suspectVal)
 	pass # Replace with function body.
 
 
