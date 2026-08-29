@@ -143,12 +143,12 @@ suspectNameUnderText = "Rohan"
 
 [node name="SuspectDesc" type="TextEdit" parent="Suspects" unique_id=132669764]
 z_index = -300
-custom_minimum_size = Vector2(580, 140)
+custom_minimum_size = Vector2(580, 120)
 layout_mode = 0
 offset_left = 9.0
-offset_top = 201.0
+offset_top = 225.0
 offset_right = 589.0
-offset_bottom = 301.0
+offset_bottom = 345.0
 editable = false
 selecting_enabled = false
 wrap_mode = 1
@@ -158,7 +158,7 @@ script = ExtResource("8_q41a2")
 
 [node name="SuspectTitle" type="TextEdit" parent="Suspects" unique_id=1747301334]
 z_index = -300
-custom_minimum_size = Vector2(150, 30)
+custom_minimum_size = Vector2(250, 30)
 layout_mode = 0
 offset_left = 16.0
 offset_top = 130.0
@@ -170,11 +170,11 @@ script = ExtResource("7_hpdrm")
 
 [node name="SuspectName" type="TextEdit" parent="Suspects" unique_id=1433924696]
 z_index = -300
-custom_minimum_size = Vector2(150, 30)
+custom_minimum_size = Vector2(200, 30)
 layout_mode = 0
-offset_left = 181.0
+offset_left = 320.0
 offset_top = 130.0
-offset_right = 281.0
+offset_right = 520.0
 offset_bottom = 160.0
 editable = false
 selecting_enabled = false
@@ -182,7 +182,7 @@ script = ExtResource("8_c18ef")
 
 [node name="SuspectShortDesc" type="TextEdit" parent="Suspects" unique_id=1751043253]
 z_index = -300
-custom_minimum_size = Vector2(560, 30)
+custom_minimum_size = Vector2(560, 50)
 layout_mode = 0
 offset_left = 16.0
 offset_top = 166.0
@@ -235,7 +235,7 @@ hOffset = 250.0
 vOffset = 130.0
 minxOffset = 10.0
 minyOffset = 10.0
-scrollMultiplier = 175
+scrollMultiplier = 150
 evidenceLocker = NodePath("EvidenceLocker")
 
 [node name="EvidenceLocker" type="Control" parent="EvidenceScrollContainer" unique_id=1616462786]
