@@ -18,10 +18,6 @@ class_name DraggableObject
 
 @export var followEvidenceControl : Control
 
-static var dragList : Array[Control]
-static var line_color: Color = Color.BLACK
-static var line_width: float = 5.0
-
 static var forcedUpdateStatic : bool = false
 static var waitCount : int = 0
 static var waitCounter : int = 0
@@ -36,7 +32,7 @@ func _process(_delta: float) -> void:
 	startPos = followEvidenceControl.global_position
 
 	if DraggableObject.forcedUpdateStatic == true:
-		dragList.clear()
+		HouseManager.dragList.clear()
 		setPos = Vector2.ZERO
 		dragComplete = false
 		drag_offset = Vector2.ZERO
@@ -94,7 +90,8 @@ func _set_values(_locationName : String) -> void:
 		var entry = EvidenceEntry.makeEntry(draggingImg.texture, evidenceName.text, evidenceChars, _locationName, evidenceDesc.text)
 		ChainOfEvidence._spawnEvidence(entry)
 		evidenceBGImage.modulate = newEvidenceModVal
-		dragList.append(self)
+		HouseManager.dragList.append(self)
+		HouseManager.forceDrawCall = true
 
 # godot callback
 func _gui_input(_event: InputEvent) -> void:
@@ -116,10 +113,3 @@ func _input(event: InputEvent):
 		# If the click position is outside the node's rectangle
 		if not get_global_rect().has_point(event.position):
 			release_focus()
-
-func _on_draw() -> void:
-	if dragList.size() <= 1:
-		return
-	
-	for k in dragList.size() - 1:
-		draw_line(dragList[k].get_child(0).global_position, dragList[k + 1].get_child(0).global_position, line_color, line_width)

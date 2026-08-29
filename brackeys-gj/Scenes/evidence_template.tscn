@@ -72,5 +72,3 @@ visible = false
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_2keyk")
 script = ExtResource("8_g7yvx")
-
-[connection signal="draw" from="DraggablePart" to="DraggablePart" method="_on_draw"]
