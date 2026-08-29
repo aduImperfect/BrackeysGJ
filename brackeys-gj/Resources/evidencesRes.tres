@@ -23,6 +23,24 @@ location = "HallRoom"
 desc = "Small pattern inconsistent with the body's final position."
 metadata/_custom_type_script = "uid://dm33po16rd0xa"
 
+[sub_resource type="Resource" id="Resource_5khaj"]
+script = ExtResource("1_0rdhy")
+evidence_tex = ExtResource("3_5khaj")
+evidence_name = "Blood Trace"
+characters = Array[String](["Marcus", "Elena"])
+location = "HallRoom"
+desc = "Small pattern inconsistent with the body's final position."
+metadata/_custom_type_script = "uid://dm33po16rd0xa"
+
+[sub_resource type="Resource" id="Resource_4k0de"]
+script = ExtResource("1_0rdhy")
+evidence_tex = ExtResource("3_5khaj")
+evidence_name = "Blood Trace"
+characters = Array[String](["Marcus", "Elena"])
+location = "HallRoom"
+desc = "Small pattern inconsistent with the body's final position."
+metadata/_custom_type_script = "uid://dm33po16rd0xa"
+
 [resource]
 script = ExtResource("2_00wuh")
-entries = Array[ExtResource("1_0rdhy")]([SubResource("Resource_q41a2"), SubResource("Resource_5fuw8")])
+entries = Array[ExtResource("1_0rdhy")]([SubResource("Resource_q41a2"), SubResource("Resource_5fuw8"), SubResource("Resource_5khaj"), SubResource("Resource_4k0de")])
