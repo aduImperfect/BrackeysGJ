@@ -1,7 +1,28 @@
-[gd_resource type="Resource" format=3 uid="uid://bv3qtssqwxc8b"]
+[gd_resource type="Resource" script_class="ValidEvidences" format=3 uid="uid://bv3qtssqwxc8b"]
 
 [ext_resource type="Script" uid="uid://dm33po16rd0xa" path="res://Scripts/evidenceEntry.gd" id="1_0rdhy"]
 [ext_resource type="Script" uid="uid://booobqof8lbga" path="res://Scripts/validEvidences.gd" id="2_00wuh"]
+[ext_resource type="Texture2D" uid="uid://3twv5i3x1tlf" path="res://Textures/EvidenceObject1.png" id="2_5khaj"]
+[ext_resource type="Texture2D" uid="uid://c188e70j1tmv" path="res://Textures/EvidenceObject2.png" id="3_5khaj"]
+
+[sub_resource type="Resource" id="Resource_q41a2"]
+script = ExtResource("1_0rdhy")
+evidence_tex = ExtResource("2_5khaj")
+evidence_name = "Kitchen Knife"
+characters = Array[String](["Marcus"])
+location = "Bedroom1Master"
+desc = "Missing from the block, later found wiped clean."
+metadata/_custom_type_script = "uid://dm33po16rd0xa"
+
+[sub_resource type="Resource" id="Resource_5fuw8"]
+script = ExtResource("1_0rdhy")
+evidence_tex = ExtResource("3_5khaj")
+evidence_name = "Blood Trace"
+characters = Array[String](["Marcus", "Elena"])
+location = "HallRoom"
+desc = "Small pattern inconsistent with the body's final position."
+metadata/_custom_type_script = "uid://dm33po16rd0xa"
 
 [resource]
 script = ExtResource("2_00wuh")
+entries = Array[ExtResource("1_0rdhy")]([SubResource("Resource_q41a2"), SubResource("Resource_5fuw8")])
