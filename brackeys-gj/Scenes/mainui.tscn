@@ -267,8 +267,9 @@ offset_top = 610.0
 offset_bottom = 718.0
 horizontal_scroll_mode = 2
 vertical_scroll_mode = 0
+scroll_horizontal_by_default = true
 script = ExtResource("17_8i0sk")
-scrollMultiplier = 100
+scrollMultiplier = 300
 evidenceTimeline = NodePath("Timeline")
 
 [node name="Timeline" type="Control" parent="TimelineScrollContainer" unique_id=379029211 node_paths=PackedStringArray("itemsHolder")]
