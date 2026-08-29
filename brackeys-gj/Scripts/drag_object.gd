@@ -30,36 +30,48 @@ func _process(_delta: float) -> void:
 			if draggingImg != null:
 				global_position = get_global_mouse_position()
 				draggingImg.position = Vector2.ZERO
+				var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
+				ChainOfEvidence._spawnEvidence(entry)
 		elif BathControl.mouseEntered == true:
 			BathControl.arrControls.append(self)
 			dragComplete = true
 			if draggingImg != null:
 				global_position = get_global_mouse_position()
 				draggingImg.position = Vector2.ZERO
+				var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
+				ChainOfEvidence._spawnEvidence(entry)
 		elif Bedroom2Control.mouseEntered == true:
 			Bedroom2Control.arrControls.append(self)
 			dragComplete = true
 			if draggingImg != null:
 				global_position = get_global_mouse_position()
 				draggingImg.position = Vector2.ZERO
+				var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
+				ChainOfEvidence._spawnEvidence(entry)
 		elif HallControl.mouseEntered == true:
 			HallControl.arrControls.append(self)
 			dragComplete = true
 			if draggingImg != null:
 				global_position = get_global_mouse_position()
 				draggingImg.position = Vector2.ZERO
+				var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
+				ChainOfEvidence._spawnEvidence(entry)
 		elif LivingRoomControl.mouseEntered == true:
 			LivingRoomControl.arrControls.append(self)
 			dragComplete = true
 			if draggingImg != null:
 				global_position = get_global_mouse_position()
 				draggingImg.position = Vector2.ZERO
+				var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
+				ChainOfEvidence._spawnEvidence(entry)
 		elif Bedroom3Control.mouseEntered == true:
 			Bedroom3Control.arrControls.append(self)
 			dragComplete = true
 			if draggingImg != null:
 				global_position = get_global_mouse_position()
 				draggingImg.position = Vector2.ZERO
+				var entry = EvidenceEntry.makeEntry("teest",["tesssttttt"], "in ur ass", "67")
+				ChainOfEvidence._spawnEvidence(entry)
 		else:
 			if draggingImg != null:
 				draggingImg.visible = false
