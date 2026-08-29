@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://cw0ew6ybihtv1" path="res://Scripts/evidence_header.gd" id="13_gfj6t"]
 [ext_resource type="Texture2D" uid="uid://dqbuoqlbnwb6r" path="res://Textures/EvidencesBG.png" id="14_3q4g7"]
 [ext_resource type="Script" uid="uid://b2rnnxgr5lnor" path="res://Scripts/evidencesSpawner.gd" id="14_5fuw8"]
+[ext_resource type="Script" uid="uid://c8i70dv6b8tgv" path="res://Scripts/timeline_scroll_container.gd" id="17_8i0sk"]
 [ext_resource type="Texture2D" uid="uid://ctsopdttq1fy7" path="res://Textures/EvidenceValBG.png" id="17_i3k6o"]
 [ext_resource type="Texture2D" uid="uid://6e8cvm6n7kw3" path="res://Textures/TimelineBG.png" id="21_qoud8"]
 [ext_resource type="Script" uid="uid://b1os4n24dbsxq" path="res://Scripts/timeline_header.gd" id="22_yj67u"]
@@ -253,25 +254,32 @@ editable = false
 selecting_enabled = false
 script = ExtResource("13_gfj6t")
 
-[node name="Timeline" type="Control" parent="." unique_id=379029211 node_paths=PackedStringArray("itemsHolder")]
-custom_minimum_size = Vector2(660, 100)
-layout_mode = 3
-anchors_preset = 0
-offset_left = 10.0
+[node name="TimelineScrollContainer" type="ScrollContainer" parent="." unique_id=2098150592 node_paths=PackedStringArray("evidenceTimeline")]
+z_index = -1200
+custom_minimum_size = Vector2(0, 100)
+clip_contents = false
 offset_top = 610.0
-offset_right = 670.0
-offset_bottom = 710.0
+offset_bottom = 718.0
+horizontal_scroll_mode = 2
+vertical_scroll_mode = 0
+script = ExtResource("17_8i0sk")
+scrollMultiplier = 100
+evidenceTimeline = NodePath("Timeline")
+
+[node name="Timeline" type="Control" parent="TimelineScrollContainer" unique_id=379029211 node_paths=PackedStringArray("itemsHolder")]
+custom_minimum_size = Vector2(2000, 100)
+layout_mode = 2
 script = ExtResource("24_8i0sk")
 itemsHolder = NodePath("Holder")
 itemInfo = ExtResource("25_c1erm")
 
-[node name="TimelineBGSprite2D" type="Sprite2D" parent="Timeline" unique_id=1067560464]
+[node name="TimelineBGSprite2D" type="Sprite2D" parent="TimelineScrollContainer/Timeline" unique_id=1067560464]
 z_index = -800
-position = Vector2(330, 50)
-scale = Vector2(660, 100)
+position = Vector2(1000, 50)
+scale = Vector2(2000, 100)
 texture = ExtResource("21_qoud8")
 
-[node name="TimelineHeader" type="TextEdit" parent="Timeline" unique_id=1865272060]
+[node name="TimelineHeader" type="TextEdit" parent="TimelineScrollContainer/Timeline" unique_id=1865272060]
 z_index = -600
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 0
@@ -284,14 +292,14 @@ editable = false
 selecting_enabled = false
 script = ExtResource("22_yj67u")
 
-[node name="Holder" type="Control" parent="Timeline" unique_id=33465211]
+[node name="Holder" type="Control" parent="TimelineScrollContainer/Timeline" unique_id=33465211]
 anchors_preset = 0
 offset_left = 11.0
 offset_top = 50.0
 offset_right = 51.0
 offset_bottom = 90.0
 
-[node name="TimelineResetButton" type="Button" parent="Timeline" unique_id=467882638]
+[node name="TimelineResetButton" type="Button" parent="TimelineScrollContainer/Timeline" unique_id=467882638]
 z_index = -100
 layout_mode = 0
 offset_left = 601.0
@@ -301,7 +309,7 @@ offset_bottom = 37.0
 text = "Reset"
 script = ExtResource("28_ry14t")
 
-[node name="EvidenceCheckButton" type="Button" parent="Timeline" unique_id=384517381 node_paths=PackedStringArray("winScreen", "lostScreen")]
+[node name="EvidenceCheckButton" type="Button" parent="TimelineScrollContainer/Timeline" unique_id=384517381 node_paths=PackedStringArray("winScreen", "lostScreen")]
 layout_mode = 0
 offset_left = 465.0
 offset_top = 6.0
@@ -310,8 +318,8 @@ offset_bottom = 37.0
 disabled = true
 text = "Evidence Check"
 script = ExtResource("29_d2nfp")
-winScreen = NodePath("../../WinScreen")
-lostScreen = NodePath("../../LostScreen")
+winScreen = NodePath("../../../WinScreen")
+lostScreen = NodePath("../../../LostScreen")
 
 [node name="House" type="Control" parent="." unique_id=1658027778]
 custom_minimum_size = Vector2(660, 600)
@@ -483,7 +491,7 @@ text = "Reset Game!"
 [connection signal="gui_input" from="Suspects/SuspectButton_1" to="Suspects/SuspectButton_1" method="_on_gui_input"]
 [connection signal="gui_input" from="Suspects/SuspectButton_2" to="Suspects/SuspectButton_2" method="_on_gui_input"]
 [connection signal="gui_input" from="Suspects/SuspectButton_3" to="Suspects/SuspectButton_3" method="_on_gui_input"]
-[connection signal="pressed" from="Timeline/TimelineResetButton" to="Timeline/TimelineResetButton" method="_on_pressed"]
-[connection signal="pressed" from="Timeline/EvidenceCheckButton" to="Timeline/EvidenceCheckButton" method="_on_pressed"]
+[connection signal="pressed" from="TimelineScrollContainer/Timeline/TimelineResetButton" to="TimelineScrollContainer/Timeline/TimelineResetButton" method="_on_pressed"]
+[connection signal="pressed" from="TimelineScrollContainer/Timeline/EvidenceCheckButton" to="TimelineScrollContainer/Timeline/EvidenceCheckButton" method="_on_pressed"]
 [connection signal="pressed" from="WinScreen/Button" to="WinScreen" method="_on_button_pressed"]
 [connection signal="pressed" from="LostScreen/Button" to="LostScreen" method="_on_button_pressed"]

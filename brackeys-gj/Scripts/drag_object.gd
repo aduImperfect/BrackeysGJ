@@ -14,6 +14,8 @@ class_name DraggableObject
 @export var evidenceModVal : Color
 @export var newEvidenceModVal : Color
 
+@export var setPos : Vector2 = Vector2.ZERO
+
 @export var followEvidenceControl : Control
 
 static var forcedUpdateStatic : bool = false
@@ -30,6 +32,7 @@ func _process(_delta: float) -> void:
 	startPos = followEvidenceControl.global_position
 
 	if DraggableObject.forcedUpdateStatic == true:
+		setPos = Vector2.ZERO
 		dragComplete = false
 		drag_offset = Vector2.ZERO
 		global_position = startPos
@@ -74,10 +77,14 @@ func _process(_delta: float) -> void:
 				draggingImg.visible = false
 				draggingImg.global_position = startPos
 
+	if setPos != Vector2.ZERO:
+		global_position = setPos
+
 func _set_values(_locationName : String) -> void:
 	if draggingImg != null && draggingImg.visible == true:
 		dragComplete = true
 		global_position = get_global_mouse_position()
+		setPos = global_position
 		draggingImg.position = Vector2.ZERO
 		var entry = EvidenceEntry.makeEntry(evidenceName.text, evidenceChars, _locationName, evidenceDesc.text)
 		ChainOfEvidence._spawnEvidence(entry)
