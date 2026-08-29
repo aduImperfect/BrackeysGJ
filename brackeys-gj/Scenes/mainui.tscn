@@ -189,6 +189,7 @@ wrap_mode = 1
 script = ExtResource("9_w0ycj")
 
 [node name="SuspicionSliderHeader" type="TextEdit" parent="Suspects" unique_id=59401149]
+visible = false
 z_index = -300
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 0
@@ -202,6 +203,7 @@ selecting_enabled = false
 script = ExtResource("11_gim0o")
 
 [node name="SuspicionSlider" type="HSlider" parent="Suspects" unique_id=1909244185]
+visible = false
 z_index = -300
 custom_minimum_size = Vector2(450, 0)
 layout_mode = 0
