@@ -2,7 +2,7 @@ extends TextEdit
 
 class_name ObjectName
 
-static var newText : String
+var newText : String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,7 +12,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	text = newText
 
-static func _update_text(_textVal : String) -> void:
+func _update_text(_textVal : String) -> void:
 	newText = _textVal
 
 func _input(event: InputEvent):
