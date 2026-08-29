@@ -99,6 +99,9 @@ func _gui_input(_event: InputEvent) -> void:
 	if dragComplete == true:
 		return
 
+	if global_position.y < 300:
+		return
+
 	if _event is InputEventMouseButton:
 		if _event.button_index == MOUSE_BUTTON_LEFT and _event.pressed:
 			is_dragging = true

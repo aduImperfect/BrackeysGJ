@@ -152,8 +152,6 @@ offset_bottom = 345.0
 editable = false
 selecting_enabled = false
 wrap_mode = 1
-scroll_smooth = true
-scroll_v_scroll_speed = 40.0
 script = ExtResource("8_q41a2")
 
 [node name="SuspectTitle" type="TextEdit" parent="Suspects" unique_id=1747301334]
@@ -299,6 +297,7 @@ endOffset = Vector2(5000, 25)
 lineZIndex = 100
 
 [node name="TimelineBGSprite2D" type="Sprite2D" parent="TimelineScrollContainer/Timeline" unique_id=1067560464]
+z_index = -50
 position = Vector2(3000, 75)
 scale = Vector2(6000, 150)
 texture = ExtResource("21_qoud8")
