@@ -1,7 +1,5 @@
 extends Control
 
-class_name DragObject
-
 @export var is_dragging: bool = false
 @export var drag_offset: Vector2 = Vector2.ZERO
 @export var startPos: Vector2 = Vector2.ZERO
@@ -13,11 +11,15 @@ class_name DragObject
 @export var evidenceModVal : Color
 @export var newEvidenceModVal : Color
 
+@export var followEvidenceControl : Control
+
 func _ready() -> void:
 	#evidenceBGImage = owner.get_child(0) as Sprite2D
 	evidenceModVal = evidenceBGImage.modulate
 
 func _process(_delta: float) -> void:
+	startPos = followEvidenceControl.global_position
+
 	if TimelineReset.resetTimeline == true:
 		dragComplete = false
 		drag_offset = Vector2.ZERO
@@ -25,73 +27,48 @@ func _process(_delta: float) -> void:
 		is_dragging = false
 		if draggingImg != null:
 			draggingImg.visible = false
+			draggingImg.z_index = -200
 		evidenceBGImage.modulate = evidenceModVal
 		#TimelineReset.resetTimeline = false
 
 	if is_dragging:
 		if draggingImg != null:
 			draggingImg.visible = true
+			draggingImg.z_index = 1000
 			draggingImg.global_position = get_global_mouse_position()
 
 	if is_dragging == false && dragComplete == false:
 		if Bedroom1MasterControl.mouseEntered == true:
 			Bedroom1MasterControl.arrControls.append(self)
-			dragComplete = true
-			if draggingImg != null:
-				global_position = get_global_mouse_position()
-				draggingImg.position = Vector2.ZERO
-				var entry = EvidenceEntry.makeEntry(evidenceName.text,["tesssttttt"], "Bedroom1MasterControl", "10", evidenceDesc.text)
-				ChainOfEvidence._spawnEvidence(entry)
-				evidenceBGImage.modulate = newEvidenceModVal
+			_set_values("Bedroom1MasterControl")
 		elif BathControl.mouseEntered == true:
 			BathControl.arrControls.append(self)
-			dragComplete = true
-			if draggingImg != null:
-				global_position = get_global_mouse_position()
-				draggingImg.position = Vector2.ZERO
-				var entry = EvidenceEntry.makeEntry(evidenceName.text,["tesssttttt"], "BathControl", "10", evidenceDesc.text)
-				ChainOfEvidence._spawnEvidence(entry)
-				evidenceBGImage.modulate = newEvidenceModVal
+			_set_values("BathControl")
 		elif Bedroom2Control.mouseEntered == true:
 			Bedroom2Control.arrControls.append(self)
-			dragComplete = true
-			if draggingImg != null:
-				global_position = get_global_mouse_position()
-				draggingImg.position = Vector2.ZERO
-				var entry = EvidenceEntry.makeEntry(evidenceName.text,["tesssttttt"], "Bedroom2Control", "10", evidenceDesc.text)
-				ChainOfEvidence._spawnEvidence(entry)
-				evidenceBGImage.modulate = newEvidenceModVal
+			_set_values("Bedroom2Control")
 		elif HallControl.mouseEntered == true:
 			HallControl.arrControls.append(self)
-			dragComplete = true
-			if draggingImg != null:
-				global_position = get_global_mouse_position()
-				draggingImg.position = Vector2.ZERO
-				var entry = EvidenceEntry.makeEntry(evidenceName.text,["tesssttttt"], "HallControl", "10", evidenceDesc.text)
-				ChainOfEvidence._spawnEvidence(entry)
-				evidenceBGImage.modulate = newEvidenceModVal
+			_set_values("HallControl")
 		elif LivingRoomControl.mouseEntered == true:
 			LivingRoomControl.arrControls.append(self)
-			dragComplete = true
-			if draggingImg != null:
-				global_position = get_global_mouse_position()
-				draggingImg.position = Vector2.ZERO
-				var entry = EvidenceEntry.makeEntry(evidenceName.text,["tesssttttt"], "LivingRoomControl", "10", evidenceDesc.text)
-				ChainOfEvidence._spawnEvidence(entry)
-				evidenceBGImage.modulate = newEvidenceModVal
+			_set_values("LivingRoomControl")
 		elif Bedroom3Control.mouseEntered == true:
 			Bedroom3Control.arrControls.append(self)
-			dragComplete = true
-			if draggingImg != null:
-				global_position = get_global_mouse_position()
-				draggingImg.position = Vector2.ZERO
-				var entry = EvidenceEntry.makeEntry(evidenceName.text,["tesssttttt"], "Bedroom3Control", "10", evidenceDesc.text)
-				ChainOfEvidence._spawnEvidence(entry)
-				evidenceBGImage.modulate = newEvidenceModVal
+			_set_values("Bedroom3Control")
 		else:
 			if draggingImg != null:
 				draggingImg.visible = false
 				draggingImg.global_position = startPos
+
+func _set_values(_locationName : String) -> void:
+	dragComplete = true
+	if draggingImg != null:
+		global_position = get_global_mouse_position()
+		draggingImg.position = Vector2.ZERO
+		var entry = EvidenceEntry.makeEntry(evidenceName.text,["tesssttttt"], _locationName, "10", evidenceDesc.text)
+		ChainOfEvidence._spawnEvidence(entry)
+		evidenceBGImage.modulate = newEvidenceModVal
 
 # godot callback
 func _gui_input(_event: InputEvent) -> void:
@@ -101,7 +78,7 @@ func _gui_input(_event: InputEvent) -> void:
 	if _event is InputEventMouseButton:
 		if _event.button_index == MOUSE_BUTTON_LEFT and _event.pressed:
 			is_dragging = true
-			startPos = global_position
+			#startPos = global_position
 			draggingImg = get_child(0) as Sprite2D
 			drag_offset = get_global_mouse_position() - global_position
 		elif _event.button_index == MOUSE_BUTTON_LEFT and not _event.pressed:
