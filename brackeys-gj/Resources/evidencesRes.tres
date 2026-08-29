@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://booobqof8lbga" path="res://Scripts/validEvidences.gd" id="2_00wuh"]
 [ext_resource type="Texture2D" uid="uid://3twv5i3x1tlf" path="res://Textures/EvidenceObject1.png" id="2_5khaj"]
 [ext_resource type="Texture2D" uid="uid://c188e70j1tmv" path="res://Textures/EvidenceObject2.png" id="3_5khaj"]
+[ext_resource type="Texture2D" uid="uid://jjv35jax4r5i" path="res://Textures/EvidenceObject3.png" id="4_4k0de"]
+[ext_resource type="Texture2D" uid="uid://dhwynfdeoi50l" path="res://Textures/EvidenceObject4.png" id="5_fjyxh"]
 
 [sub_resource type="Resource" id="Resource_q41a2"]
 script = ExtResource("1_0rdhy")
@@ -25,20 +27,20 @@ metadata/_custom_type_script = "uid://dm33po16rd0xa"
 
 [sub_resource type="Resource" id="Resource_5khaj"]
 script = ExtResource("1_0rdhy")
-evidence_tex = ExtResource("3_5khaj")
-evidence_name = "Blood Trace"
+evidence_tex = ExtResource("4_4k0de")
+evidence_name = "Muddy Footprint"
 characters = Array[String](["Marcus", "Elena"])
 location = "HallRoom"
-desc = "Small pattern inconsistent with the body's final position."
+desc = "Size 11, tracked in from outside, still damp."
 metadata/_custom_type_script = "uid://dm33po16rd0xa"
 
 [sub_resource type="Resource" id="Resource_4k0de"]
 script = ExtResource("1_0rdhy")
-evidence_tex = ExtResource("3_5khaj")
-evidence_name = "Blood Trace"
+evidence_tex = ExtResource("5_fjyxh")
+evidence_name = "Torn Letter"
 characters = Array[String](["Marcus", "Elena"])
-location = "HallRoom"
-desc = "Small pattern inconsistent with the body's final position."
+location = "Bedroom2"
+desc = "nsigned note demanding repayment, torn in half."
 metadata/_custom_type_script = "uid://dm33po16rd0xa"
 
 [resource]

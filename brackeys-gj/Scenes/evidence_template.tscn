@@ -61,14 +61,9 @@ anchors_preset = 0
 offset_right = 280.0
 offset_bottom = 120.0
 script = ExtResource("6_548gt")
-is_dragging = null
-drag_offset = null
-startPos = null
-dragComplete = null
 evidenceBGImage = NodePath("../EvidenceBG")
 evidenceName = NodePath("../ObjectName")
 evidenceDesc = NodePath("../ObjectDesc")
-evidenceModVal = null
 newEvidenceModVal = Color(0, 0, 0, 0.40784314)
 followEvidenceControl = NodePath("..")
 

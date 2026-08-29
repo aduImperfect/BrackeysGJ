@@ -208,7 +208,7 @@ offset_bottom = 366.0
 editable = false
 script = ExtResource("10_crvle")
 
-[node name="EvidenceScrollContainer" type="ScrollContainer" parent="." unique_id=1252394175 node_paths=PackedStringArray("holder")]
+[node name="EvidenceScrollContainer" type="ScrollContainer" parent="." unique_id=1252394175 node_paths=PackedStringArray("holder", "evidenceLocker")]
 custom_minimum_size = Vector2(600, 300)
 offset_left = 670.0
 offset_top = 410.0
@@ -219,16 +219,20 @@ vertical_scroll_mode = 2
 script = ExtResource("14_5fuw8")
 holder = NodePath("EvidenceLocker")
 hOffset = 300.0
-vOffset = 150.0
+vOffset = 130.0
+minxOffset = 10.0
+minyOffset = 55.0
+scrollMultiplier = 175
+evidenceLocker = NodePath("EvidenceLocker")
 
 [node name="EvidenceLocker" type="Control" parent="EvidenceScrollContainer" unique_id=1616462786]
-custom_minimum_size = Vector2(600, 600)
+custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 
 [node name="EvidenceBGSprite2D" type="Sprite2D" parent="EvidenceScrollContainer/EvidenceLocker" unique_id=1973965966]
 z_index = -800
-position = Vector2(300, 600)
-scale = Vector2(600, 1200)
+position = Vector2(300, 6000)
+scale = Vector2(600, 12000)
 texture = ExtResource("14_3q4g7")
 
 [node name="EvidenceHeader" type="TextEdit" parent="EvidenceScrollContainer/EvidenceLocker" unique_id=2136378570]
