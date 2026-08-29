@@ -28,7 +28,7 @@ func _updateInfo(suspectDataIndex : int) -> void:
 	SuspectTitle._update_text(suspectData.entries[suspectDataIndex].suspect_title)
 	SuspectName._update_text(suspectData.entries[suspectDataIndex].suspect_name)
 	SuspectShortDesc._update_text(suspectData.entries[suspectDataIndex].suspect_shortdesc)
-	SuspectInfo._update_text(suspectData.entries[suspectDataIndex].suspect_desc)
+	SuspectDesc._update_text(suspectData.entries[suspectDataIndex].suspect_desc)
 	SuspicionSliderVal._update_value(suspectData.entries[suspectDataIndex].suspect_basesuspicionlevel)
 
 func _input(event: InputEvent):

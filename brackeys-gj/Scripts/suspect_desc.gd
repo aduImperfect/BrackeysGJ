@@ -1,6 +1,6 @@
 extends TextEdit
 
-class_name SuspectInfo
+class_name SuspectDesc
 
 static var newText : String
 
