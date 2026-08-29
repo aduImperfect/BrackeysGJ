@@ -18,6 +18,8 @@ class_name DraggableObject
 
 @export var followEvidenceControl : Control
 
+static var currentControl : Control
+
 static var forcedUpdateStatic : bool = false
 static var waitCount : int = 0
 static var waitCounter : int = 0
@@ -29,6 +31,7 @@ func _ready() -> void:
 	waitCounter = EvidenceData.evidenceCounter
 
 func _process(_delta: float) -> void:
+	currentControl = self
 	startPos = followEvidenceControl.global_position
 
 	if DraggableObject.forcedUpdateStatic == true:
@@ -88,11 +91,31 @@ func _set_values(_locationName : String) -> void:
 		global_position = get_global_mouse_position()
 		setPos = global_position
 		draggingImg.position = Vector2.ZERO
+		var text = evidenceName.text
 		var entry = EvidenceEntry.makeEntry(draggingImg.texture, evidenceName.text, evidenceChars, _locationName, evidenceDesc.text)
 		ChainOfEvidence._spawnEvidence(entry)
 		evidenceBGImage.modulate = newEvidenceModVal
 		HouseManager.dragList.append(self)
 		HouseManager.forceDrawCall = true
+
+static func _ind_reset_ext() -> void:
+	currentControl._individual_reset()
+
+func _individual_reset() -> void:
+	for k in HouseManager.dragList.size():
+		if HouseManager.dragList[k] == self:
+			HouseManager.dragList.remove_at(k)
+			break
+	HouseManager.forceDrawCall = true
+	setPos = Vector2.ZERO
+	dragComplete = false
+	drag_offset = Vector2.ZERO
+	global_position = startPos
+	is_dragging = false
+	if draggingImg != null:
+		draggingImg.visible = false
+		draggingImg.z_index = -200
+	evidenceBGImage.modulate = evidenceModVal
 
 # godot callback
 func _gui_input(_event: InputEvent) -> void:
