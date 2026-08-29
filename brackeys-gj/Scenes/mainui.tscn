@@ -86,7 +86,7 @@ offset_bottom = 121.0
 editable = false
 selecting_enabled = false
 script = ExtResource("6_01wry")
-suspectNameUnderText = "Marcus"
+suspectNameUnderText = "Nikhil"
 
 [node name="SuspectButton_2" type="TextureButton" parent="Suspects" unique_id=538804975]
 z_index = -300
@@ -112,7 +112,7 @@ offset_bottom = 121.0
 editable = false
 selecting_enabled = false
 script = ExtResource("6_01wry")
-suspectNameUnderText = "Elena"
+suspectNameUnderText = "Maya"
 
 [node name="SuspectButton_3" type="TextureButton" parent="Suspects" unique_id=297813803]
 z_index = -300
@@ -138,7 +138,7 @@ offset_bottom = 121.0
 editable = false
 selecting_enabled = false
 script = ExtResource("6_01wry")
-suspectNameUnderText = "Danny"
+suspectNameUnderText = "Rohan"
 
 [node name="SuspectDesc" type="TextEdit" parent="Suspects" unique_id=132669764]
 z_index = -300
