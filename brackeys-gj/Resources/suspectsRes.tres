@@ -6,27 +6,47 @@
 [sub_resource type="Resource" id="Resource_q41a2"]
 script = ExtResource("1_rbv0f")
 suspect_title = "Business Partner"
-suspect_name = "Marcus Voss"
-suspect_shortdesc = "\"I hadn't spoken to her in weeks. Ask the accountant.\""
-suspect_desc = "Voss co-owned the design firm with the victim and stood to lose everything if the buyout went through without her signature. He claims he was at a client dinner across town, but the reservation was made under a different name. Financial records show three missed loan payments in the last month."
+suspect_name = "Nikhil"
+suspect_shortdesc = "“I hadn't spoken to Arjun in weeks. Whatever happened between us was business, nothing more.”"
+suspect_desc = "Nikhil and Arjun design firm (that they co-founded) has been bleeding cash. Loans had gone unfulfilled and Arjun had plans to restructure their finances. Nikhil didn’t deny that they’ve been arguing about this for the past month but he wasn’t quick to point out that restructuring could also leave him in deep debt. Although he is insistent that their fights had nothing to do with Arjun’s death.
+
+Nikhil says he got to the flat shortly after 8:30 PM (for yet another finance talk). According to him, Arjun was already in the living room. They argued again about unpaid loans but Nikhil says he left the room when the argument reached fever pitch. After that, he claims he spent the rest of his time in the hallway on a call before leaving.
+
+Nikhil denies all three things - entering any of the bedrooms, the bathroom and touching the kitchen knife. He mentioned that the balcony door was open as he left but assumed that it had been opened earlier by Arjun. 
+
+More financial record questions made him defensive. He admits that loan payments had been missed but insists Arjun knew about them.
+"
 suspect_basesuspicionlevel = 70
 metadata/_custom_type_script = "uid://dv5gl54usr1tt"
 
 [sub_resource type="Resource" id="Resource_5fuw8"]
 script = ExtResource("1_rbv0f")
-suspect_title = "Ex-Wife"
-suspect_name = "Elena Kade"
-suspect_shortdesc = "\"We were finally on good terms. Why would I ruin that?\""
-suspect_desc = "Kade's divorce from the victim finalized eight months ago, but the custody arrangement remained bitter. She says she was home with her sister the night of the murder. Neighbors recall raised voices from her flat around 9pm, though the timing is disputed."
+suspect_title = "Former Partner"
+suspect_name = "Maya"
+suspect_shortdesc = "“I went into the bedroom because I needed some space. I wasn't hiding anything.”"
+suspect_desc = "Maya and Arjun had been dating for years although it had recently ended but they had unresolved financial arrangements. Maya admits the separation has been difficult but denies that they were fighting on the night of his death. 
+
+According to Maya, she arrived at Flat 3B shortly after 9:00 PM to collect some personal belongings. Maya says she spoke briefly to Arjun about their finances in the living room and this upset Arjun. Wanting to avoid another argument, Maya says she went into the second bedroom and stayed there.
+
+Maya says she remembers hearing movement in the hallway while in the bedroom. She heard a sound that felt like something falling but with a short period of silence after. She claims she assumed Arjun had dropped something.
+She further states that she remained in the bedroom until she received a message on her phone at approximately 9:45 PM. When she came back into the living room, she said she found Arjun on the floor.
+
+Maya insists that she did not enter the bathroom, did not go into the kitchen and never touched the knife. She also says she never opened the balcony door. When asked why the bedroom alarm was triggered during this period, Maya says she does not remember setting it."
 suspect_basesuspicionlevel = 50
 metadata/_custom_type_script = "uid://dv5gl54usr1tt"
 
 [sub_resource type="Resource" id="Resource_7vks4"]
 script = ExtResource("1_rbv0f")
-suspect_title = "Neighbor, Unit 3"
-suspect_name = "Danny Reyes"
-suspect_shortdesc = "\"I heard something, sure. Didn't think much of it.\""
-suspect_desc = "Reyes lives directly across the hall and admits to hearing a crash around 10:40pm but says he assumed it was furniture being moved. He has a prior trespassing complaint against the victim over a shared parking spot. His story about his own whereabouts that night has shifted twice."
+suspect_title = "Friend and Former Colleague"
+suspect_name = "Rohan"
+suspect_shortdesc = "“Arjun and I argued. That's true. But I left him alive.”"
+suspect_desc = "Rohan and Arjun have been friends and (former) colleagues for a decade. They were arguing about money that Arjun had lent Rohan several months prior. Money he had promised to repay by the end of the month.
+
+Rohan says he arrived at the flat around 8:50 PM. He claims Arjun was already upset when he reached Flat 3B and their conversation quickly became a verbal fight. After this, Rohan says he eventually went into the living room while Arjun moved between the living room and hallway.
+
+Rohan admits to seeing the kitchen knife but says he never touched it. He also remembers Arjun complaining about muddy footprints that someone had left near the entrance of the flat. Rohan says shortly after 9:20 PM he left through the main entrance.
+
+Rohan is insistent that Arjun was still alive when he left. He pointed out the balcony door was closed at that point and he did not enter any of the bedrooms. On seeing the muddy footprint evidence, he says the marks could have come from his shoes because it had been raining. But he insists this does not mean he returned to the flat after leaving."
 suspect_basesuspicionlevel = 30
 metadata/_custom_type_script = "uid://dv5gl54usr1tt"
 
