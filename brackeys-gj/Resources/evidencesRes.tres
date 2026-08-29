@@ -5,44 +5,122 @@
 [ext_resource type="Texture2D" uid="uid://3twv5i3x1tlf" path="res://Textures/EvidenceObject1.png" id="2_5khaj"]
 [ext_resource type="Texture2D" uid="uid://c188e70j1tmv" path="res://Textures/EvidenceObject2.png" id="3_5khaj"]
 [ext_resource type="Texture2D" uid="uid://jjv35jax4r5i" path="res://Textures/EvidenceObject3.png" id="4_4k0de"]
-[ext_resource type="Texture2D" uid="uid://dhwynfdeoi50l" path="res://Textures/EvidenceObject4.png" id="5_fjyxh"]
 
 [sub_resource type="Resource" id="Resource_q41a2"]
 script = ExtResource("1_0rdhy")
 evidence_tex = ExtResource("2_5khaj")
-evidence_name = "Kitchen Knife"
-characters = Array[String](["Marcus Voss"])
-location = "Bedroom1Master"
-desc = "Missing from the block, later found wiped clean."
+evidence_name = "Fingerprints on Chair"
+characters = Array[String](["Nikhil"])
+location = "LivingRoom"
+desc = "Nikhil's fingerprints are found on the overturned dining chair."
 metadata/_custom_type_script = "uid://dm33po16rd0xa"
 
 [sub_resource type="Resource" id="Resource_5fuw8"]
 script = ExtResource("1_0rdhy")
-evidence_tex = ExtResource("3_5khaj")
-evidence_name = "Blood Trace"
-characters = Array[String](["Elena Kade"])
-location = "Hall"
-desc = "Small pattern inconsistent with the body's final position."
+evidence_tex = ExtResource("2_5khaj")
+evidence_name = "Unsent Email Threat"
+characters = Array[String](["Nikhil"])
+location = "LivingRoom"
+desc = "An unsent email on Arjun's laptop reads: “We need to discuss the transfer. I know what you did.”"
 metadata/_custom_type_script = "uid://dm33po16rd0xa"
 
 [sub_resource type="Resource" id="Resource_5khaj"]
 script = ExtResource("1_0rdhy")
-evidence_tex = ExtResource("4_4k0de")
-evidence_name = "Muddy Footprint"
-characters = Array[String](["Elena Kade"])
+evidence_tex = ExtResource("2_5khaj")
+evidence_name = "Blue Fibre from Jacket"
+characters = Array[String](["Nikhil"])
 location = "Hall"
-desc = "Size 11, tracked in from outside, still damp."
+desc = "A fragment of blue synthetic fibre is found on the Master Bedroom drawer handle. Matching fibre is also found on the living-room sofa."
 metadata/_custom_type_script = "uid://dm33po16rd0xa"
 
 [sub_resource type="Resource" id="Resource_4k0de"]
 script = ExtResource("1_0rdhy")
-evidence_tex = ExtResource("5_fjyxh")
-evidence_name = "Torn Letter"
-characters = Array[String](["Danny Reyes"])
+evidence_tex = ExtResource("3_5khaj")
+evidence_name = "Second Wine Glass"
+characters = Array[String](["Maya"])
+location = "LivingRoom"
+desc = "An intact wine glass contains fingerprints belonging to Arjun and Maya."
+metadata/_custom_type_script = "uid://dm33po16rd0xa"
+
+[sub_resource type="Resource" id="Resource_rbv0f"]
+script = ExtResource("1_0rdhy")
+evidence_tex = ExtResource("3_5khaj")
+evidence_name = "Maya's Phone / Wi-Fi Log"
+characters = Array[String](["Maya"])
 location = "Bedroom2"
-desc = "nsigned note demanding repayment, torn in half."
+desc = "Maya's phone remains connected to the apartment Wi-Fi while physically left in Bedroom2."
+metadata/_custom_type_script = "uid://dm33po16rd0xa"
+
+[sub_resource type="Resource" id="Resource_rh3o1"]
+script = ExtResource("1_0rdhy")
+evidence_tex = ExtResource("3_5khaj")
+evidence_name = "Bedroom Alarm"
+characters = Array[String](["Maya"])
+location = "Bedroom2"
+desc = "The alarm in Bedroom2 records a manual activation at 9:37 PM. Maya claims she was in the room."
+metadata/_custom_type_script = "uid://dm33po16rd0xa"
+
+[sub_resource type="Resource" id="Resource_68o0n"]
+script = ExtResource("1_0rdhy")
+evidence_tex = ExtResource("3_5khaj")
+evidence_name = "Bloodied Towel"
+characters = Array[String](["Maya"])
+location = "Bath"
+desc = "A recently washed towel contains traces of diluted blood."
+metadata/_custom_type_script = "uid://dm33po16rd0xa"
+
+[sub_resource type="Resource" id="Resource_dt5in"]
+script = ExtResource("1_0rdhy")
+evidence_tex = ExtResource("4_4k0de")
+evidence_name = "Rohan's Shoe, Red Clay"
+characters = Array[String](["Rohan"])
+location = "LivingRoom"
+desc = "One of Rohan's shoes is found underneath the living-room sofa. Red clay on the sole initially appears suspicious because similar material is found near the victim"
+metadata/_custom_type_script = "uid://dm33po16rd0xa"
+
+[sub_resource type="Resource" id="Resource_iex7t"]
+script = ExtResource("1_0rdhy")
+evidence_tex = ExtResource("4_4k0de")
+evidence_name = "Rohan's Jacket Fibre"
+characters = Array[String](["Rohan"])
+location = "Hall"
+desc = "A small fibre matching Rohan's jacket is found caught on the edge of the hallway door."
+metadata/_custom_type_script = "uid://dm33po16rd0xa"
+
+[sub_resource type="Resource" id="Resource_ih0fc"]
+script = ExtResource("1_0rdhy")
+evidence_tex = ExtResource("3_5khaj")
+evidence_name = "Wine Bottles"
+characters = Array[String](["Maya"])
+desc = "Three wine bottles are found in the living room. Fingerprints belonging to Nikhil and Maya are present; Rohan's are absent."
+metadata/_custom_type_script = "uid://dm33po16rd0xa"
+
+[sub_resource type="Resource" id="Resource_dynpp"]
+script = ExtResource("1_0rdhy")
+evidence_tex = ExtResource("3_5khaj")
+evidence_name = "Blood in Bathroom Sink"
+characters = Array[String](["Maya"])
+location = "Bath"
+desc = "Diluted blood traces are found in the sink and drain, together with microscopic fibres matching Arjun's shirt."
+metadata/_custom_type_script = "uid://dm33po16rd0xa"
+
+[sub_resource type="Resource" id="Resource_pi3ci"]
+script = ExtResource("1_0rdhy")
+evidence_tex = ExtResource("3_5khaj")
+evidence_name = "Blood Smear in Hallway"
+characters = Array[String](["Maya"])
+location = "Hall"
+desc = "A blood smear extends from the living room toward the bathroom."
+metadata/_custom_type_script = "uid://dm33po16rd0xa"
+
+[sub_resource type="Resource" id="Resource_fjyxh"]
+script = ExtResource("1_0rdhy")
+evidence_tex = ExtResource("3_5khaj")
+evidence_name = "Balcony Door Opened"
+location = "LivingRoom"
+desc = "The balcony door is found open, but there are no balcony footprints, disturbed dust, or evidence of an escape."
 metadata/_custom_type_script = "uid://dm33po16rd0xa"
 
 [resource]
 script = ExtResource("2_00wuh")
-entries = Array[ExtResource("1_0rdhy")]([SubResource("Resource_q41a2"), SubResource("Resource_5fuw8"), SubResource("Resource_5khaj"), SubResource("Resource_4k0de")])
+entries = Array[ExtResource("1_0rdhy")]([SubResource("Resource_q41a2"), SubResource("Resource_5fuw8"), SubResource("Resource_5khaj"), SubResource("Resource_4k0de"), SubResource("Resource_rbv0f"), SubResource("Resource_rh3o1"), SubResource("Resource_68o0n"), SubResource("Resource_dt5in"), SubResource("Resource_iex7t"), SubResource("Resource_ih0fc"), SubResource("Resource_dynpp"), SubResource("Resource_pi3ci"), SubResource("Resource_fjyxh")])

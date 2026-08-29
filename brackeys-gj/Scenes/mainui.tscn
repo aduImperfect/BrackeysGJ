@@ -223,8 +223,8 @@ custom_minimum_size = Vector2(600, 300)
 clip_contents = false
 offset_left = 670.0
 offset_top = 410.0
-offset_right = 710.0
-offset_bottom = 450.0
+offset_right = 1278.0
+offset_bottom = 710.0
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 script = ExtResource("14_5fuw8")
@@ -247,13 +247,13 @@ scale = Vector2(600, 12000)
 texture = ExtResource("14_3q4g7")
 
 [node name="EvidenceHeader" type="TextEdit" parent="EvidenceScrollContainer/EvidenceLocker" unique_id=2136378570]
-z_index = -300
+z_index = 300
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 0
 offset_left = 180.0
-offset_top = 4.0
+offset_top = -46.0
 offset_right = 380.0
-offset_bottom = 44.0
+offset_bottom = -6.0
 text = "Evidence Locker"
 editable = false
 selecting_enabled = false
@@ -261,18 +261,19 @@ script = ExtResource("13_gfj6t")
 
 [node name="TimelineScrollContainer" type="ScrollContainer" parent="." unique_id=2098150592 node_paths=PackedStringArray("evidenceTimeline")]
 z_index = -1200
-custom_minimum_size = Vector2(669.86, 100)
+custom_minimum_size = Vector2(670, 100)
 clip_contents = false
 offset_top = 610.0
 offset_bottom = 718.0
 horizontal_scroll_mode = 2
 vertical_scroll_mode = 0
+scroll_horizontal_by_default = true
 script = ExtResource("17_8i0sk")
-scrollMultiplier = 100
+scrollMultiplier = 300
 evidenceTimeline = NodePath("Timeline")
 
 [node name="Timeline" type="Control" parent="TimelineScrollContainer" unique_id=379029211 node_paths=PackedStringArray("itemsHolder")]
-custom_minimum_size = Vector2(2000, 100)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 script = ExtResource("24_8i0sk")
 itemsHolder = NodePath("Holder")
