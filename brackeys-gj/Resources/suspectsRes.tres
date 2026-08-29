@@ -1,4 +1,4 @@
-[gd_resource type="Resource" format=3 uid="uid://ymd443nravfv"]
+[gd_resource type="Resource" script_class="ValidSuspects" format=3 uid="uid://ymd443nravfv"]
 
 [ext_resource type="Script" uid="uid://biywoxbbisxtt" path="res://Scripts/validSuspects.gd" id="1_a26a5"]
 [ext_resource type="Script" uid="uid://dv5gl54usr1tt" path="res://Scripts/suspects_entry.gd" id="1_rbv0f"]

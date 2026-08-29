@@ -1,19 +1,16 @@
 extends TextureButton
 
-@export var suspectTitle : String
-@export var suspectName : String
-@export_multiline var suspectShortDesc : String
-@export_multiline var suspectInfo : String
-@export var suspectVal : int
+var suspectData : ValidSuspects = preload("res://Resources/suspectsRes.tres")
+
+static var suspectCounter : int
+var myIndex
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	myIndex =  suspectCounter
+	suspectCounter += 1
 	if name == "SuspectButton_1":
-		SuspectTitle._update_text(suspectTitle)
-		SuspectName._update_text(suspectName)
-		SuspectShortDesc._update_text(suspectShortDesc)
-		SuspectInfo._update_text(suspectInfo)
-		SuspicionSliderVal._update_value(suspectVal)
+		_updateInfo(myIndex)
 	pass # Replace with function body.
 
 
@@ -24,11 +21,15 @@ func _process(_delta: float) -> void:
 func _on_gui_input(_event: InputEvent) -> void:
 	if _event is InputEventMouseButton:
 		if _event.button_index == MOUSE_BUTTON_LEFT and _event.pressed:
-			SuspectTitle._update_text(suspectTitle)
-			SuspectName._update_text(suspectName)
-			SuspectShortDesc._update_text(suspectShortDesc)
-			SuspectInfo._update_text(suspectInfo)
-			SuspicionSliderVal._update_value(suspectVal)
+			_updateInfo(myIndex)
+
+
+func _updateInfo(suspectDataIndex : int) -> void:
+	SuspectTitle._update_text(suspectData.entries[suspectDataIndex].suspect_title)
+	SuspectName._update_text(suspectData.entries[suspectDataIndex].suspect_name)
+	SuspectShortDesc._update_text(suspectData.entries[suspectDataIndex].suspect_shortdesc)
+	SuspectInfo._update_text(suspectData.entries[suspectDataIndex].suspect_desc)
+	SuspicionSliderVal._update_value(suspectData.entries[suspectDataIndex].suspect_basesuspicionlevel)
 
 func _input(event: InputEvent):
 	# Check if a mouse button is clicked while the node has focus

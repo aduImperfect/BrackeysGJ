@@ -82,11 +82,6 @@ texture_normal = ExtResource("1_nia38")
 texture_pressed = ExtResource("2_hmkf7")
 texture_hover = ExtResource("3_4vhit")
 script = ExtResource("5_4vhit")
-suspectTitle = "Business Partner"
-suspectName = "Marcus Voss"
-suspectShortDesc = "\"I hadn't spoken to her in weeks. Ask the accountant.\""
-suspectInfo = "Voss co-owned the design firm with the victim and stood to lose everything if the buyout went through without her signature. He claims he was at a client dinner across town, but the reservation was made under a different name. Financial records show three missed loan payments in the last month."
-suspectVal = 70
 
 [node name="SuspectName1" type="TextEdit" parent="Suspects" unique_id=2119083057]
 z_index = -300
@@ -113,11 +108,6 @@ texture_normal = ExtResource("1_nia38")
 texture_pressed = ExtResource("2_hmkf7")
 texture_hover = ExtResource("3_4vhit")
 script = ExtResource("5_4vhit")
-suspectTitle = "Ex-Wife"
-suspectName = "Elena Kade"
-suspectShortDesc = "\"We were finally on good terms. Why would I ruin that?\""
-suspectInfo = "Kade's divorce from the victim finalized eight months ago, but the custody arrangement remained bitter. She says she was home with her sister the night of the murder. Neighbors recall raised voices from her flat around 9pm, though the timing is disputed."
-suspectVal = 50
 
 [node name="SuspectName2" type="TextEdit" parent="Suspects" unique_id=1605724236]
 z_index = -300
@@ -144,11 +134,6 @@ texture_normal = ExtResource("1_nia38")
 texture_pressed = ExtResource("2_hmkf7")
 texture_hover = ExtResource("3_4vhit")
 script = ExtResource("5_4vhit")
-suspectTitle = "Neighbor, Unit 3"
-suspectName = "Danny Reyes"
-suspectShortDesc = "\"I heard something, sure. Didn't think much of it.\""
-suspectInfo = "Reyes lives directly across the hall and admits to hearing a crash around 10:40pm but says he assumed it was furniture being moved. He has a prior trespassing complaint against the victim over a shared parking spot. His story about his own whereabouts that night has shifted twice."
-suspectVal = 30
 
 [node name="SuspectName3" type="TextEdit" parent="Suspects" unique_id=1158992875]
 z_index = -300
