@@ -209,6 +209,7 @@ editable = false
 script = ExtResource("10_crvle")
 
 [node name="EvidenceScrollContainer" type="ScrollContainer" parent="." unique_id=1252394175 node_paths=PackedStringArray("holder", "evidenceLocker")]
+z_index = -900
 custom_minimum_size = Vector2(600, 300)
 clip_contents = false
 offset_left = 670.0
