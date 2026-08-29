@@ -1,5 +1,7 @@
 extends Resource
 
+class_name ValidSuspects
+
 @export var entries: Array[SuspectEntry] = []
 
 # Called when the node enters the scene tree for the first time.
