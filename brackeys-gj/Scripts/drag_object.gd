@@ -8,7 +8,7 @@ class_name DraggableObject
 @export var draggingImg : Sprite2D
 @export var dragComplete : bool = false
 @export var evidenceBGImage : Sprite2D
-@export var evidenceName : TextEdit
+@export var evidenceName : Label
 @export var evidenceChars : Array[String]
 @export var evidenceDesc : TextEdit
 @export var evidenceModVal : Color

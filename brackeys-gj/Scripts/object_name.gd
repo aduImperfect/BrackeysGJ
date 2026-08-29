@@ -1,4 +1,4 @@
-extends TextEdit
+extends Label
 
 class_name ObjectName
 

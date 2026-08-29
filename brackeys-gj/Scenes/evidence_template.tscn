@@ -27,20 +27,18 @@ scale = Vector2(240, 120)
 texture = ExtResource("2_e8oyb")
 
 [node name="ObjectImg" type="Sprite2D" parent="." unique_id=1280895337]
-position = Vector2(182, 12)
+position = Vector2(219, 12)
 scale = Vector2(0.05, 0.05)
 script = ExtResource("3_pvq4j")
 
-[node name="ObjectName" type="TextEdit" parent="." unique_id=591396268]
+[node name="ObjectName" type="Label" parent="." unique_id=915563281]
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 0
 offset_left = 5.0
 offset_top = 4.0
-offset_right = 105.0
-offset_bottom = 24.0
-theme_override_font_sizes/font_size = 16
-editable = false
-selecting_enabled = false
+offset_right = 192.0
+offset_bottom = 29.0
+theme_override_font_sizes/font_size = 15
 script = ExtResource("4_548gt")
 
 [node name="ObjectDesc" type="TextEdit" parent="." unique_id=565804962]
@@ -57,13 +55,13 @@ wrap_mode = 1
 script = ExtResource("5_2keyk")
 
 [node name="DraggablePart" type="Control" parent="." unique_id=431544254 node_paths=PackedStringArray("evidenceBGImage", "evidenceName", "evidenceDesc", "followEvidenceControl")]
-custom_minimum_size = Vector2(240, 120)
+custom_minimum_size = Vector2(240, 35)
 anchors_preset = 0
 offset_right = 240.0
-offset_bottom = 120.0
+offset_bottom = 35.0
 script = ExtResource("6_548gt")
 evidenceBGImage = NodePath("../EvidenceBG")
-evidenceName = NodePath("../ObjectName")
+evidenceName = NodePath("")
 evidenceDesc = NodePath("../ObjectDesc")
 newEvidenceModVal = Color(0, 0, 0, 0.40784314)
 followEvidenceControl = NodePath("..")
