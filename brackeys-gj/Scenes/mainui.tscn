@@ -46,8 +46,8 @@ offset_bottom = 310.0
 
 [node name="SuspectsBGSprite2D" type="Sprite2D" parent="Suspects" unique_id=1455602008]
 z_index = -800
-position = Vector2(300, 200)
-scale = Vector2(600, 400)
+position = Vector2(316.00003, 183.00002)
+scale = Vector2(632.00006, 434)
 texture = ExtResource("1_wc7ih")
 
 [node name="SuspectsHeader" type="TextEdit" parent="Suspects" unique_id=302238619]
@@ -242,8 +242,8 @@ layout_mode = 2
 
 [node name="EvidenceBGSprite2D" type="Sprite2D" parent="EvidenceScrollContainer/EvidenceLocker" unique_id=1973965966]
 z_index = -800
-position = Vector2(300, 6000)
-scale = Vector2(600, 12000)
+position = Vector2(366.5, 6000)
+scale = Vector2(733, 12000)
 texture = ExtResource("14_3q4g7")
 
 [node name="EvidenceHeader" type="TextEdit" parent="EvidenceScrollContainer/EvidenceLocker" unique_id=2136378570]
