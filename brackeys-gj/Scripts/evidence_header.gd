@@ -1,14 +1,16 @@
 extends TextEdit
 
-static var startingPos : Vector2
+#static var startingPos : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	startingPos = global_position
+	#startingPos = global_position
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	global_position = startingPos
+	#global_position = startingPos
+	pass
 
 func _input(event: InputEvent):
 	# Check if a mouse button is clicked while the node has focus

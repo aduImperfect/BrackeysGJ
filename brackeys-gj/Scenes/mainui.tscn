@@ -46,8 +46,8 @@ offset_bottom = 310.0
 
 [node name="SuspectsBGSprite2D" type="Sprite2D" parent="Suspects" unique_id=1455602008]
 z_index = -800
-position = Vector2(316.00003, 183.00002)
-scale = Vector2(632.00006, 434)
+position = Vector2(316, 155)
+scale = Vector2(632, 400)
 texture = ExtResource("1_wc7ih")
 
 [node name="SuspectsHeader" type="TextEdit" parent="Suspects" unique_id=302238619]
@@ -219,20 +219,20 @@ script = ExtResource("10_crvle")
 
 [node name="EvidenceScrollContainer" type="ScrollContainer" parent="." unique_id=1252394175 node_paths=PackedStringArray("holder", "evidenceLocker")]
 z_index = -900
-custom_minimum_size = Vector2(600, 300)
+custom_minimum_size = Vector2(600, 200)
 clip_contents = false
 offset_left = 670.0
-offset_top = 410.0
+offset_top = 370.0
 offset_right = 1278.0
-offset_bottom = 710.0
+offset_bottom = 570.0
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 script = ExtResource("14_5fuw8")
 holder = NodePath("EvidenceLocker")
-hOffset = 300.0
+hOffset = 250.0
 vOffset = 130.0
 minxOffset = 10.0
-minyOffset = 55.0
+minyOffset = 10.0
 scrollMultiplier = 175
 evidenceLocker = NodePath("EvidenceLocker")
 
@@ -242,26 +242,39 @@ layout_mode = 2
 
 [node name="EvidenceBGSprite2D" type="Sprite2D" parent="EvidenceScrollContainer/EvidenceLocker" unique_id=1973965966]
 z_index = -800
-position = Vector2(366.5, 6000)
+position = Vector2(366.5, 5990)
 scale = Vector2(733, 12000)
 texture = ExtResource("14_3q4g7")
 
 [node name="EvidenceHeader" type="TextEdit" parent="EvidenceScrollContainer/EvidenceLocker" unique_id=2136378570]
-z_index = 300
-custom_minimum_size = Vector2(200, 40)
+z_index = -500
+custom_minimum_size = Vector2(40, 500)
 layout_mode = 0
-offset_left = 180.0
-offset_top = -46.0
-offset_right = 380.0
-offset_bottom = -6.0
-text = "Evidence Locker"
+offset_left = 548.0
+offset_top = 10.0
+offset_right = 588.0
+offset_bottom = 510.0
+text = "E
+V
+I
+D
+E
+N
+C
+E
+
+L
+O
+C
+K
+E
+R"
 editable = false
 selecting_enabled = false
 script = ExtResource("13_gfj6t")
 
 [node name="TimelineScrollContainer" type="ScrollContainer" parent="." unique_id=2098150592 node_paths=PackedStringArray("evidenceTimeline")]
-z_index = -1200
-custom_minimum_size = Vector2(670, 100)
+custom_minimum_size = Vector2(1280, 100)
 clip_contents = false
 offset_top = 610.0
 offset_bottom = 718.0
@@ -269,7 +282,7 @@ horizontal_scroll_mode = 2
 vertical_scroll_mode = 0
 scroll_horizontal_by_default = true
 script = ExtResource("17_8i0sk")
-scrollMultiplier = 300
+scrollMultiplier = 200
 evidenceTimeline = NodePath("Timeline")
 
 [node name="Timeline" type="Control" parent="TimelineScrollContainer" unique_id=379029211 node_paths=PackedStringArray("itemsHolder")]
@@ -281,11 +294,11 @@ itemInfo = ExtResource("25_c1erm")
 lineColor = Color(1, 0.41485962, 0.3450889, 1)
 startOffset = Vector2(0, 25)
 endOffset = Vector2(5000, 25)
+lineZIndex = 100
 
 [node name="TimelineBGSprite2D" type="Sprite2D" parent="TimelineScrollContainer/Timeline" unique_id=1067560464]
-z_index = -1300
-position = Vector2(1000, 50)
-scale = Vector2(2000, 100)
+position = Vector2(3000, 75)
+scale = Vector2(6000, 150)
 texture = ExtResource("21_qoud8")
 
 [node name="TimelineHeader" type="TextEdit" parent="TimelineScrollContainer/Timeline" unique_id=1865272060]
@@ -293,15 +306,16 @@ z_index = 1000
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 0
 offset_left = 8.0
-offset_top = 3.0
+offset_top = 5.0
 offset_right = 208.0
-offset_bottom = 43.0
+offset_bottom = 45.0
 text = "Chain Of Evidence"
 editable = false
 selecting_enabled = false
 script = ExtResource("22_yj67u")
 
 [node name="Holder" type="Control" parent="TimelineScrollContainer/Timeline" unique_id=33465211]
+z_index = 100
 anchors_preset = 0
 offset_left = 11.0
 offset_top = 50.0
@@ -309,21 +323,20 @@ offset_right = 51.0
 offset_bottom = 90.0
 
 [node name="TimelineResetButton" type="Button" parent="TimelineScrollContainer/Timeline" unique_id=467882638]
-z_index = -100
 layout_mode = 0
-offset_left = 601.0
+offset_left = 1200.0
 offset_top = 6.0
-offset_right = 652.0
+offset_right = 1251.0
 offset_bottom = 37.0
 text = "Reset"
 script = ExtResource("28_ry14t")
 
 [node name="EvidenceCheckButton" type="Button" parent="TimelineScrollContainer/Timeline" unique_id=384517381 node_paths=PackedStringArray("winScreen", "lostScreen")]
 layout_mode = 0
-offset_left = 465.0
-offset_top = 6.0
-offset_right = 593.0
-offset_bottom = 37.0
+offset_left = 1050.0
+offset_top = 5.0
+offset_right = 1178.0
+offset_bottom = 36.0
 disabled = true
 text = "Evidence Check"
 script = ExtResource("29_d2nfp")
@@ -342,8 +355,8 @@ script = ExtResource("26_d2nfp")
 
 [node name="HouseBGSprite2D" type="Sprite2D" parent="House" unique_id=1759952695]
 z_index = -1200
-position = Vector2(330, 300)
-scale = Vector2(660, 600)
+position = Vector2(325, 295)
+scale = Vector2(670, 610)
 texture = ExtResource("23_ih6jt")
 
 [node name="HouseHeader" type="TextEdit" parent="House" unique_id=585503340]
