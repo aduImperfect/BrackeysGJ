@@ -33,6 +33,7 @@ func _process(_delta: float) -> void:
 
 	if DraggableObject.forcedUpdateStatic == true:
 		HouseManager.dragList.clear()
+		HouseManager.forceDrawCall = true
 		setPos = Vector2.ZERO
 		dragComplete = false
 		drag_offset = Vector2.ZERO

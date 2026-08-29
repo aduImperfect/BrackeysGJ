@@ -21,6 +21,7 @@ func _process(_delta: float) -> void:
 
 func _draw() -> void:
 	if dragList.size() <= 1:
+		
 		return
 	
 	for k in dragList.size() - 1:

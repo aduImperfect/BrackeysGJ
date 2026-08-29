@@ -261,7 +261,7 @@ script = ExtResource("13_gfj6t")
 
 [node name="TimelineScrollContainer" type="ScrollContainer" parent="." unique_id=2098150592 node_paths=PackedStringArray("evidenceTimeline")]
 z_index = -1200
-custom_minimum_size = Vector2(669.86, 100)
+custom_minimum_size = Vector2(670, 100)
 clip_contents = false
 offset_top = 610.0
 offset_bottom = 718.0
@@ -272,7 +272,7 @@ scrollMultiplier = 100
 evidenceTimeline = NodePath("Timeline")
 
 [node name="Timeline" type="Control" parent="TimelineScrollContainer" unique_id=379029211 node_paths=PackedStringArray("itemsHolder")]
-custom_minimum_size = Vector2(2000, 100)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 script = ExtResource("24_8i0sk")
 itemsHolder = NodePath("Holder")
