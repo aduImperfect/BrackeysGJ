@@ -17,6 +17,7 @@ func _updateInfo(index : int) -> void:
 	get_child(1)._update_texture(entry.evidence_tex)
 	get_child(2)._update_text(entry.evidence_name)
 	get_child(3)._update_text(entry.desc)
+	get_child(4).evidenceChars = entry.characters
 	get_child(4).get_child(0)._update_texture(entry.evidence_tex)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

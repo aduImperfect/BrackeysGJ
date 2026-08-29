@@ -19,6 +19,8 @@ static func makeEntry(p_name: String, p_characters: Array[String], p_location: S
 	return e
 
 static func compareEntries(a: EvidenceEntry, b: EvidenceEntry) -> bool:
+	#print("A: ", a.evidence_name, a.location, a.characters)
+	#print("B: ", b.evidence_name, b.location, b.characters)
 	return a.evidence_name == b.evidence_name \
 		and a.location == b.location \
 		and a.characters == b.characters \
