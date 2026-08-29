@@ -1,5 +1,7 @@
 extends Control
 
+class_name DraggableObject
+
 @export var is_dragging: bool = false
 @export var drag_offset: Vector2 = Vector2.ZERO
 @export var startPos: Vector2 = Vector2.ZERO
@@ -13,14 +15,20 @@ extends Control
 
 @export var followEvidenceControl : Control
 
+static var forcedUpdateStatic : bool = false
+static var waitCount : int = 0
+static var waitCounter : int = 0
+
 func _ready() -> void:
-	#evidenceBGImage = owner.get_child(0) as Sprite2D
 	evidenceModVal = evidenceBGImage.modulate
+	dragComplete = false
+	waitCount = 0
+	waitCounter = EvidenceData.evidenceCounter
 
 func _process(_delta: float) -> void:
 	startPos = followEvidenceControl.global_position
 
-	if TimelineReset.resetTimeline == true:
+	if DraggableObject.forcedUpdateStatic == true:
 		dragComplete = false
 		drag_offset = Vector2.ZERO
 		global_position = startPos
@@ -29,7 +37,11 @@ func _process(_delta: float) -> void:
 			draggingImg.visible = false
 			draggingImg.z_index = -200
 		evidenceBGImage.modulate = evidenceModVal
-		#TimelineReset.resetTimeline = false
+		if waitCount < waitCounter:
+			waitCount += 1
+		else:
+			DraggableObject.forcedUpdateStatic = false
+			waitCount = 0
 
 	if is_dragging:
 		if draggingImg != null:
@@ -62,8 +74,8 @@ func _process(_delta: float) -> void:
 				draggingImg.global_position = startPos
 
 func _set_values(_locationName : String) -> void:
-	dragComplete = true
-	if draggingImg != null:
+	if draggingImg != null && draggingImg.visible == true:
+		dragComplete = true
 		global_position = get_global_mouse_position()
 		draggingImg.position = Vector2.ZERO
 		var entry = EvidenceEntry.makeEntry(evidenceName.text,["tesssttttt"], _locationName, evidenceDesc.text)

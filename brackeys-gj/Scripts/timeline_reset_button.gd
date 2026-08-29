@@ -21,4 +21,6 @@ func _on_pressed() -> void:
 	HallControl.arrControls.clear()
 	LivingRoomControl.arrControls.clear()
 	Bedroom3Control.arrControls.clear()
+	
+	DraggableObject.forcedUpdateStatic = true
 	resetTimeline = true
