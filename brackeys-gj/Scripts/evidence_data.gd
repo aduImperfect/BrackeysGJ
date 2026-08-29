@@ -6,8 +6,24 @@ var evidenceData : ValidEvidences = preload("res://Resources/evidencesRes.tres")
 static var evidenceCounter : int = 0
 var myIndex
 
+static var indexesConsumed : Array[bool] = []
+
 func _ready() -> void:
-	myIndex =  evidenceCounter
+	if evidenceCounter == 0:
+		indexesConsumed.clear()
+		for k in evidenceData.entries.size():
+			indexesConsumed.append(false)
+
+	myIndex = randi_range(0, evidenceData.entries.size() - 1)
+
+	#var checkCounter : int = 0
+	while (indexesConsumed[myIndex] == true): 
+		#&& (checkCounter != evidenceData.entries.size()):
+		#checkCounter += 1
+		myIndex = randi_range(0, evidenceData.entries.size() - 1)
+
+	indexesConsumed[myIndex] = true
+
 	if (evidenceCounter + 1) < evidenceData.entries.size():
 		evidenceCounter += 1
 	_updateInfo(myIndex)

@@ -21,7 +21,9 @@ func spawnEvidences() -> void:
 	#Make sure to expand the scroll size depending on the number of evidences spawned in.
 	evidenceLocker.custom_minimum_size.y = scrollMultiplier * ceili(evidenceData.entries.size()/2)
 
-	for evidenceIndex in  evidenceData.entries.size():
+	#var jumbledEvidenceEntries = evidenceData.entries.shuffle()
+
+	for evidenceIndex in evidenceData.entries.size():
 		var spawnedEvidence = evidenceScene.instantiate() as EvidenceData
 		var column = evidenceIndex % 2
 		var row = evidenceIndex / 2
