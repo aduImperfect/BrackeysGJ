@@ -279,8 +279,8 @@ script = ExtResource("24_8i0sk")
 itemsHolder = NodePath("Holder")
 itemInfo = ExtResource("25_c1erm")
 lineColor = Color(1, 0.41485962, 0.3450889, 1)
-startOffset = Vector2(40, 15)
-endOffset = Vector2(0, 15)
+startOffset = Vector2(0, 25)
+endOffset = Vector2(5000, 25)
 
 [node name="TimelineBGSprite2D" type="Sprite2D" parent="TimelineScrollContainer/Timeline" unique_id=1067560464]
 z_index = -1300
@@ -289,13 +289,13 @@ scale = Vector2(2000, 100)
 texture = ExtResource("21_qoud8")
 
 [node name="TimelineHeader" type="TextEdit" parent="TimelineScrollContainer/Timeline" unique_id=1865272060]
-z_index = -600
+z_index = 1000
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 0
 offset_left = 8.0
-offset_top = 4.0
+offset_top = 3.0
 offset_right = 208.0
-offset_bottom = 44.0
+offset_bottom = 43.0
 text = "Chain Of Evidence"
 editable = false
 selecting_enabled = false

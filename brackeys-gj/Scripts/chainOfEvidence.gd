@@ -9,7 +9,7 @@ class_name ChainOfEvidence
 @export var endOffset : Vector2 = Vector2.ZERO
 @export var lineZIndex : int = -1250
 
-static var offset : float = 300
+static var offset : float = 200
 var validEvidences : ValidEvidences = preload("res://Resources/evidencesRes.tres")
 static var itemsHolderInternal : Control
 static var itemInfoInternal : PackedScene
@@ -22,6 +22,7 @@ func _ready() -> void:
 	itemInfoInternal = itemInfo
 	selfInternal = self
 	z_index = lineZIndex
+	queue_redraw()
 
 func _process(_delta: float) -> void:
 	if spawnedEvidences.size() == validEvidences.entries.size():
@@ -34,14 +35,18 @@ func _process(_delta: float) -> void:
 
 func _draw() -> void:
 	var xform := get_global_transform().affine_inverse()
-	for i in range(spawnedEvidences.size() - 1):
-		var la := spawnedEvidences[i] as Node2D
-		var lb := spawnedEvidences[i + 1] as Node2D
-		if not is_instance_valid(la) or not is_instance_valid(lb):
-			continue
-		var from := xform * la.global_position + startOffset
-		var to := xform * lb.global_position + endOffset
-		draw_line(from, to, lineColor, lineWidth)
+	#for i in range(spawnedEvidences.size() - 1):
+		#var la := spawnedEvidences[i] as Node2D
+		#var lb := spawnedEvidences[i + 1] as Node2D
+		#if not is_instance_valid(la) or not is_instance_valid(lb):
+			#continue
+		#var from := xform * la.global_position + startOffset
+		#var to := xform * lb.global_position + endOffset
+		#draw_line(from, to, lineColor, lineWidth)
+	var from := xform * itemsHolderInternal.global_position + startOffset
+	var to := xform * itemsHolderInternal.global_position + endOffset
+	draw_line(from, to, lineColor, lineWidth)
+	print("test")
 
 static func _spawnEvidence(entry: EvidenceEntry) -> void:
 	var newEvidence := itemInfoInternal.instantiate() as Node2D
@@ -57,8 +62,8 @@ static func _spawnEvidence(entry: EvidenceEntry) -> void:
 	spawnedEvidencesEntries.append(entry)
 	spawnedEvidences.append(newEvidence)
 
-	if selfInternal:
-		selfInternal.queue_redraw()
+	#if selfInternal:
+		#selfInternal.queue_redraw()
 
 func _checkAndPopulateEvidences(_playerEvidences : AllEvidences) -> void:
 	_clearEvidences()
@@ -70,4 +75,3 @@ func _clearEvidences() -> void:
 		evidence.queue_free()
 	spawnedEvidences.clear()
 	spawnedEvidencesEntries.clear()
-	queue_redraw()
