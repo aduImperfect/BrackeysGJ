@@ -2,21 +2,25 @@ extends Control
 
 class_name EvidenceData
 
-@export var evidenceTex : Texture2D
-@export var evidenceName : String
-@export var evidenceCharacters : Array[String]
-@export_multiline var evidenceDesc : String
+var evidenceData : ValidEvidences = preload("res://Resources/evidencesRes.tres")
+static var evidenceCounter : int
+var myIndex
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	myIndex =  evidenceCounter
+	if evidenceCounter + 1 < evidenceData.entries.size():
+		evidenceCounter += 1
+	_updateInfo(myIndex)
 
+func  _updateInfo(index : int) -> void:
+	var entry = evidenceData.entries[index]
+	ObjectTex._update_texture(entry.evidence_tex)
+	ObjectName._update_text(entry.evidence_name)
+	ObjectDesc._update_text(entry.desc)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	ObjectTex._update_texture(evidenceTex)
-	ObjectName._update_text(evidenceName)
-	ObjectDesc._update_text(evidenceDesc)
+	pass
 
 func _input(event: InputEvent):
 	# Check if a mouse button is clicked while the node has focus

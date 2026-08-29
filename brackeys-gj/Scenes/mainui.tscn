@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dkb3b4y1kedq8" path="res://Textures/Suspects_3.png" id="3_4vhit"]
 [ext_resource type="Script" uid="uid://mg242xff10ut" path="res://Scripts/suspect_button.gd" id="5_4vhit"]
 [ext_resource type="Script" uid="uid://cug4o61k3blg6" path="res://Scripts/suspect_name_under.gd" id="6_01wry"]
-[ext_resource type="Script" uid="uid://tmvam1swun57" path="res://Scripts/suspect_information.gd" id="6_6c4uu"]
+[ext_resource type="Script" path="res://Scripts/suspect_information.gd" id="6_6c4uu"]
 [ext_resource type="Script" uid="uid://xvyyvay02k1o" path="res://Scripts/suspect_title.gd" id="7_hpdrm"]
 [ext_resource type="Script" uid="uid://cfrw6uoohei75" path="res://Scripts/suspect_name.gd" id="8_c18ef"]
 [ext_resource type="Script" uid="uid://17mewq7g522f" path="res://Scripts/suspect_short_desc.gd" id="9_w0ycj"]
@@ -262,9 +262,6 @@ offset_top = 55.0
 offset_right = 290.0
 offset_bottom = 155.0
 script = ExtResource("14_ouli6")
-evidenceTex = ExtResource("17_ueqbn")
-evidenceName = "Kitchen Knife"
-evidenceDesc = "Missing from the block, later found wiped clean."
 
 [node name="Evidence1BG" type="Sprite2D" parent="EvidenceScrollContainer/EvidenceLocker/Evidence1" unique_id=1793554176]
 z_index = -700
@@ -310,9 +307,6 @@ offset_top = 55.0
 offset_right = 590.0
 offset_bottom = 155.0
 script = ExtResource("14_ouli6")
-evidenceTex = ExtResource("24_i3k7k")
-evidenceName = "Blood Trace"
-evidenceDesc = "Small pattern inconsistent with the body's final position."
 
 [node name="Evidence2BG" type="Sprite2D" parent="EvidenceScrollContainer/EvidenceLocker/Evidence2" unique_id=1184839474]
 z_index = -700
@@ -358,9 +352,6 @@ offset_top = 185.0
 offset_right = 290.0
 offset_bottom = 285.0
 script = ExtResource("14_ouli6")
-evidenceTex = ExtResource("23_jhobj")
-evidenceName = "Muddy Footprint"
-evidenceDesc = "Size 11, tracked in from outside, still damp."
 
 [node name="Evidence3BG" type="Sprite2D" parent="EvidenceScrollContainer/EvidenceLocker/Evidence3" unique_id=97410052]
 z_index = -700
@@ -406,9 +397,6 @@ offset_top = 185.0
 offset_right = 590.0
 offset_bottom = 285.0
 script = ExtResource("14_ouli6")
-evidenceTex = ExtResource("24_oiwit")
-evidenceName = "Torn Letter"
-evidenceDesc = "Unsigned note demanding repayment, torn in half."
 
 [node name="Evidence4BG" type="Sprite2D" parent="EvidenceScrollContainer/EvidenceLocker/Evidence4" unique_id=101458765]
 z_index = -700
@@ -454,9 +442,6 @@ offset_top = 315.0
 offset_right = 290.0
 offset_bottom = 415.0
 script = ExtResource("14_ouli6")
-evidenceTex = ExtResource("25_w2f58")
-evidenceName = "Spare Key"
-evidenceDesc = "Reported \"lost\" by the victim two weeks prior."
 
 [node name="Evidence5BG" type="Sprite2D" parent="EvidenceScrollContainer/EvidenceLocker/Evidence5" unique_id=683852329]
 z_index = -700
@@ -502,9 +487,6 @@ offset_top = 315.0
 offset_right = 590.0
 offset_bottom = 435.0
 script = ExtResource("14_ouli6")
-evidenceTex = ExtResource("26_mr6a0")
-evidenceName = "Single Glove"
-evidenceDesc = "Left-hand, leather, no matching pair recovered."
 
 [node name="Evidence6BG" type="Sprite2D" parent="EvidenceScrollContainer/EvidenceLocker/Evidence6" unique_id=1699053441]
 z_index = -700
@@ -550,9 +532,6 @@ offset_top = 445.0
 offset_right = 290.0
 offset_bottom = 565.0
 script = ExtResource("14_ouli6")
-evidenceTex = ExtResource("27_q41a2")
-evidenceName = "Insurance Policy"
-evidenceDesc = "Recently amended, payout doubled last month."
 
 [node name="Evidence7BG" type="Sprite2D" parent="EvidenceScrollContainer/EvidenceLocker/Evidence7" unique_id=1292260523]
 z_index = -700
@@ -598,9 +577,6 @@ offset_top = 445.0
 offset_right = 590.0
 offset_bottom = 565.0
 script = ExtResource("14_ouli6")
-evidenceTex = ExtResource("28_5fuw8")
-evidenceName = "Victim's Phone"
-evidenceDesc = "Last call placed at 10:32pm, 47 seconds long."
 
 [node name="Evidence8BG" type="Sprite2D" parent="EvidenceScrollContainer/EvidenceLocker/Evidence8" unique_id=1776675264]
 z_index = -700
