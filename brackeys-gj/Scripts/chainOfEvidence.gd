@@ -7,6 +7,7 @@ class_name ChainOfEvidence
 @export var lineWidth : float = 2.0
 @export var startOffset : Vector2 = Vector2.ZERO
 @export var endOffset : Vector2 = Vector2.ZERO
+@export var lineZIndex : int = -1250
 
 static var offset : float = 300
 var validEvidences : ValidEvidences = preload("res://Resources/evidencesRes.tres")
@@ -20,6 +21,7 @@ func _ready() -> void:
 	itemsHolderInternal = itemsHolder
 	itemInfoInternal = itemInfo
 	selfInternal = self
+	z_index = lineZIndex
 
 func _process(_delta: float) -> void:
 	if spawnedEvidences.size() == validEvidences.entries.size():
