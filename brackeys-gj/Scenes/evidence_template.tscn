@@ -11,7 +11,7 @@
 
 [node name="Evidence" type="Control" unique_id=1643630644]
 z_index = -500
-custom_minimum_size = Vector2(240, 120)
+custom_minimum_size = Vector2(240, 200)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 10.0
@@ -22,8 +22,8 @@ script = ExtResource("1_6g3e4")
 
 [node name="EvidenceBG" type="Sprite2D" parent="." unique_id=1608268065]
 z_index = -200
-position = Vector2(120.000015, 60.000023)
-scale = Vector2(240, 120)
+position = Vector2(120, 100)
+scale = Vector2(240, 200)
 texture = ExtResource("2_e8oyb")
 
 [node name="ObjectImg" type="Sprite2D" parent="." unique_id=1280895337]
@@ -42,7 +42,7 @@ theme_override_font_sizes/font_size = 15
 script = ExtResource("4_548gt")
 
 [node name="ObjectDesc" type="TextEdit" parent="." unique_id=565804962]
-custom_minimum_size = Vector2(230, 80)
+custom_minimum_size = Vector2(230, 160)
 layout_mode = 0
 offset_left = 5.0
 offset_top = 35.0

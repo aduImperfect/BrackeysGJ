@@ -31,7 +31,6 @@ func _ready() -> void:
 	waitCounter = EvidenceData.evidenceCounter
 
 func _process(_delta: float) -> void:
-	currentControl = self
 	startPos = followEvidenceControl.global_position
 
 	if DraggableObject.forcedUpdateStatic == true:

@@ -219,7 +219,7 @@ script = ExtResource("10_crvle")
 
 [node name="EvidenceScrollContainer" type="ScrollContainer" parent="." unique_id=1252394175 node_paths=PackedStringArray("holder", "evidenceLocker")]
 z_index = -900
-custom_minimum_size = Vector2(600, 200)
+custom_minimum_size = Vector2(600, 240)
 clip_contents = false
 offset_left = 670.0
 offset_top = 370.0
@@ -230,10 +230,10 @@ vertical_scroll_mode = 2
 script = ExtResource("14_5fuw8")
 holder = NodePath("EvidenceLocker")
 hOffset = 250.0
-vOffset = 130.0
+vOffset = 210.0
 minxOffset = 10.0
 minyOffset = 10.0
-scrollMultiplier = 150
+scrollMultiplier = 260
 evidenceLocker = NodePath("EvidenceLocker")
 
 [node name="EvidenceLocker" type="Control" parent="EvidenceScrollContainer" unique_id=1616462786]
