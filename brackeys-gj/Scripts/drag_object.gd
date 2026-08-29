@@ -66,7 +66,7 @@ func _set_values(_locationName : String) -> void:
 	if draggingImg != null:
 		global_position = get_global_mouse_position()
 		draggingImg.position = Vector2.ZERO
-		var entry = EvidenceEntry.makeEntry(evidenceName.text,["tesssttttt"], _locationName, "10", evidenceDesc.text)
+		var entry = EvidenceEntry.makeEntry(evidenceName.text,["tesssttttt"], _locationName, evidenceDesc.text)
 		ChainOfEvidence._spawnEvidence(entry)
 		evidenceBGImage.modulate = newEvidenceModVal
 

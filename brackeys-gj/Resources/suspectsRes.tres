@@ -1,0 +1,35 @@
+[gd_resource type="Resource" format=3 uid="uid://ymd443nravfv"]
+
+[ext_resource type="Script" uid="uid://biywoxbbisxtt" path="res://Scripts/validSuspects.gd" id="1_a26a5"]
+[ext_resource type="Script" uid="uid://dv5gl54usr1tt" path="res://Scripts/suspects_entry.gd" id="1_rbv0f"]
+
+[sub_resource type="Resource" id="Resource_q41a2"]
+script = ExtResource("1_rbv0f")
+suspect_title = "Business Partner"
+suspect_name = "Marcus Voss"
+suspect_shortdesc = "\"I hadn't spoken to her in weeks. Ask the accountant.\""
+suspect_desc = "Voss co-owned the design firm with the victim and stood to lose everything if the buyout went through without her signature. He claims he was at a client dinner across town, but the reservation was made under a different name. Financial records show three missed loan payments in the last month."
+suspect_basesuspicionlevel = 70
+metadata/_custom_type_script = "uid://dv5gl54usr1tt"
+
+[sub_resource type="Resource" id="Resource_5fuw8"]
+script = ExtResource("1_rbv0f")
+suspect_title = "Ex-Wife"
+suspect_name = "Elena Kade"
+suspect_shortdesc = "\"We were finally on good terms. Why would I ruin that?\""
+suspect_desc = "Kade's divorce from the victim finalized eight months ago, but the custody arrangement remained bitter. She says she was home with her sister the night of the murder. Neighbors recall raised voices from her flat around 9pm, though the timing is disputed."
+suspect_basesuspicionlevel = 50
+metadata/_custom_type_script = "uid://dv5gl54usr1tt"
+
+[sub_resource type="Resource" id="Resource_7vks4"]
+script = ExtResource("1_rbv0f")
+suspect_title = "Neighbor, Unit 3"
+suspect_name = "Danny Reyes"
+suspect_shortdesc = "\"I heard something, sure. Didn't think much of it.\""
+suspect_desc = "Reyes lives directly across the hall and admits to hearing a crash around 10:40pm but says he assumed it was furniture being moved. He has a prior trespassing complaint against the victim over a shared parking spot. His story about his own whereabouts that night has shifted twice."
+suspect_basesuspicionlevel = 30
+metadata/_custom_type_script = "uid://dv5gl54usr1tt"
+
+[resource]
+script = ExtResource("1_a26a5")
+entries = Array[ExtResource("1_rbv0f")]([SubResource("Resource_q41a2"), SubResource("Resource_5fuw8"), SubResource("Resource_7vks4")])
