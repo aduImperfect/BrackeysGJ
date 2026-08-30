@@ -35,14 +35,6 @@ func _process(_delta: float) -> void:
 
 func _draw() -> void:
 	var xform := get_global_transform().affine_inverse()
-	#for i in range(spawnedEvidences.size() - 1):
-		#var la := spawnedEvidences[i] as Node2D
-		#var lb := spawnedEvidences[i + 1] as Node2D
-		#if not is_instance_valid(la) or not is_instance_valid(lb):
-			#continue
-		#var from := xform * la.global_position + startOffset
-		#var to := xform * lb.global_position + endOffset
-		#draw_line(from, to, lineColor, lineWidth)
 	var from := xform * itemsHolderInternal.global_position + startOffset
 	var to := xform * itemsHolderInternal.global_position + endOffset
 	draw_line(from, to, lineColor, lineWidth)
@@ -56,13 +48,13 @@ static func _spawnEvidence(entry: EvidenceEntry) -> void:
 	var nameLab := newEvidence.find_child("EvidenceName") as Label
 	nameLab.text = entry.evidence_name
 
+	var locLab := newEvidence.find_child("EvidenceLocation") as Label
+	locLab.text = entry.location
+
 	var evidenceTex := newEvidence.find_child("EvidenceTex") as TextureRect
 	evidenceTex.texture = entry.evidence_tex
 	spawnedEvidencesEntries.append(entry)
 	spawnedEvidences.append(newEvidence)
-
-	#if selfInternal:
-		#selfInternal.queue_redraw()
 
 func _checkAndPopulateEvidences(_playerEvidences : AllEvidences) -> void:
 	_clearEvidences()
