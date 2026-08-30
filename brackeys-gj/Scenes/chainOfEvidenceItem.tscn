@@ -8,7 +8,7 @@
 layout_mode = 3
 anchors_preset = 0
 offset_right = 142.0
-offset_bottom = 92.0
+offset_bottom = 64.0
 
 [node name="EvidenceName" type="Label" parent="Control" unique_id=291498499]
 layout_mode = 0
@@ -26,3 +26,11 @@ offset_bottom = 35.0
 texture = ExtResource("1_dgy51")
 expand_mode = 5
 stretch_mode = 4
+
+[node name="EvidenceLocation" type="Label" parent="Control" unique_id=1236082642]
+layout_mode = 0
+offset_top = 46.0
+offset_right = 41.0
+offset_bottom = 68.99999
+theme_override_font_sizes/font_size = 12
+text = "loc"

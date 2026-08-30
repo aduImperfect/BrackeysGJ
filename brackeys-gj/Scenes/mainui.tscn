@@ -273,9 +273,11 @@ selecting_enabled = false
 script = ExtResource("13_gfj6t")
 
 [node name="TimelineScrollContainer" type="ScrollContainer" parent="." unique_id=2098150592 node_paths=PackedStringArray("evidenceTimeline")]
+z_index = 50
 custom_minimum_size = Vector2(1280, 100)
 clip_contents = false
 offset_top = 610.0
+offset_right = 1280.0
 offset_bottom = 718.0
 horizontal_scroll_mode = 2
 vertical_scroll_mode = 0
@@ -361,13 +363,13 @@ texture = ExtResource("23_ih6jt")
 
 [node name="HouseHeader" type="TextEdit" parent="House" unique_id=585503340]
 z_index = -300
-custom_minimum_size = Vector2(300, 40)
+custom_minimum_size = Vector2(350, 40)
 layout_mode = 0
 offset_left = 8.0
 offset_top = 6.0
 offset_right = 308.0
 offset_bottom = 46.0
-text = "The Scene — Ashcombe Flat, Unit 4"
+text = "The Scene — Enigma Apartments, Unit 57"
 editable = false
 selecting_enabled = false
 script = ExtResource("27_kcbrv")
