@@ -46,7 +46,7 @@ offset_bottom = 310.0
 
 [node name="SuspectsBGSprite2D" type="Sprite2D" parent="Suspects" unique_id=1455602008]
 z_index = -800
-position = Vector2(316, 155)
+position = Vector2(316.00006, 160.00002)
 scale = Vector2(632, 400)
 texture = ExtResource("1_wc7ih")
 
