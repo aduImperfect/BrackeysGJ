@@ -54,20 +54,25 @@ selecting_enabled = false
 wrap_mode = 1
 script = ExtResource("5_2keyk")
 
-[node name="DraggablePart" type="Control" parent="." unique_id=431544254 node_paths=PackedStringArray("evidenceBGImage", "evidenceName", "evidenceDesc", "followEvidenceControl")]
+[node name="DraggablePart" type="Control" parent="." unique_id=431544254 node_paths=PackedStringArray("draggingImg", "evidenceBGImage", "evidenceName", "evidenceDesc", "followEvidenceControl")]
 custom_minimum_size = Vector2(240, 35)
 anchors_preset = 0
 offset_right = 240.0
 offset_bottom = 35.0
 script = ExtResource("6_548gt")
+draggingImg = NodePath("DragObjImg")
 evidenceBGImage = NodePath("../EvidenceBG")
 evidenceName = NodePath("../ObjectName")
 evidenceDesc = NodePath("../ObjectDesc")
 newEvidenceModVal = Color(0, 0, 0, 0.40784314)
 followEvidenceControl = NodePath("..")
 
-[node name="DragObjImg" type="Sprite2D" parent="DraggablePart" unique_id=1634869368]
+[node name="DragObjImg" type="TextureRect" parent="DraggablePart" unique_id=2009260818]
 visible = false
+layout_mode = 0
 scale = Vector2(0.1, 0.1)
+mouse_filter = 0
+mouse_behavior_recursive = 1
+mouse_force_pass_scroll_events = false
 texture = ExtResource("7_2keyk")
 script = ExtResource("8_g7yvx")

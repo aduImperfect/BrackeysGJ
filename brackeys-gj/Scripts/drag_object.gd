@@ -5,7 +5,7 @@ class_name DraggableObject
 @export var is_dragging: bool = false
 @export var drag_offset: Vector2 = Vector2.ZERO
 @export var startPos: Vector2 = Vector2.ZERO
-@export var draggingImg : Sprite2D
+@export var draggingImg : TextureRect
 @export var dragComplete : bool = false
 @export var evidenceBGImage : Sprite2D
 @export var evidenceName : Label
@@ -23,15 +23,22 @@ static var currentControl : Control
 static var forcedUpdateStatic : bool = false
 static var waitCount : int = 0
 static var waitCounter : int = 0
+var draggingParent : Control
+var anotherStartPos : Vector2
+var presssCount : int
 
 func _ready() -> void:
 	evidenceModVal = evidenceBGImage.modulate
 	dragComplete = false
 	waitCount = 0
 	waitCounter = EvidenceData.evidenceCounter
+	draggingParent = draggingImg.get_parent() as Control
+	presssCount = 0
 
 func _process(_delta: float) -> void:
 	startPos = followEvidenceControl.global_position
+	if name.contains("140"):
+		print(name + " "  + str(startPos) + " " + str(anotherStartPos) + " " + str(global_position))
 
 	if DraggableObject.forcedUpdateStatic == true:
 		HouseManager.dragList.clear()
@@ -57,6 +64,19 @@ func _process(_delta: float) -> void:
 			draggingImg.z_index = 1000
 			draggingImg.global_position = get_global_mouse_position()
 
+	#if(draggingImg.get_parent() != draggingParent):
+		#draggingImg.reparent(draggingParent)
+	#if is_dragging == false && abs(startPos - global_position) != Vector2.ZERO:
+		#var scene_root = get_tree().current_scene
+		#if(draggingImg.get_parent() != scene_root):
+			#draggingParent.reparent(scene_root)
+	if(presssCount == 1) :
+		print(name)
+		var scene_root = get_tree().current_scene
+		if(draggingImg.get_parent() != scene_root):
+			draggingParent.reparent(scene_root)
+
+	presssCount = 0
 	if is_dragging == false && dragComplete == false:
 		if Bedroom1MasterControl.mouseEntered == true:
 			Bedroom1MasterControl.arrControls.append(self)
@@ -87,6 +107,9 @@ func _process(_delta: float) -> void:
 func _set_values(_locationName : String) -> void:
 	if draggingImg != null && draggingImg.visible == true:
 		dragComplete = true
+		#var scene_root = get_tree().current_scene
+		#if(draggingImg.get_parent() != scene_root):
+			#draggingParent.reparent(scene_root)
 		global_position = get_global_mouse_position()
 		setPos = global_position
 		draggingImg.position = Vector2.ZERO
@@ -121,21 +144,21 @@ func _gui_input(_event: InputEvent) -> void:
 	if dragComplete == true:
 		return
 
-	if global_position.y < 300:
-		return
-
 	if _event is InputEventMouseButton:
 		if _event.button_index == MOUSE_BUTTON_LEFT and _event.pressed:
+			print("mouse clicked ", name)
 			is_dragging = true
 			#startPos = global_position
-			draggingImg = get_child(0) as Sprite2D
+			anotherStartPos = global_position
+			draggingImg = get_child(0) as TextureRect
 			drag_offset = get_global_mouse_position() - global_position
+			presssCount = 1
 		elif _event.button_index == MOUSE_BUTTON_LEFT and not _event.pressed:
 			is_dragging = false
+			presssCount = 0
 
-func _input(event: InputEvent):
-	# Check if a mouse button is clicked while the node has focus
-	if has_focus() and event is InputEventMouseButton and event.pressed:
-		# If the click position is outside the node's rectangle
-		if not get_global_rect().has_point(event.position):
-			release_focus()
+func _input(_event: InputEvent):
+	if _event is InputEventMouseButton:
+		if _event.button_index == MOUSE_BUTTON_LEFT and not _event.pressed:
+			is_dragging = false
+			presssCount = 0
