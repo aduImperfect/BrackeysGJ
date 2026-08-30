@@ -37,8 +37,8 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	startPos = followEvidenceControl.global_position
-	if name.contains("140"):
-		print(name + " "  + str(startPos) + " " + str(anotherStartPos) + " " + str(global_position))
+	#if name.contains("140"):
+		#print(name + " "  + str(startPos) + " " + str(anotherStartPos) + " " + str(global_position))
 
 	if DraggableObject.forcedUpdateStatic == true:
 		HouseManager.dragList.clear()
