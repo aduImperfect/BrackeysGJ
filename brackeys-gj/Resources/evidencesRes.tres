@@ -92,6 +92,7 @@ script = ExtResource("1_0rdhy")
 evidence_tex = ExtResource("3_5khaj")
 evidence_name = "Wine Bottles"
 characters = Array[String](["Maya"])
+location = "LivingRoom"
 desc = "Three wine bottles are found in the living room. Fingerprints belonging to Nikhil and Maya are present; Rohan's are absent."
 metadata/_custom_type_script = "uid://dm33po16rd0xa"
 
